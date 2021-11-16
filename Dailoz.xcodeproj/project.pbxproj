@@ -56,15 +56,47 @@
 		5EDA2E91274442FD00546708 /* Dailoz */ = {
 			isa = PBXGroup;
 			children = (
-				5EDA2E92274442FD00546708 /* AppDelegate.swift */,
-				5EDA2E94274442FD00546708 /* SceneDelegate.swift */,
-				5EDA2E96274442FD00546708 /* ViewController.swift */,
+				5EDA2EA82744442100546708 /* AppDelegate */,
+				5EDA2EA72744441900546708 /* Controller */,
+				5EDA2EA62744440E00546708 /* View */,
+				5EDA2EA92744444800546708 /* Resource */,
+			);
+			path = Dailoz;
+			sourceTree = "<group>";
+		};
+		5EDA2EA62744440E00546708 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				5EDA2E98274442FD00546708 /* Main.storyboard */,
 				5EDA2E9D2744430100546708 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5EDA2EA72744441900546708 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5EDA2E96274442FD00546708 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5EDA2EA82744442100546708 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				5EDA2E92274442FD00546708 /* AppDelegate.swift */,
+				5EDA2E94274442FD00546708 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		5EDA2EA92744444800546708 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
 				5EDA2E9B2744430100546708 /* Assets.xcassets */,
 				5EDA2EA02744430100546708 /* Info.plist */,
 			);
-			path = Dailoz;
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
