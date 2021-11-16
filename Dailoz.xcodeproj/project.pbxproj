@@ -56,6 +56,7 @@
 		5EDA2E91274442FD00546708 /* Dailoz */ = {
 			isa = PBXGroup;
 			children = (
+				5EDA2EA02744430100546708 /* Info.plist */,
 				5EDA2EA82744442100546708 /* AppDelegate */,
 				5EDA2EA72744441900546708 /* Controller */,
 				5EDA2EA62744440E00546708 /* View */,
@@ -94,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				5EDA2E9B2744430100546708 /* Assets.xcassets */,
-				5EDA2EA02744430100546708 /* Info.plist */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
