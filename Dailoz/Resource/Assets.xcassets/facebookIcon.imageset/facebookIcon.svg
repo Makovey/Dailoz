@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 730</title>
+    <defs>
+        <circle id="path-1" cx="21" cy="21" r="21"></circle>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="42" height="42" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <linearGradient x1="50%" y1="3.05253697e-15%" x2="50%" y2="99.7034193%" id="linearGradient-3">
+            <stop stop-color="#18ACFE" offset="0%"></stop>
+            <stop stop-color="#0163E0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Raw-File" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Signup" transform="translate(-195.000000, -614.000000)">
+            <g id="Group-732" transform="translate(137.000000, 614.000000)">
+                <g id="Group-730" transform="translate(58.000000, 0.000000)">
+                    <use id="Ellipse-257" stroke="#E3E8F1" mask="url(#mask-2)" stroke-width="1.55555558" stroke-dasharray="0,0" xlink:href="#path-1"></use>
+                    <g id="Facebook" transform="translate(6.000000, 6.000000)">
+                        <path d="M15,28.125 C22.2487373,28.125 28.125,22.2487373 28.125,15 C28.125,7.75126266 22.2487373,1.875 15,1.875 C7.75126266,1.875 1.875,7.75126266 1.875,15 C1.875,22.2487373 7.75126266,28.125 15,28.125 Z" id="bg" fill="url(#linearGradient-3)"></path>
+                        <path d="M20.4708636,15.309466 L16.8236393,15.309466 L16.8236393,12.9065534 C16.8236393,11.8928447 17.3321865,10.9041262 18.9657716,10.9041262 L20.625,10.9041262 L20.625,7.7503034 C19.6215688,7.58343447 18.6404023,7.5 17.6815005,7.5 C14.6764118,7.5 12.7140605,9.27463082 12.7140605,12.4860435 L12.7140605,15.309466 L9.375,15.309466 L9.375,19.0139563 L12.7140605,19.0139563 L12.7140605,27.9698253 C13.384415,28.0724564 14.0702213,28.125 14.7688498,28.125 C15.4674782,28.125 16.1532848,28.0724564 16.8236393,27.9698253 L16.8236393,19.0139563 L19.8878518,19.0139563 L20.4708636,15.309466 Z" id="f" fill="#FFFFFF" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

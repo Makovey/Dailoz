@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E0D11EC2746F1EF00F4F905 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0D11EB2746F1EF00F4F905 /* SignUpController.swift */; };
 		5EDA2E93274442FD00546708 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA2E92274442FD00546708 /* AppDelegate.swift */; };
 		5EDA2E95274442FD00546708 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA2E94274442FD00546708 /* SceneDelegate.swift */; };
-		5EDA2E97274442FD00546708 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA2E96274442FD00546708 /* ViewController.swift */; };
+		5EDA2E97274442FD00546708 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA2E96274442FD00546708 /* SplashController.swift */; };
 		5EDA2E9A274442FD00546708 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDA2E98274442FD00546708 /* Main.storyboard */; };
 		5EDA2E9C2744430100546708 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EDA2E9B2744430100546708 /* Assets.xcassets */; };
 		5EDA2E9F2744430100546708 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDA2E9D2744430100546708 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E0D11EB2746F1EF00F4F905 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		5EDA2E8F274442FD00546708 /* Dailoz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dailoz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EDA2E92274442FD00546708 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EDA2E94274442FD00546708 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5EDA2E96274442FD00546708 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5EDA2E96274442FD00546708 /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
 		5EDA2E99274442FD00546708 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5EDA2E9B2744430100546708 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5EDA2E9E2744430100546708 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +39,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E0D11EA2746E5AD00F4F905 /* StarterControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5EDA2E96274442FD00546708 /* SplashController.swift */,
+				5E0D11EB2746F1EF00F4F905 /* SignUpController.swift */,
+			);
+			path = StarterControllers;
+			sourceTree = "<group>";
+		};
 		5EDA2E86274442FD00546708 = {
 			isa = PBXGroup;
 			children = (
@@ -77,7 +88,7 @@
 		5EDA2EA72744441900546708 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5EDA2E96274442FD00546708 /* ViewController.swift */,
+				5E0D11EA2746E5AD00F4F905 /* StarterControllers */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -170,9 +181,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EDA2E97274442FD00546708 /* ViewController.swift in Sources */,
+				5EDA2E97274442FD00546708 /* SplashController.swift in Sources */,
 				5EDA2E93274442FD00546708 /* AppDelegate.swift in Sources */,
 				5EDA2E95274442FD00546708 /* SceneDelegate.swift in Sources */,
+				5E0D11EC2746F1EF00F4F905 /* SignUpController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
