@@ -13,14 +13,8 @@ class SplashController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        customizeButton()
     }
     
-    
-    func customizeButton() {
-        loginButton.layer.cornerRadius = 15.0
-    }
-
 
 }
 
