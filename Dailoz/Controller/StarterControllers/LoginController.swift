@@ -6,18 +6,52 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginController: UIViewController {
     
+    @IBOutlet weak var loginTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        customizeButton()
+        
+        self.dismissKeyboardWhenTappedOut()
+        
+        loginTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
-    func customizeButton() {
-        loginButton.layer.cornerRadius = 15.0
+    @IBAction func loginButtonPressed(_ sender: UIButton) {
+        authenticate()
+    }
+    
+    
+    func authenticate() {
+        if let email = loginTextField.text, let password = passwordTextField.text {
+            Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+                if let e = error {
+                    self.errorLabel.text = e.localizedDescription
+                } else {
+                    self.performSegue(withIdentifier: K.loginSegue, sender: self)
+                }
+            }
+        }
+    }
+    
+}
+
+extension LoginController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if !textField.isSecureTextEntry {
+            passwordTextField.becomeFirstResponder()
+        } else {
+            authenticate()
+        }
+        return true
     }
     
 }

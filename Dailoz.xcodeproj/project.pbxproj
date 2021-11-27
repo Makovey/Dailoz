@@ -9,20 +9,23 @@
 /* Begin PBXBuildFile section */
 		27BD973CA5D4ED9E7AACCAB5 /* Pods_Dailoz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD573761BB677B11D6D9C3F /* Pods_Dailoz.framework */; };
 		5E0D11EC2746F1EF00F4F905 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0D11EB2746F1EF00F4F905 /* SignUpController.swift */; };
-		5EABE08B274CDCD800608FA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EABE08A274CDCD800608FA8 /* GoogleService-Info.plist */; };
+		5E943822274FD2F70099CF1C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E943821274FD2F70099CF1C /* Extensions.swift */; };
+		5EABE090274D319800608FA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EABE08F274D319700608FA8 /* GoogleService-Info.plist */; };
 		5EDA2E93274442FD00546708 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA2E92274442FD00546708 /* AppDelegate.swift */; };
 		5EDA2E95274442FD00546708 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA2E94274442FD00546708 /* SceneDelegate.swift */; };
 		5EDA2E97274442FD00546708 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA2E96274442FD00546708 /* SplashController.swift */; };
 		5EDA2E9A274442FD00546708 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDA2E98274442FD00546708 /* Main.storyboard */; };
 		5EDA2E9C2744430100546708 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EDA2E9B2744430100546708 /* Assets.xcassets */; };
 		5EDA2E9F2744430100546708 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDA2E9D2744430100546708 /* LaunchScreen.storyboard */; };
+		5EE5FA14275228ED00676A7D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE5FA13275228ED00676A7D /* Constants.swift */; };
 		5EED98E7274A55DA00918BE7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EED98E6274A55DA00918BE7 /* LoginController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4F056BB502C929F9A6639616 /* Pods-Dailoz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dailoz.debug.xcconfig"; path = "Target Support Files/Pods-Dailoz/Pods-Dailoz.debug.xcconfig"; sourceTree = "<group>"; };
 		5E0D11EB2746F1EF00F4F905 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
-		5EABE08A274CDCD800608FA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5E943821274FD2F70099CF1C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5EABE08F274D319700608FA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Dailoz/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		5EDA2E8F274442FD00546708 /* Dailoz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dailoz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EDA2E92274442FD00546708 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EDA2E94274442FD00546708 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,6 +34,7 @@
 		5EDA2E9B2744430100546708 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5EDA2E9E2744430100546708 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5EDA2EA02744430100546708 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EE5FA13275228ED00676A7D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5EED98E6274A55DA00918BE7 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		AFD4B7CE0FE591B761274CEE /* Pods-Dailoz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dailoz.release.xcconfig"; path = "Target Support Files/Pods-Dailoz/Pods-Dailoz.release.xcconfig"; sourceTree = "<group>"; };
 		CAD573761BB677B11D6D9C3F /* Pods_Dailoz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dailoz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +75,7 @@
 				5EDA2E96274442FD00546708 /* SplashController.swift */,
 				5E0D11EB2746F1EF00F4F905 /* SignUpController.swift */,
 				5EED98E6274A55DA00918BE7 /* LoginController.swift */,
+				5E943821274FD2F70099CF1C /* Extensions.swift */,
 			);
 			path = StarterControllers;
 			sourceTree = "<group>";
@@ -96,12 +101,13 @@
 		5EDA2E91274442FD00546708 /* Dailoz */ = {
 			isa = PBXGroup;
 			children = (
-				5EABE08A274CDCD800608FA8 /* GoogleService-Info.plist */,
 				5EDA2EA02744430100546708 /* Info.plist */,
+				5EABE08F274D319700608FA8 /* GoogleService-Info.plist */,
 				5EDA2EA82744442100546708 /* AppDelegate */,
 				5EDA2EA72744441900546708 /* Controller */,
 				5EDA2EA62744440E00546708 /* View */,
 				5EDA2EA92744444800546708 /* Resource */,
+				5EE5FA13275228ED00676A7D /* Constants.swift */,
 			);
 			path = Dailoz;
 			sourceTree = "<group>";
@@ -201,8 +207,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EDA2E9F2744430100546708 /* LaunchScreen.storyboard in Resources */,
+				5EABE090274D319800608FA8 /* GoogleService-Info.plist in Resources */,
 				5EDA2E9C2744430100546708 /* Assets.xcassets in Resources */,
-				5EABE08B274CDCD800608FA8 /* GoogleService-Info.plist in Resources */,
 				5EDA2E9A274442FD00546708 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +263,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EDA2E97274442FD00546708 /* SplashController.swift in Sources */,
+				5EE5FA14275228ED00676A7D /* Constants.swift in Sources */,
+				5E943822274FD2F70099CF1C /* Extensions.swift in Sources */,
 				5EDA2E93274442FD00546708 /* AppDelegate.swift in Sources */,
 				5EDA2E95274442FD00546708 /* SceneDelegate.swift in Sources */,
 				5E0D11EC2746F1EF00F4F905 /* SignUpController.swift in Sources */,
@@ -337,7 +345,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -392,7 +400,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -419,7 +427,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -450,7 +458,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

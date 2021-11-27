@@ -6,33 +6,55 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignUpController: UIViewController {
-
-    @IBOutlet weak var signUpButton: UIButton!
     
-    @IBOutlet var textFields: [UITextField]!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        customizeButton()
-        customizeTextInput()
+        
+        self.dismissKeyboardWhenTappedOut()
+        
+        usernameTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
-    
-    func customizeButton() {
-        signUpButton.layer.cornerRadius = 15.0
+    @IBAction func createButtonPressed(_ sender: UIButton) {
+        login()
     }
     
-    func customizeTextInput() {
-        let bottomLine = CALayer()
+    func login() {
+        if let username = usernameTextField.text, let email = emailTextField.text, let password = passwordTextField.text {
+            //TODO add username to user
+            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                if let e = error {
+                    self.errorLabel.text = e.localizedDescription
+                } else {
+                    self.performSegue(withIdentifier: K.signUpSegue, sender: self)
+                }
+            }
+        }
+    }
+    
+}
+
+extension SignUpController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == usernameTextField {
+            emailTextField.becomeFirstResponder()
+        } else if textField == emailTextField {
+            passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            login()
+        }
         
-        bottomLine.frame = CGRect(x: 0, y: textFields[0].frame.height, width: textFields[0].frame.width, height: 2)
-        
-        bottomLine.backgroundColor = UIColor.red.cgColor
-        
-        textFields[0].borderStyle = .none
-        
-        textFields[0].layer.addSublayer(bottomLine)
+        return true
     }
 }
