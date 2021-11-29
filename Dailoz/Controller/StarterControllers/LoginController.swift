@@ -22,6 +22,8 @@ class LoginController: UIViewController {
         
         loginTextField.delegate = self
         passwordTextField.delegate = self
+        
+        stylingElements()
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
@@ -39,6 +41,11 @@ class LoginController: UIViewController {
                 }
             }
         }
+    }
+    
+    func stylingElements() {
+        Utilities.styleTextField(loginTextField)
+        Utilities.styleTextField(passwordTextField)
     }
     
 }

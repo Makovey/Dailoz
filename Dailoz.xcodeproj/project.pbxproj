@@ -10,7 +10,6 @@
 		27BD973CA5D4ED9E7AACCAB5 /* Pods_Dailoz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD573761BB677B11D6D9C3F /* Pods_Dailoz.framework */; };
 		5E0D11EC2746F1EF00F4F905 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0D11EB2746F1EF00F4F905 /* SignUpController.swift */; };
 		5E943822274FD2F70099CF1C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E943821274FD2F70099CF1C /* Extensions.swift */; };
-		5EABE090274D319800608FA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EABE08F274D319700608FA8 /* GoogleService-Info.plist */; };
 		5EDA2E93274442FD00546708 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA2E92274442FD00546708 /* AppDelegate.swift */; };
 		5EDA2E95274442FD00546708 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA2E94274442FD00546708 /* SceneDelegate.swift */; };
 		5EDA2E97274442FD00546708 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA2E96274442FD00546708 /* SplashController.swift */; };
@@ -19,13 +18,14 @@
 		5EDA2E9F2744430100546708 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDA2E9D2744430100546708 /* LaunchScreen.storyboard */; };
 		5EE5FA14275228ED00676A7D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE5FA13275228ED00676A7D /* Constants.swift */; };
 		5EED98E7274A55DA00918BE7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EED98E6274A55DA00918BE7 /* LoginController.swift */; };
+		5EFD4465275522EC00EFBA96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EFD4464275522EC00EFBA96 /* GoogleService-Info.plist */; };
+		5EFD446A2755232A00EFBA96 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD44692755232A00EFBA96 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4F056BB502C929F9A6639616 /* Pods-Dailoz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dailoz.debug.xcconfig"; path = "Target Support Files/Pods-Dailoz/Pods-Dailoz.debug.xcconfig"; sourceTree = "<group>"; };
 		5E0D11EB2746F1EF00F4F905 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		5E943821274FD2F70099CF1C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		5EABE08F274D319700608FA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Dailoz/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		5EDA2E8F274442FD00546708 /* Dailoz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dailoz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EDA2E92274442FD00546708 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EDA2E94274442FD00546708 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +36,8 @@
 		5EDA2EA02744430100546708 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EE5FA13275228ED00676A7D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5EED98E6274A55DA00918BE7 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		5EFD4464275522EC00EFBA96 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "Dailoz/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		5EFD44692755232A00EFBA96 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		AFD4B7CE0FE591B761274CEE /* Pods-Dailoz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dailoz.release.xcconfig"; path = "Target Support Files/Pods-Dailoz/Pods-Dailoz.release.xcconfig"; sourceTree = "<group>"; };
 		CAD573761BB677B11D6D9C3F /* Pods_Dailoz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dailoz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -102,12 +104,12 @@
 			isa = PBXGroup;
 			children = (
 				5EDA2EA02744430100546708 /* Info.plist */,
-				5EABE08F274D319700608FA8 /* GoogleService-Info.plist */,
+				5EFD4464275522EC00EFBA96 /* GoogleService-Info.plist */,
 				5EDA2EA82744442100546708 /* AppDelegate */,
 				5EDA2EA72744441900546708 /* Controller */,
 				5EDA2EA62744440E00546708 /* View */,
 				5EDA2EA92744444800546708 /* Resource */,
-				5EE5FA13275228ED00676A7D /* Constants.swift */,
+				5EFD44682755232100EFBA96 /* Helpers */,
 			);
 			path = Dailoz;
 			sourceTree = "<group>";
@@ -144,6 +146,15 @@
 				5EDA2E9B2744430100546708 /* Assets.xcassets */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		5EFD44682755232100EFBA96 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5EFD44692755232A00EFBA96 /* Utilities.swift */,
+				5EE5FA13275228ED00676A7D /* Constants.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,7 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EDA2E9F2744430100546708 /* LaunchScreen.storyboard in Resources */,
-				5EABE090274D319800608FA8 /* GoogleService-Info.plist in Resources */,
+				5EFD4465275522EC00EFBA96 /* GoogleService-Info.plist in Resources */,
 				5EDA2E9C2744430100546708 /* Assets.xcassets in Resources */,
 				5EDA2E9A274442FD00546708 /* Main.storyboard in Resources */,
 			);
@@ -268,6 +279,7 @@
 				5EDA2E93274442FD00546708 /* AppDelegate.swift in Sources */,
 				5EDA2E95274442FD00546708 /* SceneDelegate.swift in Sources */,
 				5E0D11EC2746F1EF00F4F905 /* SignUpController.swift in Sources */,
+				5EFD446A2755232A00EFBA96 /* Utilities.swift in Sources */,
 				5EED98E7274A55DA00918BE7 /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

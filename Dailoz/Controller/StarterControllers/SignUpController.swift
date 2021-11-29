@@ -24,6 +24,8 @@ class SignUpController: UIViewController {
         usernameTextField.delegate = self
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        
+        stylingElements()
     }
     
     @IBAction func createButtonPressed(_ sender: UIButton) {
@@ -41,6 +43,12 @@ class SignUpController: UIViewController {
                 }
             }
         }
+    }
+    
+    func stylingElements() {
+        Utilities.styleTextField(usernameTextField)
+        Utilities.styleTextField(emailTextField)
+        Utilities.styleTextField(passwordTextField)
     }
     
 }
