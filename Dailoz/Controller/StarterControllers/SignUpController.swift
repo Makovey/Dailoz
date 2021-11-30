@@ -7,9 +7,10 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class SignUpController: UIViewController {
-    
+        
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -29,16 +30,26 @@ class SignUpController: UIViewController {
     }
     
     @IBAction func createButtonPressed(_ sender: UIButton) {
-        login()
+        signUp()
     }
     
-    func login() {
+    func signUp() {
         if let username = usernameTextField.text, let email = emailTextField.text, let password = passwordTextField.text {
-            //TODO add username to user
+            if username.isEmpty {
+                errorLabel.text = "Fill Username field"
+                return
+            }
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if let e = error {
                     self.errorLabel.text = e.localizedDescription
                 } else {
+                    DBHelper.saveDataToDB(
+                        collection: K.FStore.userInfoCollection,
+                        documentName: DBHelper.userUid!,
+                        data: [
+                            K.FStore.nameField : username,
+                            K.FStore.emailField : email
+                        ])
                     self.performSegue(withIdentifier: K.signUpSegue, sender: self)
                 }
             }
@@ -60,7 +71,7 @@ extension SignUpController: UITextFieldDelegate {
         } else if textField == emailTextField {
             passwordTextField.becomeFirstResponder()
         } else if textField == passwordTextField {
-            login()
+            signUp()
         }
         
         return true

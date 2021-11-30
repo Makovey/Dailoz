@@ -8,4 +8,11 @@
 struct K {
     static let loginSegue = "loginToMain"
     static let signUpSegue = "signUpToMain"
+    
+    struct FStore {
+        static let userInfoCollection = "userInfo"
+        static let uidField = "uid"
+        static let emailField = "email"
+        static let nameField = "name"
+    }
 }

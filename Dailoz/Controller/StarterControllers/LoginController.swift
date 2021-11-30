@@ -27,11 +27,11 @@ class LoginController: UIViewController {
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        authenticate()
+        login()
     }
     
     
-    func authenticate() {
+    func login() {
         if let email = loginTextField.text, let password = passwordTextField.text {
             Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
                 if let e = error {
@@ -53,10 +53,10 @@ class LoginController: UIViewController {
 extension LoginController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if !textField.isSecureTextEntry {
+        if textField == loginTextField {
             passwordTextField.becomeFirstResponder()
-        } else {
-            authenticate()
+        } else if textField == passwordTextField {
+            login()
         }
         return true
     }

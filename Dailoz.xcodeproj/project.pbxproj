@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		27BD973CA5D4ED9E7AACCAB5 /* Pods_Dailoz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD573761BB677B11D6D9C3F /* Pods_Dailoz.framework */; };
 		5E0D11EC2746F1EF00F4F905 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0D11EB2746F1EF00F4F905 /* SignUpController.swift */; };
 		5E943822274FD2F70099CF1C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E943821274FD2F70099CF1C /* Extensions.swift */; };
+		5EB6201B27565BD2001D1FA4 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6201A27565BD2001D1FA4 /* DBHelper.swift */; };
 		5EDA2E93274442FD00546708 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA2E92274442FD00546708 /* AppDelegate.swift */; };
 		5EDA2E95274442FD00546708 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA2E94274442FD00546708 /* SceneDelegate.swift */; };
 		5EDA2E97274442FD00546708 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA2E96274442FD00546708 /* SplashController.swift */; };
@@ -20,12 +20,14 @@
 		5EED98E7274A55DA00918BE7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EED98E6274A55DA00918BE7 /* LoginController.swift */; };
 		5EFD4465275522EC00EFBA96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EFD4464275522EC00EFBA96 /* GoogleService-Info.plist */; };
 		5EFD446A2755232A00EFBA96 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD44692755232A00EFBA96 /* Utilities.swift */; };
+		5EFD446D275566CC00EFBA96 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFD446C275566CC00EFBA96 /* HomeController.swift */; };
+		ADD058DFF97A1ED1B673ECE9 /* Pods_Dailoz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6DC0AE9312D7E6053DFBB1D /* Pods_Dailoz.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4F056BB502C929F9A6639616 /* Pods-Dailoz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dailoz.debug.xcconfig"; path = "Target Support Files/Pods-Dailoz/Pods-Dailoz.debug.xcconfig"; sourceTree = "<group>"; };
 		5E0D11EB2746F1EF00F4F905 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		5E943821274FD2F70099CF1C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5EB6201A27565BD2001D1FA4 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
 		5EDA2E8F274442FD00546708 /* Dailoz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dailoz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EDA2E92274442FD00546708 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EDA2E94274442FD00546708 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,8 +40,10 @@
 		5EED98E6274A55DA00918BE7 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		5EFD4464275522EC00EFBA96 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "Dailoz/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		5EFD44692755232A00EFBA96 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		AFD4B7CE0FE591B761274CEE /* Pods-Dailoz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dailoz.release.xcconfig"; path = "Target Support Files/Pods-Dailoz/Pods-Dailoz.release.xcconfig"; sourceTree = "<group>"; };
-		CAD573761BB677B11D6D9C3F /* Pods_Dailoz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dailoz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EFD446C275566CC00EFBA96 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		A3AE332F12EDCBFD0535352F /* Pods-Dailoz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dailoz.release.xcconfig"; path = "Target Support Files/Pods-Dailoz/Pods-Dailoz.release.xcconfig"; sourceTree = "<group>"; };
+		B6DC0AE9312D7E6053DFBB1D /* Pods_Dailoz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dailoz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2EDD79E9C6AE8A266F50EE8 /* Pods-Dailoz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dailoz.debug.xcconfig"; path = "Target Support Files/Pods-Dailoz/Pods-Dailoz.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27BD973CA5D4ED9E7AACCAB5 /* Pods_Dailoz.framework in Frameworks */,
+				ADD058DFF97A1ED1B673ECE9 /* Pods_Dailoz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,18 +61,10 @@
 		0A242517D44DAC95D39B85CD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4F056BB502C929F9A6639616 /* Pods-Dailoz.debug.xcconfig */,
-				AFD4B7CE0FE591B761274CEE /* Pods-Dailoz.release.xcconfig */,
+				D2EDD79E9C6AE8A266F50EE8 /* Pods-Dailoz.debug.xcconfig */,
+				A3AE332F12EDCBFD0535352F /* Pods-Dailoz.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		0DFAF78A866C44E794D37E0E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				CAD573761BB677B11D6D9C3F /* Pods_Dailoz.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		5E0D11EA2746E5AD00F4F905 /* StarterControllers */ = {
@@ -77,7 +73,6 @@
 				5EDA2E96274442FD00546708 /* SplashController.swift */,
 				5E0D11EB2746F1EF00F4F905 /* SignUpController.swift */,
 				5EED98E6274A55DA00918BE7 /* LoginController.swift */,
-				5E943821274FD2F70099CF1C /* Extensions.swift */,
 			);
 			path = StarterControllers;
 			sourceTree = "<group>";
@@ -88,7 +83,7 @@
 				5EDA2E91274442FD00546708 /* Dailoz */,
 				5EDA2E90274442FD00546708 /* Products */,
 				0A242517D44DAC95D39B85CD /* Pods */,
-				0DFAF78A866C44E794D37E0E /* Frameworks */,
+				B42321999E0EA71DFF1C1BE0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +102,7 @@
 				5EFD4464275522EC00EFBA96 /* GoogleService-Info.plist */,
 				5EDA2EA82744442100546708 /* AppDelegate */,
 				5EDA2EA72744441900546708 /* Controller */,
+				5E943821274FD2F70099CF1C /* Extensions.swift */,
 				5EDA2EA62744440E00546708 /* View */,
 				5EDA2EA92744444800546708 /* Resource */,
 				5EFD44682755232100EFBA96 /* Helpers */,
@@ -127,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				5E0D11EA2746E5AD00F4F905 /* StarterControllers */,
+				5EFD446B2755669C00EFBA96 /* MainControllers */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -153,8 +150,25 @@
 			children = (
 				5EFD44692755232A00EFBA96 /* Utilities.swift */,
 				5EE5FA13275228ED00676A7D /* Constants.swift */,
+				5EB6201A27565BD2001D1FA4 /* DBHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5EFD446B2755669C00EFBA96 /* MainControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5EFD446C275566CC00EFBA96 /* HomeController.swift */,
+			);
+			path = MainControllers;
+			sourceTree = "<group>";
+		};
+		B42321999E0EA71DFF1C1BE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6DC0AE9312D7E6053DFBB1D /* Pods_Dailoz.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,11 +178,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5EDA2EA32744430100546708 /* Build configuration list for PBXNativeTarget "Dailoz" */;
 			buildPhases = (
-				1D5D895E3BF3CF195457C761 /* [CP] Check Pods Manifest.lock */,
+				B27A8858701C1E23926CC968 /* [CP] Check Pods Manifest.lock */,
 				5EDA2E8B274442FD00546708 /* Sources */,
 				5EDA2E8C274442FD00546708 /* Frameworks */,
 				5EDA2E8D274442FD00546708 /* Resources */,
-				E8885C7061B520B68233FDD1 /* [CP] Embed Pods Frameworks */,
+				49DBB9A5C6DE646122A564CB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -227,7 +241,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1D5D895E3BF3CF195457C761 /* [CP] Check Pods Manifest.lock */ = {
+		49DBB9A5C6DE646122A564CB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dailoz/Pods-Dailoz-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dailoz/Pods-Dailoz-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dailoz/Pods-Dailoz-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B27A8858701C1E23926CC968 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -249,23 +280,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E8885C7061B520B68233FDD1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Dailoz/Pods-Dailoz-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Dailoz/Pods-Dailoz-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dailoz/Pods-Dailoz-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -278,7 +292,9 @@
 				5E943822274FD2F70099CF1C /* Extensions.swift in Sources */,
 				5EDA2E93274442FD00546708 /* AppDelegate.swift in Sources */,
 				5EDA2E95274442FD00546708 /* SceneDelegate.swift in Sources */,
+				5EFD446D275566CC00EFBA96 /* HomeController.swift in Sources */,
 				5E0D11EC2746F1EF00F4F905 /* SignUpController.swift in Sources */,
+				5EB6201B27565BD2001D1FA4 /* DBHelper.swift in Sources */,
 				5EFD446A2755232A00EFBA96 /* Utilities.swift in Sources */,
 				5EED98E7274A55DA00918BE7 /* LoginController.swift in Sources */,
 			);
@@ -424,7 +440,7 @@
 		};
 		5EDA2EA42744430100546708 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F056BB502C929F9A6639616 /* Pods-Dailoz.debug.xcconfig */;
+			baseConfigurationReference = D2EDD79E9C6AE8A266F50EE8 /* Pods-Dailoz.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -455,7 +471,7 @@
 		};
 		5EDA2EA52744430100546708 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AFD4B7CE0FE591B761274CEE /* Pods-Dailoz.release.xcconfig */;
+			baseConfigurationReference = A3AE332F12EDCBFD0535352F /* Pods-Dailoz.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
