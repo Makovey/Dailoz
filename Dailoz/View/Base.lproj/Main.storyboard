@@ -777,7 +777,7 @@
             <objects>
                 <navigationController id="yy5-aI-dmV" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="WBf-ig-WqW">
-                        <imageReference key="image" image="plusIcon" symbolScale="default"/>
+                        <imageReference key="image" image="plus" symbolScale="default"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qFM-1E-r8o">
@@ -876,7 +876,7 @@
         <!--Add Task Screen-->
         <scene sceneID="EpL-Xm-OWf">
             <objects>
-                <viewController id="DAp-SU-M65" userLabel="Add Task Screen" sceneMemberID="viewController">
+                <viewController id="DAp-SU-M65" userLabel="Add Task Screen" customClass="AddTaskController" customModule="Dailoz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SBd-7S-eHs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -887,36 +887,53 @@
                                 <color key="textColor" name="MainBlue"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="ttZ-gP-84j">
-                                <rect key="frame" x="35" y="160.5" width="344" height="286"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="ttZ-gP-84j">
+                                <rect key="frame" x="35" y="170.5" width="344" height="315"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n1N-SO-484">
-                                        <rect key="frame" x="0.0" y="0.0" width="344" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="344" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="B9K-CM-t9c"/>
+                                        </constraints>
+                                        <color key="textColor" name="MainBlue"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oto-7y-ua6">
-                                        <rect key="frame" x="0.0" y="84" width="344" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="When we start?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oto-7y-ua6">
+                                        <rect key="frame" x="0.0" y="90" width="344" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="bhm-Iw-la7"/>
+                                        </constraints>
+                                        <color key="textColor" name="MainBlue"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="AVO-vI-fbb">
-                                        <rect key="frame" x="0.0" y="168" width="344" height="34"/>
+                                        <rect key="frame" x="0.0" y="180" width="344" height="45"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Start at" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1jK-fO-TEz">
-                                                <rect key="frame" x="0.0" y="0.0" width="156" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="156" height="45"/>
+                                                <color key="textColor" name="MainBlue"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="End at" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mql-Vo-Snm">
-                                                <rect key="frame" x="188" y="0.0" width="156" height="34"/>
+                                                <rect key="frame" x="188" y="0.0" width="156" height="45"/>
+                                                <color key="textColor" name="MainBlue"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="0wR-T1-WyL"/>
+                                        </constraints>
                                     </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZeR-kE-bK4">
-                                        <rect key="frame" x="0.0" y="252" width="344" height="34"/>
+                                        <rect key="frame" x="0.0" y="270" width="344" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="kKZ-hu-xC1"/>
+                                        </constraints>
+                                        <color key="textColor" name="MainBlue"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -940,20 +957,20 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tags" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NqZ-my-zQv">
-                                <rect key="frame" x="35" y="481.5" width="55" height="32.5"/>
+                                <rect key="frame" x="35" y="520.5" width="55" height="32.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <color key="textColor" name="MainBlue"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OKM-tb-TaR">
-                                <rect key="frame" x="35" y="534" width="344" height="35"/>
+                                <rect key="frame" x="35" y="573" width="344" height="35"/>
                                 <color key="backgroundColor" name="CompletedCardBlue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="NZ6-ZT-8su"/>
                                 </constraints>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlB-YH-lrh">
-                                <rect key="frame" x="35" y="589" width="344" height="26"/>
+                                <rect key="frame" x="35" y="628" width="344" height="26"/>
                                 <color key="tintColor" name="TagPurple"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="+ Add new tag">
@@ -975,7 +992,7 @@
                             <constraint firstItem="hlB-YH-lrh" firstAttribute="top" secondItem="OKM-tb-TaR" secondAttribute="bottom" constant="20" id="XlG-2A-fjZ"/>
                             <constraint firstItem="Ikc-ME-eJs" firstAttribute="trailing" secondItem="hlB-YH-lrh" secondAttribute="trailing" constant="35" id="coD-IE-9X7"/>
                             <constraint firstItem="OKM-tb-TaR" firstAttribute="top" secondItem="NqZ-my-zQv" secondAttribute="bottom" constant="20" id="geQ-Na-6my"/>
-                            <constraint firstItem="ttZ-gP-84j" firstAttribute="top" secondItem="pl7-he-GNW" secondAttribute="bottom" constant="20" id="iXQ-3Z-Xky"/>
+                            <constraint firstItem="ttZ-gP-84j" firstAttribute="top" secondItem="pl7-he-GNW" secondAttribute="bottom" constant="30" id="iXQ-3Z-Xky"/>
                             <constraint firstItem="Ikc-ME-eJs" firstAttribute="trailing" secondItem="dbE-zt-otY" secondAttribute="trailing" constant="35" id="msI-4S-FK4"/>
                             <constraint firstItem="hlB-YH-lrh" firstAttribute="leading" secondItem="Ikc-ME-eJs" secondAttribute="leading" constant="35" id="sR3-q1-Wcx"/>
                             <constraint firstItem="Ikc-ME-eJs" firstAttribute="bottom" secondItem="dbE-zt-otY" secondAttribute="bottom" constant="15" id="unA-rr-c2p"/>
@@ -983,6 +1000,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="okW-WE-cNX"/>
+                    <connections>
+                        <outlet property="dateTextField" destination="oto-7y-ua6" id="HFl-BN-vG4"/>
+                        <outlet property="descriptionTextField" destination="ZeR-kE-bK4" id="S86-vN-liL"/>
+                        <outlet property="endTextField" destination="Mql-Vo-Snm" id="Feo-hV-2NT"/>
+                        <outlet property="startAtTextField" destination="1jK-fO-TEz" id="GFe-JV-oeb"/>
+                        <outlet property="titleTextField" destination="n1N-SO-484" id="fiC-iO-555"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uVs-jA-gAJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1242,8 +1266,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zzc-1Q-sc0"/>
-        <segue reference="Agv-Jj-gSE"/>
+        <segue reference="7QN-Qn-XoF"/>
+        <segue reference="Kk1-7K-d7v"/>
         <segue reference="i8f-F3-Rta"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -1256,7 +1280,7 @@
         <image name="homeIcon" width="24" height="24"/>
         <image name="menuIcon" width="24" height="24"/>
         <image name="person" catalog="system" width="128" height="117"/>
-        <image name="plusIcon" width="50" height="50"/>
+        <image name="plus" width="50" height="50"/>
         <image name="splashImage" width="291" height="294"/>
         <namedColor name="CanceledCardRed">
             <color red="0.90600001811981201" green="0.49000000953674316" blue="0.49000000953674316" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

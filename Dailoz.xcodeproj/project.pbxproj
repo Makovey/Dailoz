@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E046BF52759110D0090B5A6 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E046BF42759110D0090B5A6 /* Task.swift */; };
 		5E0D11EC2746F1EF00F4F905 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0D11EB2746F1EF00F4F905 /* SignUpController.swift */; };
+		5E490AAB27578A18000ED5C8 /* AddTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E490AAA27578A18000ED5C8 /* AddTaskController.swift */; };
 		5E943822274FD2F70099CF1C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E943821274FD2F70099CF1C /* Extensions.swift */; };
 		5EB6201B27565BD2001D1FA4 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6201A27565BD2001D1FA4 /* DBHelper.swift */; };
 		5EDA2E93274442FD00546708 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA2E92274442FD00546708 /* AppDelegate.swift */; };
@@ -25,8 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E046BF42759110D0090B5A6 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		5E0D11EB2746F1EF00F4F905 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
-		5E943821274FD2F70099CF1C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5E490AAA27578A18000ED5C8 /* AddTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskController.swift; sourceTree = "<group>"; };
+		5E943821274FD2F70099CF1C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Dailoz/Controller/Extensions.swift; sourceTree = SOURCE_ROOT; };
 		5EB6201A27565BD2001D1FA4 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
 		5EDA2E8F274442FD00546708 /* Dailoz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dailoz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EDA2E92274442FD00546708 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +71,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		5E046BF6275911140090B5A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5E046BF42759110D0090B5A6 /* Task.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5E0D11EA2746E5AD00F4F905 /* StarterControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,11 +113,11 @@
 				5EDA2EA02744430100546708 /* Info.plist */,
 				5EFD4464275522EC00EFBA96 /* GoogleService-Info.plist */,
 				5EDA2EA82744442100546708 /* AppDelegate */,
+				5E046BF6275911140090B5A6 /* Model */,
 				5EDA2EA72744441900546708 /* Controller */,
-				5E943821274FD2F70099CF1C /* Extensions.swift */,
 				5EDA2EA62744440E00546708 /* View */,
-				5EDA2EA92744444800546708 /* Resource */,
 				5EFD44682755232100EFBA96 /* Helpers */,
+				5EDA2EA92744444800546708 /* Resource */,
 			);
 			path = Dailoz;
 			sourceTree = "<group>";
@@ -124,6 +136,7 @@
 			children = (
 				5E0D11EA2746E5AD00F4F905 /* StarterControllers */,
 				5EFD446B2755669C00EFBA96 /* MainControllers */,
+				5E943821274FD2F70099CF1C /* Extensions.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -159,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				5EFD446C275566CC00EFBA96 /* HomeController.swift */,
+				5E490AAA27578A18000ED5C8 /* AddTaskController.swift */,
 			);
 			path = MainControllers;
 			sourceTree = "<group>";
@@ -291,6 +305,8 @@
 				5EE5FA14275228ED00676A7D /* Constants.swift in Sources */,
 				5E943822274FD2F70099CF1C /* Extensions.swift in Sources */,
 				5EDA2E93274442FD00546708 /* AppDelegate.swift in Sources */,
+				5E046BF52759110D0090B5A6 /* Task.swift in Sources */,
+				5E490AAB27578A18000ED5C8 /* AddTaskController.swift in Sources */,
 				5EDA2E95274442FD00546708 /* SceneDelegate.swift in Sources */,
 				5EFD446D275566CC00EFBA96 /* HomeController.swift in Sources */,
 				5E0D11EC2746F1EF00F4F905 /* SignUpController.swift in Sources */,
