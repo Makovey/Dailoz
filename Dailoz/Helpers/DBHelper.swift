@@ -26,9 +26,23 @@ struct DBHelper {
             }
     }
     
+    static func saveDataToSubcollectionDB(collection: String, documentName: String, subCollection: String, data:[String: Any]) {
+        db.collection(collection)
+            .document(documentName)
+            .collection(subCollection)
+            .document()
+            .setData(data) { error in
+                if let e = error {
+                    print("There was an issue saving data to Firestore \(e)")
+                } else {
+                    print("Successfully saving data to collection: \(collection) and subcollection \(subCollection)")
+                }
+            }
+    }
+    
     
     static func loadInfo(completion:@escaping(([String: Any]?) -> ())) {
-        let docRef = db.collection(K.FStore.userInfoCollection).document(userUid!)
+        let docRef = db.collection(K.FStore.Collection.userInfo).document(userUid!)
 
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {

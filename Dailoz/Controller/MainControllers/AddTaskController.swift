@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 class AddTaskController: UIViewController {
     
@@ -14,9 +15,12 @@ class AddTaskController: UIViewController {
     @IBOutlet weak var startAtTextField: UITextField!
     @IBOutlet weak var endTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
     
     let datePicker = UIDatePicker()
     let timePicker = UIDatePicker()
+
+    var timing = (start: Date(), end: Date())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +35,7 @@ class AddTaskController: UIViewController {
         createTimePicker()
     }
     
-
+    
     func stylingElements() {
         Utilities.styleTextField(titleTextField)
         Utilities.styleTextField(dateTextField)
@@ -40,6 +44,33 @@ class AddTaskController: UIViewController {
         Utilities.styleTextField(descriptionTextField)
     }
     
+    @IBAction func createButtonPressed(_ sender: UIButton) {
+        validateAndSaveTask()
+    }
+    
+    func validateAndSaveTask() {
+        if let title = titleTextField.text, let date = dateTextField.text, let startAt = startAtTextField.text, let endTo = endTextField.text {
+            if !title.isEmpty && !date.isEmpty && !startAt.isEmpty && !endTo.isEmpty {
+                
+                DBHelper.saveDataToSubcollectionDB(
+                    collection: K.FStore.Collection.tasks,
+                    documentName: DBHelper.userUid!,
+                    subCollection: K.FStore.Collection.userTasks,
+                    data: [
+                        K.FStore.Field.title: title,
+                        K.FStore.Field.date: datePicker.date,
+                        K.FStore.Field.start: timing.start,
+                        K.FStore.Field.end: timing.end,
+                        K.FStore.Field.description: descriptionTextField.text ?? ""
+                    ])
+                
+                errorLabel.alpha = 0
+            } else {
+                print("It's not oke")
+                errorLabel.alpha = 1
+            }
+        }
+    }
 }
 
 // MARK: Set UIDatePicker to Keyboard and work with it
@@ -49,11 +80,38 @@ extension AddTaskController: UITextFieldDelegate {
     //TODO сделать проверку на конец времени (не может быть раньше начала) или перенос на следующую дату
     //TODO title required & Description is optional
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case titleTextField:
+            dateTextField.becomeFirstResponder()
+        case descriptionTextField:
+            validateAndSaveTask()
+        default: break
+            
+        }
+        
+        return true
+    }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField == dateTextField {
+        switch textField {
+        case dateTextField:
             bindPicker(picker: datePicker, to: textField)
-        } else if textField == startAtTextField || textField == endTextField {
+        case startAtTextField, endTextField:
             bindPicker(picker: timePicker, to: textField)
+        default: break
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        switch textField {
+        case dateTextField:
+            inputDateToTextField()
+        case startAtTextField:
+            inputTimeStartToTextField()
+        case endTextField:
+            inputTimeEndToTextField()
+        default: break
         }
     }
     
@@ -66,7 +124,8 @@ extension AddTaskController: UITextFieldDelegate {
         
         datePicker.datePickerMode = .date
         datePicker.backgroundColor = .white
-        datePicker.tintColor = K.Colors.mainPurple
+        datePicker.timeZone = .autoupdatingCurrent
+        datePicker.tintColor = K.Color.mainPurple
     }
     
     func createTimePicker() {
@@ -76,7 +135,8 @@ extension AddTaskController: UITextFieldDelegate {
         
         timePicker.datePickerMode = .time
         timePicker.backgroundColor = .white
-        timePicker.tintColor = K.Colors.mainPurple
+        timePicker.timeZone = .autoupdatingCurrent
+        timePicker.tintColor = K.Color.mainPurple
     }
     
     
@@ -106,35 +166,50 @@ extension AddTaskController: UITextFieldDelegate {
             fatalError("Toolbar's button is nil")
         }
         
-        safetyDoneBtn.tintColor = K.Colors.mainPurple
+        safetyDoneBtn.tintColor = K.Color.mainPurple
         toolbar.setItems([safetyDoneBtn], animated: true)
         
         return toolbar
     }
     
     @objc func dateTextFieldDonePressed() {
+        inputDateToTextField()
+    }
+    
+    @objc func startTextFieldDonePressed() {
+        inputTimeStartToTextField()
+    }
+    
+    @objc func endTextFieldDonePressed() {
+        inputTimeEndToTextField()
+    }
+    
+    func inputDateToTextField() {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .long
+        dateFormatter.dateStyle = .full
         dateFormatter.timeStyle = .none
         
         self.dateTextField.text = dateFormatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
     
-    @objc func startTextFieldDonePressed() {
+    func inputTimeStartToTextField() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
         
+        
+        timing.start = timePicker.date
         self.startAtTextField.text = dateFormatter.string(from: timePicker.date)
         self.view.endEditing(true)
     }
     
-    @objc func endTextFieldDonePressed() {
+    func inputTimeEndToTextField() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
         
+        timing.end = timePicker.date
         self.endTextField.text = dateFormatter.string(from: timePicker.date)
         self.view.endEditing(true)
     }

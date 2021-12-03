@@ -12,13 +12,27 @@ struct K {
     static let signUpSegue = "signUpToMain"
     
     struct FStore {
-        static let userInfoCollection = "userInfo"
-        static let uidField = "uid"
-        static let emailField = "email"
-        static let nameField = "name"
+        struct Collection {
+            static let userInfo = "userInfo"
+            static let tasks = "tasks"
+            static let userTasks = "userTasks"
+        }
+        
+        struct Field {
+            static let uid = "uid"
+            static let email = "email"
+            static let name = "name"
+            static let title = "title"
+            static let date = "date"
+            static let start = "start"
+            static let end = "end"
+            static let description = "description"
+        }
+
     }
     
-    struct Colors {
+    struct Color {
         static let mainPurple = UIColor(red: 91/255, green: 103/255, blue: 202/255, alpha: 1)
+        static let red = UIColor(red: 231/255, green: 1245/255, blue: 125/255, alpha: 1)
     }
 }

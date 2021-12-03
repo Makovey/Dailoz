@@ -21,7 +21,7 @@ class HomeController: UIViewController {
     func updateUI() {
         DispatchQueue.main.async {
             DBHelper.loadInfo { result in
-                self.usernameLabel.text = result![K.FStore.nameField]! as? String
+                self.usernameLabel.text = result![K.FStore.Field.name]! as? String
             }
         }
     }

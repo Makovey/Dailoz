@@ -44,11 +44,11 @@ class SignUpController: UIViewController {
                     self.errorLabel.text = e.localizedDescription
                 } else {
                     DBHelper.saveDataToDB(
-                        collection: K.FStore.userInfoCollection,
+                        collection: K.FStore.Collection.userInfo,
                         documentName: DBHelper.userUid!,
                         data: [
-                            K.FStore.nameField : username,
-                            K.FStore.emailField : email
+                            K.FStore.Field.name : username,
+                            K.FStore.Field.email : email
                         ])
                     self.performSegue(withIdentifier: K.signUpSegue, sender: self)
                 }
