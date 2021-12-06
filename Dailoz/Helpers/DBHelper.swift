@@ -12,6 +12,10 @@ struct DBHelper {
     
     static let db = Firestore.firestore()
     
+//    let userTasks: [Task] = {
+//        computed свойство с массивом который public, берем отседа и вставляем где хотим
+//    }
+    
     static let userUid = Auth.auth().currentUser?.uid
     
     static func saveDataTo(collection: String, documentName: String, data:[String: Any]) {
