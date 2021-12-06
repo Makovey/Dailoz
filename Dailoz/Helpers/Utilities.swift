@@ -24,6 +24,8 @@ class Utilities {
     
     static func showBunner(title: String, subtitle: String, style: BannerStyle) {
         let banner = GrowingNotificationBanner(title: title, subtitle: subtitle, style: style)
+        banner.titleLabel?.font = UIFont.init(name: K.mainFontBolt, size: 17)
+        banner.subtitleLabel?.font = UIFont(name: K.mainFont, size: 13)
         banner.duration = 2.5
         banner.dismissOnSwipeUp = true
         banner.show(queuePosition: .front)

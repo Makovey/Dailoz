@@ -12,7 +12,9 @@ class LoginController: UIViewController {
     
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var forgotPasswordButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +24,7 @@ class LoginController: UIViewController {
         loginTextField.delegate = self
         passwordTextField.delegate = self
         
-        stylingElements()
+        styleElements()
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
@@ -42,9 +44,10 @@ class LoginController: UIViewController {
         }
     }
     
-    func stylingElements() {
-        Utilities.styleTextField(loginTextField)
-        Utilities.styleTextField(passwordTextField)
+    func styleElements() {
+        for textField in [loginTextField, passwordTextField] {
+            Utilities.styleTextField(textField!)
+        }
     }
     
 }

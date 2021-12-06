@@ -31,29 +31,41 @@
                                     <constraint firstAttribute="height" constant="300" id="fcE-9B-I5P"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qH-Ol-LmO">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qH-Ol-LmO">
                                 <rect key="frame" x="35" y="792" width="344" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="oan-XD-eKo"/>
                                 </constraints>
                                 <color key="tintColor" name="MainPurple"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Sign Up">
-                                    <fontDescription key="titleFontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Sign Up">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name="Comfortaa-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="cgp-rf-bin" kind="show" id="Agv-Jj-gSE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjD-Ol-uzL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjD-Ol-uzL">
                                 <rect key="frame" x="35" y="722" width="344" height="50"/>
                                 <color key="backgroundColor" name="MainPurple"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="WGp-hy-aXH"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Login">
-                                    <fontDescription key="titleFontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Login">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name="Comfortaa-Medium"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                     <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
@@ -65,7 +77,7 @@
                                     <segue destination="p4b-tE-Lw8" kind="show" id="i8f-F3-Rta"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dialoz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XgD-fo-tJV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dailoz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XgD-fo-tJV">
                                 <rect key="frame" x="151" y="469" width="112.5" height="39.5"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="35"/>
                                 <color key="textColor" name="MainPurple"/>
@@ -204,8 +216,14 @@
                                 <rect key="frame" x="35" y="822.5" width="344" height="28.5"/>
                                 <color key="tintColor" name="SplashText"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Don’t have an account? Sign Up">
-                                    <fontDescription key="titleFontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="13"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Don’t have an account? Sign Up">
+                                            <attributes>
+                                                <font key="NSFont" size="13" name="Comfortaa-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="cgp-rf-bin" kind="show" id="Kk1-7K-d7v"/>
@@ -236,8 +254,14 @@
                                         <rect key="frame" x="0.0" y="154" width="344" height="27.5"/>
                                         <color key="tintColor" name="MainPurple"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Forgot Password?">
-                                            <fontDescription key="titleFontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="12"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Forgot Password?">
+                                                    <attributes>
+                                                        <font key="NSFont" size="12" name="Comfortaa-Regular"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                         </buttonConfiguration>
                                     </button>
                                 </subviews>
@@ -249,8 +273,14 @@
                                     <constraint firstAttribute="height" constant="50" id="UFl-qg-Gga"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Login">
-                                    <fontDescription key="titleFontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Login">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name="Comfortaa-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                     <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
@@ -337,6 +367,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="wN1-mm-puZ"/>
                     <connections>
+                        <outlet property="forgotPasswordButton" destination="Gz7-Ul-WXl" id="mmK-W6-YXD"/>
                         <outlet property="loginButton" destination="xHN-5F-Af1" id="bZk-fx-vO4"/>
                         <outlet property="loginTextField" destination="DAb-h3-PG6" id="Hpl-BS-0qd"/>
                         <outlet property="passwordTextField" destination="sCB-ZZ-fnt" id="bM2-R2-xdZ"/>
@@ -397,8 +428,14 @@
                                     <constraint firstAttribute="height" constant="50" id="Avr-TN-GPh"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Create">
-                                    <fontDescription key="titleFontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Create">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name="Comfortaa-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                     <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
@@ -420,8 +457,14 @@
                                 <rect key="frame" x="35" y="821" width="344" height="30"/>
                                 <color key="tintColor" name="SplashText"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Have any account? Sign In">
-                                    <fontDescription key="titleFontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Have any account? Sign In">
+                                            <attributes>
+                                                <font key="NSFont" size="14" name="Comfortaa-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="p4b-tE-Lw8" kind="show" id="6Ki-i5-Yqh"/>
@@ -704,8 +747,14 @@
                                         <rect key="frame" x="291.5" y="0.0" width="52.5" height="30.5"/>
                                         <color key="tintColor" name="MainBlue"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="View">
-                                            <fontDescription key="titleFontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="12"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="View">
+                                                    <attributes>
+                                                        <font key="NSFont" size="12" name="Comfortaa-Regular"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                         </buttonConfiguration>
                                     </button>
                                 </subviews>
@@ -935,8 +984,14 @@
                                     <constraint firstAttribute="height" constant="50" id="meh-Rn-QX5"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Create">
-                                    <fontDescription key="titleFontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Create">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name="Comfortaa-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                     <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
@@ -965,8 +1020,14 @@
                                 <rect key="frame" x="35" y="624" width="344" height="25.5"/>
                                 <color key="tintColor" name="TagPurple"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="+ Add new tag">
-                                    <fontDescription key="titleFontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="10"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="+ Add new tag">
+                                            <attributes>
+                                                <font key="NSFont" size="10" name="Comfortaa-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </buttonConfiguration>
                             </button>
                         </subviews>
