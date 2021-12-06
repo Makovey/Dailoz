@@ -10,13 +10,14 @@ import Foundation
 
 class AddTaskController: UIViewController {
     
+    @IBOutlet var createTaskTextFields: [UITextField]!
+    
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var startAtTextField: UITextField!
     @IBOutlet weak var endTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
-    @IBOutlet weak var errorLabel: UILabel!
-    
+        
     let datePicker = UIDatePicker()
     let timePicker = UIDatePicker()
 
@@ -30,18 +31,16 @@ class AddTaskController: UIViewController {
         startAtTextField.delegate = self
         endTextField.delegate = self
         
-        stylingElements()
+        stylingTextFields()
         createDatePicker()
         createTimePicker()
     }
     
     
-    func stylingElements() {
-        Utilities.styleTextField(titleTextField)
-        Utilities.styleTextField(dateTextField)
-        Utilities.styleTextField(startAtTextField)
-        Utilities.styleTextField(endTextField)
-        Utilities.styleTextField(descriptionTextField)
+    func stylingTextFields() {
+        for textField in createTaskTextFields {
+            Utilities.styleTextField(textField)
+        }
     }
     
     @IBAction func createButtonPressed(_ sender: UIButton) {
@@ -52,7 +51,7 @@ class AddTaskController: UIViewController {
         if let title = titleTextField.text, let date = dateTextField.text, let startAt = startAtTextField.text, let endTo = endTextField.text {
             if !title.isEmpty && !date.isEmpty && !startAt.isEmpty && !endTo.isEmpty {
                 
-                DBHelper.saveDataToSubcollectionDB(
+                DBHelper.saveDataToSubcollection(
                     collection: K.FStore.Collection.tasks,
                     documentName: DBHelper.userUid!,
                     subCollection: K.FStore.Collection.userTasks,
@@ -64,10 +63,11 @@ class AddTaskController: UIViewController {
                         K.FStore.Field.description: descriptionTextField.text ?? ""
                     ])
                 
-                errorLabel.alpha = 0
+                Utilities.showBunner(title: "We're plained your task", subtitle: "\(title) - startAt \(startAt)", style: .success)
+                Utilities.clearAllTextFields(textFields: createTaskTextFields)
+                
             } else {
-                print("It's not oke")
-                errorLabel.alpha = 1
+                Utilities.showBunner(title: "Oh, we can't save your task", subtitle: "Please, fill all required fields", style: .danger)
             }
         }
     }
@@ -78,7 +78,7 @@ class AddTaskController: UIViewController {
 extension AddTaskController: UITextFieldDelegate {
     
     //TODO сделать проверку на конец времени (не может быть раньше начала) или перенос на следующую дату
-    //TODO title required & Description is optional
+    //TODO отменить сохранение одинаковых тасок (Alert)
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {

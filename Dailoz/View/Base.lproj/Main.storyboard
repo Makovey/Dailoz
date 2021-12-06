@@ -298,12 +298,6 @@
                                     <constraint firstAttribute="height" constant="75" id="mtL-FZ-mE4"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxc-21-WdP">
-                                <rect key="frame" x="35" y="389.5" width="344" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" name="CanceledCardRed"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eLo-gv-OCp"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -316,10 +310,8 @@
                             <constraint firstItem="B4t-fb-TDZ" firstAttribute="top" secondItem="eLo-gv-OCp" secondAttribute="top" constant="65" id="F8s-Ph-pUW"/>
                             <constraint firstItem="ImK-GO-zAV" firstAttribute="leading" secondItem="0Lj-uc-Dbr" secondAttribute="trailing" constant="25" id="HXg-D9-1qJ"/>
                             <constraint firstItem="0Vk-L8-67K" firstAttribute="leading" secondItem="eLo-gv-OCp" secondAttribute="leading" constant="35" id="IZQ-fO-nzn"/>
-                            <constraint firstItem="yxc-21-WdP" firstAttribute="leading" secondItem="4kC-5W-dkh" secondAttribute="leading" constant="35" id="IdB-jy-VSv"/>
                             <constraint firstItem="ImK-GO-zAV" firstAttribute="leading" secondItem="0Lj-uc-Dbr" secondAttribute="trailing" constant="25" id="Lg1-Xq-x9T"/>
                             <constraint firstItem="5Ka-Ry-YuL" firstAttribute="top" secondItem="xHN-5F-Af1" secondAttribute="bottom" constant="70" id="Ntw-R4-qWs"/>
-                            <constraint firstItem="yxc-21-WdP" firstAttribute="top" secondItem="z3O-bd-9bc" secondAttribute="bottom" constant="20" id="OlX-nY-ZK6"/>
                             <constraint firstItem="ImK-GO-zAV" firstAttribute="top" secondItem="xHN-5F-Af1" secondAttribute="bottom" constant="60" id="Ouw-ek-Uiu"/>
                             <constraint firstAttribute="bottom" secondItem="0Vk-L8-67K" secondAttribute="bottom" constant="45" id="SAb-H2-2Ke"/>
                             <constraint firstItem="eLo-gv-OCp" firstAttribute="trailing" secondItem="xqf-Eh-Gtw" secondAttribute="trailing" constant="120" id="WrH-0Q-gQ9"/>
@@ -333,13 +325,11 @@
                             <constraint firstItem="xqf-Eh-Gtw" firstAttribute="top" secondItem="ImK-GO-zAV" secondAttribute="bottom" constant="35" id="q5w-K3-Udg"/>
                             <constraint firstItem="eLo-gv-OCp" firstAttribute="trailing" secondItem="xHN-5F-Af1" secondAttribute="trailing" constant="35" id="rz4-co-tHM"/>
                             <constraint firstItem="eLo-gv-OCp" firstAttribute="trailing" secondItem="5Ka-Ry-YuL" secondAttribute="trailing" constant="35" id="u54-zP-Xqd"/>
-                            <constraint firstAttribute="trailing" secondItem="yxc-21-WdP" secondAttribute="trailing" constant="35" id="yIA-O9-oyw"/>
                             <constraint firstItem="eLo-gv-OCp" firstAttribute="trailing" secondItem="z3O-bd-9bc" secondAttribute="trailing" constant="35" id="yyz-ib-c0V"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wN1-mm-puZ"/>
                     <connections>
-                        <outlet property="errorLabel" destination="yxc-21-WdP" id="71q-vP-51t"/>
                         <outlet property="loginButton" destination="xHN-5F-Af1" id="bZk-fx-vO4"/>
                         <outlet property="loginTextField" destination="DAb-h3-PG6" id="Hpl-BS-0qd"/>
                         <outlet property="passwordTextField" destination="sCB-ZZ-fnt" id="bM2-R2-xdZ"/>
@@ -464,28 +454,19 @@
                                     <constraint firstAttribute="height" constant="75" id="DqQ-iR-auS"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jhf-tz-O7C">
-                                <rect key="frame" x="35" y="406" width="344" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" name="CanceledCardRed"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aVy-rG-JAd"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="ek5-Tx-fZM" secondAttribute="bottom" constant="45" id="2vb-VZ-C1e"/>
                             <constraint firstItem="ZQ9-Xw-0Xb" firstAttribute="top" secondItem="JL3-I3-kee" secondAttribute="bottom" constant="35" id="3lH-Fl-k4P"/>
-                            <constraint firstItem="Jhf-tz-O7C" firstAttribute="leading" secondItem="aVy-rG-JAd" secondAttribute="leading" constant="35" id="4lh-nS-4Zz"/>
                             <constraint firstItem="aVy-rG-JAd" firstAttribute="trailing" secondItem="G3V-9o-EfK" secondAttribute="trailing" constant="35" id="AKy-hj-K9Y"/>
                             <constraint firstItem="Kwq-CG-3pX" firstAttribute="leading" secondItem="aVy-rG-JAd" secondAttribute="leading" constant="35" id="FIM-rS-mvo"/>
                             <constraint firstItem="aVy-rG-JAd" firstAttribute="trailing" secondItem="ek5-Tx-fZM" secondAttribute="trailing" constant="35" id="IY0-vu-ezR"/>
                             <constraint firstItem="G3V-9o-EfK" firstAttribute="leading" secondItem="aVy-rG-JAd" secondAttribute="leading" constant="35" id="Iiq-VK-ZAp"/>
-                            <constraint firstItem="aVy-rG-JAd" firstAttribute="trailing" secondItem="Jhf-tz-O7C" secondAttribute="trailing" constant="35" id="LVq-pC-8CD"/>
                             <constraint firstItem="JL3-I3-kee" firstAttribute="leading" secondItem="qZU-Xw-YKh" secondAttribute="trailing" constant="25" id="MC7-8H-nPA"/>
                             <constraint firstAttribute="trailing" secondItem="paz-cg-oUI" secondAttribute="trailing" constant="35" id="MnT-J6-JGr"/>
                             <constraint firstItem="ek5-Tx-fZM" firstAttribute="leading" secondItem="aVy-rG-JAd" secondAttribute="leading" constant="35" id="RR6-KV-sLW"/>
-                            <constraint firstItem="Jhf-tz-O7C" firstAttribute="top" secondItem="G3V-9o-EfK" secondAttribute="bottom" constant="20" id="S2M-Ky-YXI"/>
                             <constraint firstItem="qZU-Xw-YKh" firstAttribute="top" secondItem="Kwq-CG-3pX" secondAttribute="bottom" constant="80" id="VNd-gS-QSU"/>
                             <constraint firstItem="uIY-2M-FG2" firstAttribute="leading" secondItem="aVy-rG-JAd" secondAttribute="leading" constant="50" id="XuP-B8-1i6"/>
                             <constraint firstItem="JL3-I3-kee" firstAttribute="top" secondItem="Kwq-CG-3pX" secondAttribute="bottom" constant="70" id="bEc-II-wI7"/>
@@ -504,7 +485,6 @@
                     <navigationItem key="navigationItem" id="iuZ-Xb-tTd"/>
                     <connections>
                         <outlet property="emailTextField" destination="vXI-wv-KIJ" id="bDh-Ss-hfu"/>
-                        <outlet property="errorLabel" destination="Jhf-tz-O7C" id="mYc-Uj-hus"/>
                         <outlet property="passwordTextField" destination="FWc-EL-5il" id="06R-nn-Qnd"/>
                         <outlet property="signUpButton" destination="Kwq-CG-3pX" id="oEe-xe-MjF"/>
                         <outlet property="usernameTextField" destination="vX7-l3-1sF" id="dNE-CU-gJB"/>
@@ -928,7 +908,7 @@
                                             <constraint firstAttribute="height" constant="45" id="0wR-T1-WyL"/>
                                         </constraints>
                                     </stackView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZeR-kE-bK4">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description (optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZeR-kE-bK4">
                                         <rect key="frame" x="0.0" y="270" width="344" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="kKZ-hu-xC1"/>
@@ -980,24 +960,16 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
                                 </buttonConfiguration>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Please, fill all required fields&quot;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEg-UP-1GN">
-                                <rect key="frame" x="35" y="705" width="344" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" name="CanceledCardRed"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ikc-ME-eJs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Ikc-ME-eJs" firstAttribute="trailing" secondItem="yEg-UP-1GN" secondAttribute="trailing" constant="35" id="2Yh-bq-8Az"/>
                             <constraint firstItem="ttZ-gP-84j" firstAttribute="leading" secondItem="Ikc-ME-eJs" secondAttribute="leading" constant="35" id="5I9-8j-Byg"/>
                             <constraint firstItem="dbE-zt-otY" firstAttribute="leading" secondItem="Ikc-ME-eJs" secondAttribute="leading" constant="35" id="6Lx-8c-XFh"/>
                             <constraint firstItem="NqZ-my-zQv" firstAttribute="leading" secondItem="Ikc-ME-eJs" secondAttribute="leading" constant="35" id="6gj-uE-EK8"/>
                             <constraint firstItem="OKM-tb-TaR" firstAttribute="leading" secondItem="Ikc-ME-eJs" secondAttribute="leading" constant="35" id="EAZ-g6-DK6"/>
                             <constraint firstItem="NqZ-my-zQv" firstAttribute="top" secondItem="ttZ-gP-84j" secondAttribute="bottom" constant="35" id="GvT-5P-j4y"/>
                             <constraint firstItem="Ikc-ME-eJs" firstAttribute="trailing" secondItem="ttZ-gP-84j" secondAttribute="trailing" constant="35" id="H9o-GR-ypo"/>
-                            <constraint firstItem="dbE-zt-otY" firstAttribute="top" secondItem="yEg-UP-1GN" secondAttribute="bottom" constant="25" id="I1h-Yr-djS"/>
                             <constraint firstItem="pl7-he-GNW" firstAttribute="leading" secondItem="Ikc-ME-eJs" secondAttribute="leading" constant="35" id="LRc-Bs-ACf"/>
                             <constraint firstItem="Ikc-ME-eJs" firstAttribute="trailing" secondItem="OKM-tb-TaR" secondAttribute="trailing" constant="35" id="Rt4-9I-inA"/>
                             <constraint firstItem="hlB-YH-lrh" firstAttribute="top" secondItem="OKM-tb-TaR" secondAttribute="bottom" constant="20" id="XlG-2A-fjZ"/>
@@ -1005,7 +977,6 @@
                             <constraint firstItem="OKM-tb-TaR" firstAttribute="top" secondItem="NqZ-my-zQv" secondAttribute="bottom" constant="20" id="geQ-Na-6my"/>
                             <constraint firstItem="ttZ-gP-84j" firstAttribute="top" secondItem="pl7-he-GNW" secondAttribute="bottom" constant="30" id="iXQ-3Z-Xky"/>
                             <constraint firstItem="Ikc-ME-eJs" firstAttribute="trailing" secondItem="dbE-zt-otY" secondAttribute="trailing" constant="35" id="msI-4S-FK4"/>
-                            <constraint firstItem="yEg-UP-1GN" firstAttribute="leading" secondItem="Ikc-ME-eJs" secondAttribute="leading" constant="35" id="muP-Ti-WZS"/>
                             <constraint firstItem="hlB-YH-lrh" firstAttribute="leading" secondItem="Ikc-ME-eJs" secondAttribute="leading" constant="35" id="sR3-q1-Wcx"/>
                             <constraint firstItem="Ikc-ME-eJs" firstAttribute="bottom" secondItem="dbE-zt-otY" secondAttribute="bottom" constant="15" id="unA-rr-c2p"/>
                             <constraint firstItem="pl7-he-GNW" firstAttribute="top" secondItem="Ikc-ME-eJs" secondAttribute="top" constant="20" id="xGO-fM-znK"/>
@@ -1016,9 +987,13 @@
                         <outlet property="dateTextField" destination="oto-7y-ua6" id="HFl-BN-vG4"/>
                         <outlet property="descriptionTextField" destination="ZeR-kE-bK4" id="S86-vN-liL"/>
                         <outlet property="endTextField" destination="Mql-Vo-Snm" id="Feo-hV-2NT"/>
-                        <outlet property="errorLabel" destination="yEg-UP-1GN" id="6e9-xO-nW2"/>
                         <outlet property="startAtTextField" destination="1jK-fO-TEz" id="GFe-JV-oeb"/>
                         <outlet property="titleTextField" destination="n1N-SO-484" id="fiC-iO-555"/>
+                        <outletCollection property="createTaskTextFields" destination="oto-7y-ua6" collectionClass="NSMutableArray" id="aFN-9Q-PVY"/>
+                        <outletCollection property="createTaskTextFields" destination="ZeR-kE-bK4" collectionClass="NSMutableArray" id="gKV-xP-o9b"/>
+                        <outletCollection property="createTaskTextFields" destination="n1N-SO-484" collectionClass="NSMutableArray" id="oxh-lG-je4"/>
+                        <outletCollection property="createTaskTextFields" destination="1jK-fO-TEz" collectionClass="NSMutableArray" id="1EZ-2F-wC9"/>
+                        <outletCollection property="createTaskTextFields" destination="Mql-Vo-Snm" collectionClass="NSMutableArray" id="izn-lr-nK2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uVs-jA-gAJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

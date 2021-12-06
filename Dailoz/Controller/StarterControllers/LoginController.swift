@@ -13,7 +13,6 @@ class LoginController: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +34,7 @@ class LoginController: UIViewController {
         if let email = loginTextField.text, let password = passwordTextField.text {
             Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
                 if let e = error {
-                    self.errorLabel.text = e.localizedDescription
+                    Utilities.showBunner(title: "Oh, we can't login", subtitle: e.localizedDescription, style: .danger)
                 } else {
                     self.performSegue(withIdentifier: K.loginSegue, sender: self)
                 }

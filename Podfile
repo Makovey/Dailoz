@@ -8,5 +8,6 @@ target 'Dailoz' do
   # Pods for Dailoz
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'NotificationBannerSwift'
 
 end

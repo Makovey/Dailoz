@@ -9,7 +9,7 @@ import Foundation
 
 struct Task {
     let title: String
-    let dateBeign: Date
+    let dateBegin: Date
     let startAt: Date
     let endTo: Date
     let description: String?

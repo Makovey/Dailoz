@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import NotificationBannerSwift
 
 class Utilities {
     
@@ -19,6 +20,19 @@ class Utilities {
     static func isPasswordValid(_ password : String) -> Bool {
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
         return passwordTest.evaluate(with: password)
+    }
+    
+    static func showBunner(title: String, subtitle: String, style: BannerStyle) {
+        let banner = GrowingNotificationBanner(title: title, subtitle: subtitle, style: style)
+        banner.duration = 2.5
+        banner.dismissOnSwipeUp = true
+        banner.show(queuePosition: .front)
+    }
+    
+    static func clearAllTextFields(textFields: [UITextField]) {
+        for textField in textFields {
+            textField.text = ""
+        }
     }
     
 }

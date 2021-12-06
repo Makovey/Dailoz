@@ -15,7 +15,6 @@ class SignUpController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
-    @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,14 +35,14 @@ class SignUpController: UIViewController {
     func signUp() {
         if let username = usernameTextField.text, let email = emailTextField.text, let password = passwordTextField.text {
             if username.isEmpty {
-                errorLabel.text = "Fill Username field"
+                Utilities.showBunner(title: "Oh, we can't sign up", subtitle: "Please, fill username field", style: .danger)
                 return
             }
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if let e = error {
-                    self.errorLabel.text = e.localizedDescription
+                    Utilities.showBunner(title: "Oh, we can't sign up", subtitle: e.localizedDescription, style: .danger)
                 } else {
-                    DBHelper.saveDataToDB(
+                    DBHelper.saveDataTo(
                         collection: K.FStore.Collection.userInfo,
                         documentName: DBHelper.userUid!,
                         data: [
