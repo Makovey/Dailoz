@@ -21,6 +21,10 @@ class HomeController: UIViewController {
         print("My tasks \(tasks)")
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//    }
+    
     func updateUI() {
         DispatchQueue.main.async {
             DBHelper.getInfo { result in

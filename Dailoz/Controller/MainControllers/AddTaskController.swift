@@ -17,10 +17,11 @@ class AddTaskController: UIViewController {
     @IBOutlet weak var startAtTextField: UITextField!
     @IBOutlet weak var endTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
-        
+    
     let datePicker = UIDatePicker()
     let timePicker = UIDatePicker()
-
+    var tasksFromDB: [Task] = []
+    
     var timing = (start: Date(), end: Date())
     
     override func viewDidLoad() {
@@ -31,13 +32,18 @@ class AddTaskController: UIViewController {
         startAtTextField.delegate = self
         endTextField.delegate = self
         
-        stylingTextFields()
+        styleTextFields()
         createDatePicker()
         createTimePicker()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        uploadTasks()
+    }
     
-    func stylingTextFields() {
+    
+    func styleTextFields() {
         for textField in createTaskTextFields {
             Utilities.styleTextField(textField)
         }
@@ -51,23 +57,65 @@ class AddTaskController: UIViewController {
         if let title = titleTextField.text, let date = dateTextField.text, let startAt = startAtTextField.text, let endTo = endTextField.text {
             if !title.isEmpty && !date.isEmpty && !startAt.isEmpty && !endTo.isEmpty {
                 
+                
+                let task = Task(title: title, dateBegin: datePicker.date, startAt: timing.start, endTo: timing.end, description: descriptionTextField.text ?? "")
+                
+                if checkAlreadyHasThisTask(task) {
+                    Utilities.showBunner(title: "Oops", subtitle: "You're alredy planned \(task.title)", style: .warning)
+                    return
+                }
+                
                 DBHelper.saveDataToSubcollection(
                     collection: K.FStore.Collection.tasks,
                     documentName: DBHelper.userUid!,
                     subCollection: K.FStore.Collection.userTasks,
                     data: [
-                        K.FStore.Field.title: title,
-                        K.FStore.Field.date: datePicker.date,
-                        K.FStore.Field.start: timing.start,
-                        K.FStore.Field.end: timing.end,
-                        K.FStore.Field.description: descriptionTextField.text ?? ""
+                        K.FStore.Field.title: task.title,
+                        K.FStore.Field.date: task.dateBegin,
+                        K.FStore.Field.start: task.startAt,
+                        K.FStore.Field.end: task.endTo,
+                        K.FStore.Field.description: task.description ?? ""
                     ])
                 
-                Utilities.showBunner(title: "We're plained your task", subtitle: "\(title) - startAt \(startAt)", style: .success)
+                
+                Utilities.showBunner(title: "We're plained your task", subtitle: "\(task.title) - startAt \(startAt)", style: .success)
                 Utilities.clearAllTextFields(textFields: createTaskTextFields)
                 
             } else {
                 Utilities.showBunner(title: "Oh, we can't save your task", subtitle: "Please, fill all required fields", style: .danger)
+            }
+        }
+    }
+    
+    func checkAlreadyHasThisTask(_ task: Task) -> Bool {
+        var result = false
+        
+        
+        let calendar = Calendar.current
+        let currentTaskStart = calendar.dateComponents([.hour, .minute], from: task.startAt)
+        let currentTaskEnd = calendar.dateComponents([.hour, .minute], from: task.endTo)
+        
+        if !tasksFromDB.isEmpty {
+            for taskFromDB in tasksFromDB {
+                if task.title == taskFromDB.title {
+                    let dbTaskStart = calendar.dateComponents([.hour, .minute], from: taskFromDB.startAt)
+                    let dbTaskEnd = calendar.dateComponents([.hour, .minute], from: taskFromDB.endTo)
+                    if currentTaskStart.hour == dbTaskStart.hour && currentTaskStart.minute == dbTaskStart.minute {
+                        if currentTaskEnd.hour == dbTaskEnd.hour && currentTaskEnd.minute == dbTaskEnd.minute {
+                            result = true
+                            break
+                        }
+                    }
+                }
+            }
+        }
+        return result
+    }
+    
+    func uploadTasks() {
+        DBHelper.getUserTasks { tasksFromDB in
+            if let saveTasks = tasksFromDB {
+                self.tasksFromDB = saveTasks
             }
         }
     }
@@ -76,9 +124,6 @@ class AddTaskController: UIViewController {
 // MARK: Set UIDatePicker to Keyboard and work with it
 
 extension AddTaskController: UITextFieldDelegate {
-    
-    //TODO сделать проверку на конец времени (не может быть раньше начала) или перенос на следующую дату
-    //TODO отменить сохранение одинаковых тасок (Alert)
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
