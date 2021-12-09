@@ -13,6 +13,7 @@
 		5E6F221F275E2B4900333B13 /* Comfortaa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E6F221E275E2B4900333B13 /* Comfortaa.ttf */; };
 		5E6F2222275E4BF900333B13 /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E6F2221275E4BF900333B13 /* Comfortaa-Bold.ttf */; };
 		5E943822274FD2F70099CF1C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E943821274FD2F70099CF1C /* Extensions.swift */; };
+		5EA5F5D22760F9A700EA9710 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA5F5D12760F9A700EA9710 /* UserInfo.swift */; };
 		5EB6201B27565BD2001D1FA4 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6201A27565BD2001D1FA4 /* DBHelper.swift */; };
 		5EDA2E93274442FD00546708 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA2E92274442FD00546708 /* AppDelegate.swift */; };
 		5EDA2E95274442FD00546708 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA2E94274442FD00546708 /* SceneDelegate.swift */; };
@@ -35,6 +36,7 @@
 		5E6F221E275E2B4900333B13 /* Comfortaa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Comfortaa.ttf; sourceTree = "<group>"; };
 		5E6F2221275E4BF900333B13 /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
 		5E943821274FD2F70099CF1C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Dailoz/Controller/Extensions.swift; sourceTree = SOURCE_ROOT; };
+		5EA5F5D12760F9A700EA9710 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		5EB6201A27565BD2001D1FA4 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
 		5EDA2E8F274442FD00546708 /* Dailoz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dailoz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EDA2E92274442FD00546708 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				5E046BF42759110D0090B5A6 /* Task.swift */,
+				5EA5F5D12760F9A700EA9710 /* UserInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				5E490AAB27578A18000ED5C8 /* AddTaskController.swift in Sources */,
 				5EDA2E95274442FD00546708 /* SceneDelegate.swift in Sources */,
 				5EFD446D275566CC00EFBA96 /* HomeController.swift in Sources */,
+				5EA5F5D22760F9A700EA9710 /* UserInfo.swift in Sources */,
 				5E0D11EC2746F1EF00F4F905 /* SignUpController.swift in Sources */,
 				5EB6201B27565BD2001D1FA4 /* DBHelper.swift in Sources */,
 				5EFD446A2755232A00EFBA96 /* Utilities.swift in Sources */,

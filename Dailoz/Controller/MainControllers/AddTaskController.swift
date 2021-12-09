@@ -20,7 +20,6 @@ class AddTaskController: UIViewController {
     
     let datePicker = UIDatePicker()
     let timePicker = UIDatePicker()
-    var tasksFromDB: [Task] = []
     
     var timing = (start: Date(), end: Date())
     
@@ -39,7 +38,7 @@ class AddTaskController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        uploadTasks()
+        print("user has \(DBHelper.userTasks.count) tasks")
     }
     
     
@@ -57,7 +56,6 @@ class AddTaskController: UIViewController {
         if let title = titleTextField.text, let date = dateTextField.text, let startAt = startAtTextField.text, let endTo = endTextField.text {
             if !title.isEmpty && !date.isEmpty && !startAt.isEmpty && !endTo.isEmpty {
                 
-                
                 let task = Task(title: title, dateBegin: datePicker.date, startAt: timing.start, endTo: timing.end, description: descriptionTextField.text ?? "")
                 
                 if checkAlreadyHasThisTask(task) {
@@ -67,7 +65,7 @@ class AddTaskController: UIViewController {
                 
                 DBHelper.saveDataToSubcollection(
                     collection: K.FStore.Collection.tasks,
-                    documentName: DBHelper.userUid!,
+                    documentName: DBHelper.userId!,
                     subCollection: K.FStore.Collection.userTasks,
                     data: [
                         K.FStore.Field.title: task.title,
@@ -76,7 +74,6 @@ class AddTaskController: UIViewController {
                         K.FStore.Field.end: task.endTo,
                         K.FStore.Field.description: task.description ?? ""
                     ])
-                
                 
                 Utilities.showBunner(title: "We're plained your task", subtitle: "\(task.title) - startAt \(startAt)", style: .success)
                 Utilities.clearAllTextFields(textFields: createTaskTextFields)
@@ -90,13 +87,12 @@ class AddTaskController: UIViewController {
     func checkAlreadyHasThisTask(_ task: Task) -> Bool {
         var result = false
         
-        
         let calendar = Calendar.current
         let currentTaskStart = calendar.dateComponents([.hour, .minute], from: task.startAt)
         let currentTaskEnd = calendar.dateComponents([.hour, .minute], from: task.endTo)
         
-        if !tasksFromDB.isEmpty {
-            for taskFromDB in tasksFromDB {
+        if !DBHelper.userTasks.isEmpty {
+            for taskFromDB in DBHelper.userTasks {
                 if task.title == taskFromDB.title {
                     let dbTaskStart = calendar.dateComponents([.hour, .minute], from: taskFromDB.startAt)
                     let dbTaskEnd = calendar.dateComponents([.hour, .minute], from: taskFromDB.endTo)
@@ -110,14 +106,6 @@ class AddTaskController: UIViewController {
             }
         }
         return result
-    }
-    
-    func uploadTasks() {
-        DBHelper.getUserTasks { tasksFromDB in
-            if let saveTasks = tasksFromDB {
-                self.tasksFromDB = saveTasks
-            }
-        }
     }
 }
 

@@ -12,12 +12,12 @@ struct DBHelper {
     
     static let db = Firestore.firestore()
     
-//    let userTasks: [Task] = {
-//        computed свойство с массивом который public, берем отседа и вставляем где хотим
-//    }
+    static var userTasks: [Task] = []
     
-    static let userUid = Auth.auth().currentUser?.uid
+    static var userInfo: UserInfo?
     
+    static let userId = Auth.auth().currentUser?.uid
+        
     static func saveDataTo(collection: String, documentName: String, data:[String: Any]) {
         db.collection(collection)
             .document(documentName)
@@ -44,11 +44,11 @@ struct DBHelper {
             }
     }
     
-    static func getUserTasks(completion:@escaping(([Task]?) -> ())) {
-        var tasks: [Task] = []
-        
+    static func reloadUserTasks(completion:@escaping(() -> ())) {
+        userTasks.removeAll()
+    
         db.collection(K.FStore.Collection.tasks)
-            .document(userUid!)
+            .document(userId!)
             .collection(K.FStore.Collection.userTasks)
             .addSnapshotListener({ querySnapshot, error in
                 if let snapshotDocument = querySnapshot?.documents {
@@ -61,30 +61,31 @@ struct DBHelper {
                            let descritpion = data[K.FStore.Field.description] as? String {
                             let task = Task(title: title, dateBegin: date.dateValue(), startAt: startAt.dateValue(), endTo: end.dateValue(), description: descritpion)
                             
-                            tasks.append(task)
+                            userTasks.append(task)
                         }
                     }
-                    completion(tasks)
                 } else {
                     print("Doc is nil")
                 }
+                completion()
             })
     }
     
-    
-    static func getInfo(completion:@escaping(([String: Any]?) -> ())) {
-        let docRef = db.collection(K.FStore.Collection.userInfo).document(userUid!)
+        
+    private static func getUserInfo(completion:@escaping(() -> ())) {
+        let docRef = db.collection(K.FStore.Collection.userInfo).document(userId!)
         
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
-                let documentData = document.data()!
-                print("Document data fetched: \(documentData)")
-                
-                completion(documentData)
+                let data = document.data()!
+                if let username = data[K.FStore.Field.name] as? String,
+                    let email = data[K.FStore.Field.email] as? String {
+                    userInfo = UserInfo(username: username, email: email)
+                }
+                completion()
             } else {
                 print("Document does not exist")
-                
-                completion(nil)
+                completion()
             }
         }
     }

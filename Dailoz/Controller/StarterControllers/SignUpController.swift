@@ -44,7 +44,7 @@ class SignUpController: UIViewController {
                 } else {
                     DBHelper.saveDataTo(
                         collection: K.FStore.Collection.userInfo,
-                        documentName: DBHelper.userUid!,
+                        documentName: DBHelper.userId!,
                         data: [
                             K.FStore.Field.name : username,
                             K.FStore.Field.email : email
@@ -57,7 +57,7 @@ class SignUpController: UIViewController {
     
     func styleElements() {
         for textField in [usernameTextField, emailTextField, passwordTextField] {
-            Utilities.styleTextField(usernameTextField)
+            Utilities.styleTextField(textField!)
         }
     }
     

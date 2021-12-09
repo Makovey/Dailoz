@@ -33,6 +33,7 @@ class LoginController: UIViewController {
     
     
     func login() {
+        disableLoginButton()
         if let email = loginTextField.text, let password = passwordTextField.text {
             Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
                 if let e = error {
@@ -40,6 +41,7 @@ class LoginController: UIViewController {
                 } else {
                     self.performSegue(withIdentifier: K.loginSegue, sender: self)
                 }
+                self.enableLoginButton()
             }
         }
     }
@@ -50,6 +52,16 @@ class LoginController: UIViewController {
         }
     }
     
+    func disableLoginButton() {
+        loginButton.isEnabled = false
+        loginButton.alpha = 0.8
+    }
+    
+    func enableLoginButton() {
+        loginButton.isEnabled = true
+        loginButton.alpha = 1.0
+    }
+    
 }
 
 extension LoginController: UITextFieldDelegate {
@@ -58,6 +70,7 @@ extension LoginController: UITextFieldDelegate {
         if textField == loginTextField {
             passwordTextField.becomeFirstResponder()
         } else if textField == passwordTextField {
+            self.view.endEditing(true)
             login()
         }
         return true

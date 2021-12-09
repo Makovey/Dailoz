@@ -13,31 +13,20 @@ class HomeController: UIViewController {
     
     @IBOutlet weak var usernameLabel: UILabel!
     
-    var tasks: [Task] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUI()
-        print("My tasks \(tasks)")
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("Home Controller called")
+        updateUI()
+    }
     
     func updateUI() {
-        DispatchQueue.main.async {
-            DBHelper.getInfo { result in
-//                self.usernameLabel.text = result![K.FStore.Field.name]! as? String
-            }
-        }
-        
-        DispatchQueue.main.async {
-            DBHelper.getUserTasks { result in
-                print("1")
-                self.tasks = result!
-                self.usernameLabel.text = String(self.tasks.count)
-            }
+        DBHelper.reloadUserTasks {
+            print("Home Controller \(DBHelper.userTasks.count)")
+            self.usernameLabel.text = String(DBHelper.userTasks.count)
         }
     }
 }
