@@ -87,15 +87,14 @@ class AddTaskController: UIViewController {
     func checkAlreadyHasThisTask(_ task: Task) -> Bool {
         var result = false
         
-        let calendar = Calendar.current
-        let currentTaskStart = calendar.dateComponents([.hour, .minute], from: task.startAt)
-        let currentTaskEnd = calendar.dateComponents([.hour, .minute], from: task.endTo)
+        let currentTaskStart = DateHelper.getsHourAndMinutes(date: task.startAt)
+        let currentTaskEnd = DateHelper.getsHourAndMinutes(date: task.endTo)
         
         if !DBHelper.userTasks.isEmpty {
             for taskFromDB in DBHelper.userTasks {
                 if task.title == taskFromDB.title {
-                    let dbTaskStart = calendar.dateComponents([.hour, .minute], from: taskFromDB.startAt)
-                    let dbTaskEnd = calendar.dateComponents([.hour, .minute], from: taskFromDB.endTo)
+                    let dbTaskStart = DateHelper.getsHourAndMinutes(date: taskFromDB.startAt)
+                    let dbTaskEnd = DateHelper.getsHourAndMinutes(date: task.endTo)
                     if currentTaskStart.hour == dbTaskStart.hour && currentTaskStart.minute == dbTaskStart.minute {
                         if currentTaskEnd.hour == dbTaskEnd.hour && currentTaskEnd.minute == dbTaskEnd.minute {
                             result = true

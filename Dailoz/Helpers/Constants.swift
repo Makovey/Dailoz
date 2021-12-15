@@ -38,4 +38,8 @@ struct K {
         static let mainPurple = UIColor(red: 91/255, green: 103/255, blue: 202/255, alpha: 1)
         static let red = UIColor(red: 231/255, green: 1245/255, blue: 125/255, alpha: 1)
     }
+    
+    struct Cell {
+        static let taskCell = "TaskCell"
+    }
 }

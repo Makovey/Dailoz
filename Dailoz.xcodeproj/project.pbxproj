@@ -10,9 +10,13 @@
 		5E046BF52759110D0090B5A6 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E046BF42759110D0090B5A6 /* Task.swift */; };
 		5E0D11EC2746F1EF00F4F905 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0D11EB2746F1EF00F4F905 /* SignUpController.swift */; };
 		5E490AAB27578A18000ED5C8 /* AddTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E490AAA27578A18000ED5C8 /* AddTaskController.swift */; };
+		5E52B82627660C8400694952 /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E52B82427660C8400694952 /* TaskController.swift */; };
+		5E60634627693F6700B15F61 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E60634527693F6700B15F61 /* DateHelper.swift */; };
 		5E6F221F275E2B4900333B13 /* Comfortaa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E6F221E275E2B4900333B13 /* Comfortaa.ttf */; };
 		5E6F2222275E4BF900333B13 /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E6F2221275E4BF900333B13 /* Comfortaa-Bold.ttf */; };
 		5E943822274FD2F70099CF1C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E943821274FD2F70099CF1C /* Extensions.swift */; };
+		5E9954122767A1A1007EE757 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9954102767A1A1007EE757 /* TaskCell.swift */; };
+		5E9954132767A1A1007EE757 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E9954112767A1A1007EE757 /* TaskCell.xib */; };
 		5EA5F5D22760F9A700EA9710 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA5F5D12760F9A700EA9710 /* UserInfo.swift */; };
 		5EB6201B27565BD2001D1FA4 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6201A27565BD2001D1FA4 /* DBHelper.swift */; };
 		5EDA2E93274442FD00546708 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA2E92274442FD00546708 /* AppDelegate.swift */; };
@@ -33,9 +37,13 @@
 		5E046BF42759110D0090B5A6 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		5E0D11EB2746F1EF00F4F905 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		5E490AAA27578A18000ED5C8 /* AddTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskController.swift; sourceTree = "<group>"; };
+		5E52B82427660C8400694952 /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
+		5E60634527693F6700B15F61 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		5E6F221E275E2B4900333B13 /* Comfortaa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Comfortaa.ttf; sourceTree = "<group>"; };
 		5E6F2221275E4BF900333B13 /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
 		5E943821274FD2F70099CF1C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Dailoz/Controller/Extensions.swift; sourceTree = SOURCE_ROOT; };
+		5E9954102767A1A1007EE757 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		5E9954112767A1A1007EE757 /* TaskCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
 		5EA5F5D12760F9A700EA9710 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		5EB6201A27565BD2001D1FA4 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
 		5EDA2E8F274442FD00546708 /* Dailoz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dailoz.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +189,7 @@
 				5EFD44692755232A00EFBA96 /* Utilities.swift */,
 				5EE5FA13275228ED00676A7D /* Constants.swift */,
 				5EB6201A27565BD2001D1FA4 /* DBHelper.swift */,
+				5E60634527693F6700B15F61 /* DateHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -190,6 +199,9 @@
 			children = (
 				5EFD446C275566CC00EFBA96 /* HomeController.swift */,
 				5E490AAA27578A18000ED5C8 /* AddTaskController.swift */,
+				5E52B82427660C8400694952 /* TaskController.swift */,
+				5E9954102767A1A1007EE757 /* TaskCell.swift */,
+				5E9954112767A1A1007EE757 /* TaskCell.xib */,
 			);
 			path = MainControllers;
 			sourceTree = "<group>";
@@ -264,6 +276,7 @@
 			files = (
 				5EDA2E9F2744430100546708 /* LaunchScreen.storyboard in Resources */,
 				5EFD4465275522EC00EFBA96 /* GoogleService-Info.plist in Resources */,
+				5E9954132767A1A1007EE757 /* TaskCell.xib in Resources */,
 				5E6F2222275E4BF900333B13 /* Comfortaa-Bold.ttf in Resources */,
 				5EDA2E9C2744430100546708 /* Assets.xcassets in Resources */,
 				5EDA2E9A274442FD00546708 /* Main.storyboard in Resources */,
@@ -320,13 +333,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E52B82627660C8400694952 /* TaskController.swift in Sources */,
 				5EDA2E97274442FD00546708 /* SplashController.swift in Sources */,
 				5EE5FA14275228ED00676A7D /* Constants.swift in Sources */,
 				5E943822274FD2F70099CF1C /* Extensions.swift in Sources */,
+				5E9954122767A1A1007EE757 /* TaskCell.swift in Sources */,
 				5EDA2E93274442FD00546708 /* AppDelegate.swift in Sources */,
 				5E046BF52759110D0090B5A6 /* Task.swift in Sources */,
 				5E490AAB27578A18000ED5C8 /* AddTaskController.swift in Sources */,
 				5EDA2E95274442FD00546708 /* SceneDelegate.swift in Sources */,
+				5E60634627693F6700B15F61 /* DateHelper.swift in Sources */,
 				5EFD446D275566CC00EFBA96 /* HomeController.swift in Sources */,
 				5EA5F5D22760F9A700EA9710 /* UserInfo.swift in Sources */,
 				5E0D11EC2746F1EF00F4F905 /* SignUpController.swift in Sources */,
