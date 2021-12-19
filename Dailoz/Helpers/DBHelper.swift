@@ -30,7 +30,24 @@ struct DBHelper {
             }
     }
     
+    static func getOnlyTodaysTask() -> [Task]? {
+        if userTasks.count != 0 {
+            return DBHelper.userTasks.filter { task in
+                let component = DateHelper.getMonthAndDay(date: task.dateBegin)
+                let today = DateHelper.getMonthAndDay(date: Date())
+                
+                let result = component.month == today.month! && component.day! == today.day
+                return result
+            }
+        } else {
+            return nil
+        }
+
+    }
+    
     static func saveDataToSubcollection(collection: String, documentName: String, subCollection: String, data:[String: Any]) {
+        userTasks.removeAll()
+        
         db.collection(collection)
             .document(documentName)
             .collection(subCollection)

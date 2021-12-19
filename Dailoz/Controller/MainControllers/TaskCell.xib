@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -27,18 +26,17 @@
                         <rect key="frame" x="5" y="5" width="390" height="103"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="6m2-66-S02">
-                                <rect key="frame" x="0.0" y="16" width="103.5" height="71"/>
+                                <rect key="frame" x="0.0" y="7" width="103.5" height="89"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2J-EW-1QP">
-                                        <rect key="frame" x="0.0" y="15.5" width="2" height="40"/>
-                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="2" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="2" id="plE-M7-YoJ"/>
                                             <constraint firstAttribute="height" constant="40" id="qQy-5S-AUt"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Ecu-Ap-ubl">
-                                        <rect key="frame" x="19" y="0.0" width="84.5" height="71"/>
+                                        <rect key="frame" x="19" y="0.0" width="84.5" height="89"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cT3-f0-BzV">
                                                 <rect key="frame" x="0.0" y="0.0" width="84.5" height="25"/>
@@ -46,14 +44,14 @@
                                                 <color key="textColor" name="MainBlue"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00-01:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfP-vX-Ro9">
-                                                <rect key="frame" x="0.0" y="32" width="84.5" height="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfP-vX-Ro9">
+                                                <rect key="frame" x="0.0" y="32" width="84.5" height="50"/>
                                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                                                 <color key="textColor" name="MainGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KC6-yy-O6L">
-                                                <rect key="frame" x="0.0" y="55" width="84.5" height="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KC6-yy-O6L">
+                                                <rect key="frame" x="0.0" y="89" width="84.5" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                                                 <color key="textColor" name="MainGray"/>
                                                 <nil key="highlightedColor"/>
@@ -63,9 +61,16 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9C-OK-wt6">
-                                <rect key="frame" x="347" y="36" width="43" height="31"/>
+                                <rect key="frame" x="315" y="14" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="aYS-hB-Ra3"/>
+                                    <constraint firstAttribute="height" constant="75" id="ghy-uT-IJa"/>
+                                </constraints>
                                 <color key="tintColor" name="MainPurple"/>
                                 <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system"/>
+                                <connections>
+                                    <action selector="removeButtonPressed:" destination="z32-pZ-RYF" eventType="touchUpInside" id="tmG-Mb-Tkh"/>
+                                </connections>
                             </button>
                         </subviews>
                     </stackView>
@@ -81,8 +86,10 @@
             <connections>
                 <outlet property="cellContent" destination="tJH-Uh-PWb" id="YmZ-Pk-SZk"/>
                 <outlet property="descriptionLabel" destination="KC6-yy-O6L" id="cQt-Ia-Mym"/>
+                <outlet property="removeButton" destination="g9C-OK-wt6" id="Ljn-co-Tpe"/>
                 <outlet property="time" destination="pfP-vX-Ro9" id="13B-Yy-zWQ"/>
                 <outlet property="title" destination="cT3-f0-BzV" id="Dh5-PS-Csc"/>
+                <outlet property="verticalLineView" destination="Q2J-EW-1QP" id="Cdw-aN-6vB"/>
             </connections>
             <point key="canvasLocation" x="188.40579710144928" y="-3.0133928571428572"/>
         </tableViewCell>
@@ -101,8 +108,5 @@
         <namedColor name="MainPurple">
             <color red="0.35699999332427979" green="0.40400001406669617" blue="0.79199999570846558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

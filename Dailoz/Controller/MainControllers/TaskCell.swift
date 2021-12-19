@@ -13,6 +13,8 @@ class TaskCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var verticalLineView: UIView!
+    @IBOutlet weak var removeButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,5 +29,9 @@ class TaskCell: UITableViewCell {
         super.layoutSubviews()
 
         cellContent.frame = cellContent.frame.inset(by: UIEdgeInsets(top: 2, left: 0, bottom: 2, right: 0))
+    }
+    
+    @IBAction func removeButtonPressed(_ sender: UIButton) {
+        print("Delete button pressed")
     }
 }

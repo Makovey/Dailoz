@@ -87,18 +87,24 @@ class AddTaskController: UIViewController {
     func checkAlreadyHasThisTask(_ task: Task) -> Bool {
         var result = false
         
-        let currentTaskStart = DateHelper.getsHourAndMinutes(date: task.startAt)
-        let currentTaskEnd = DateHelper.getsHourAndMinutes(date: task.endTo)
+        let taskDate = DateHelper.getMonthAndDay(date: task.dateBegin)
+        let taskStartTime = DateHelper.getHourAndMinutes(date: task.startAt)
+        let taskEndTime = DateHelper.getHourAndMinutes(date: task.endTo)
         
         if !DBHelper.userTasks.isEmpty {
             for taskFromDB in DBHelper.userTasks {
                 if task.title == taskFromDB.title {
-                    let dbTaskStart = DateHelper.getsHourAndMinutes(date: taskFromDB.startAt)
-                    let dbTaskEnd = DateHelper.getsHourAndMinutes(date: task.endTo)
-                    if currentTaskStart.hour == dbTaskStart.hour && currentTaskStart.minute == dbTaskStart.minute {
-                        if currentTaskEnd.hour == dbTaskEnd.hour && currentTaskEnd.minute == dbTaskEnd.minute {
-                            result = true
-                            break
+                    let dbTaskDate = DateHelper.getMonthAndDay(date: taskFromDB.dateBegin)
+                    if taskDate.month! == dbTaskDate.month! && taskDate.day! == dbTaskDate.day! {
+                        
+                        let dbTaskStartTime = DateHelper.getHourAndMinutes(date: taskFromDB.startAt)
+                        let dbTaskEndTime = DateHelper.getHourAndMinutes(date: task.endTo)
+                        
+                        if taskStartTime.hour == dbTaskStartTime.hour && taskStartTime.minute == dbTaskStartTime.minute {
+                            if taskEndTime.hour == dbTaskEndTime.hour && taskEndTime.minute == dbTaskEndTime.minute {
+                                result = true
+                                break
+                            }
                         }
                     }
                 }
