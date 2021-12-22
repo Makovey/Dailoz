@@ -21,6 +21,8 @@ class AddTaskController: UIViewController {
     let datePicker = UIDatePicker()
     let timePicker = UIDatePicker()
     
+    let notification = NotificationCenter.default
+    
     var timing = (start: Date(), end: Date())
     
     override func viewDidLoad() {
@@ -68,6 +70,7 @@ class AddTaskController: UIViewController {
                     documentName: DBHelper.userId!,
                     subCollection: K.FStore.Collection.userTasks,
                     data: [
+                        K.FStore.Field.id: task.id,
                         K.FStore.Field.title: task.title,
                         K.FStore.Field.date: task.dateBegin,
                         K.FStore.Field.start: task.startAt,

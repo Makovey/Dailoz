@@ -9,6 +9,8 @@ import UIKit
 
 class TaskCell: UITableViewCell {
     
+    var idOfTask: String?
+    
     @IBOutlet weak var cellContent: UIView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var time: UILabel!
@@ -32,6 +34,10 @@ class TaskCell: UITableViewCell {
     }
     
     @IBAction func removeButtonPressed(_ sender: UIButton) {
-        print("Delete button pressed")
+        if let id = idOfTask {
+            DBHelper.removeUserTaskWithId(id) {
+                NotificationCenter.default.post(name: Notification.Name.cellDeleted, object: nil)
+            }
+        }
     }
 }

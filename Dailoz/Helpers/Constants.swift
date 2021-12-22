@@ -25,6 +25,8 @@ struct K {
             static let uid = "uid"
             static let email = "email"
             static let name = "name"
+            
+            static let id = "id"
             static let title = "title"
             static let date = "date"
             static let start = "start"
