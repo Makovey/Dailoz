@@ -31,6 +31,7 @@ struct K {
             static let date = "date"
             static let start = "start"
             static let end = "end"
+            static let type = "type"
             static let description = "description"
         }
 
@@ -43,5 +44,6 @@ struct K {
     
     struct Cell {
         static let taskCell = "TaskCell"
+        static let tagCell = "TagCell"
     }
 }

@@ -9,21 +9,23 @@ import Foundation
 
 struct Task: Hashable {
     
-    init(title: String, dateBegin: Date, startAt: Date, endTo: Date, description: String?) {
+    init(title: String, dateBegin: Date, startAt: Date, endTo: Date, type: String?, description: String?) {
         self.id = UUID().uuidString
         self.title = title
         self.dateBegin = dateBegin
         self.startAt = startAt
         self.endTo = endTo
+        self.type = type
         self.description = description
     }
     
-    init(id: String, title: String, dateBegin: Date, startAt: Date, endTo: Date, description: String?) {
+    init(id: String, title: String, dateBegin: Date, startAt: Date, endTo: Date, type: String?, description: String?) {
         self.id = id
         self.title = title
         self.dateBegin = dateBegin
         self.startAt = startAt
         self.endTo = endTo
+        self.type = type
         self.description = description
     }
     
@@ -32,5 +34,6 @@ struct Task: Hashable {
     let dateBegin: Date
     let startAt: Date
     let endTo: Date
+    let type: String?
     let description: String?
 }

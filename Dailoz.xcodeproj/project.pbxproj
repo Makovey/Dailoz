@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5E046BF52759110D0090B5A6 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E046BF42759110D0090B5A6 /* Task.swift */; };
 		5E0D11EC2746F1EF00F4F905 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0D11EB2746F1EF00F4F905 /* SignUpController.swift */; };
+		5E2137D12775E40100F7DA27 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2137D02775E40100F7DA27 /* ProfileController.swift */; };
 		5E490AAB27578A18000ED5C8 /* AddTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E490AAA27578A18000ED5C8 /* AddTaskController.swift */; };
 		5E52B82627660C8400694952 /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E52B82427660C8400694952 /* TaskController.swift */; };
 		5E60634627693F6700B15F61 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E60634527693F6700B15F61 /* DateHelper.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		5E046BF42759110D0090B5A6 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		5E0D11EB2746F1EF00F4F905 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		5E2137D02775E40100F7DA27 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		5E490AAA27578A18000ED5C8 /* AddTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskController.swift; sourceTree = "<group>"; };
 		5E52B82427660C8400694952 /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
 		5E60634527693F6700B15F61 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
@@ -102,6 +104,15 @@
 				5EED98E6274A55DA00918BE7 /* LoginController.swift */,
 			);
 			path = StarterControllers;
+			sourceTree = "<group>";
+		};
+		5E6774F82773C1F0006DD545 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5E9954102767A1A1007EE757 /* TaskCell.swift */,
+				5E9954112767A1A1007EE757 /* TaskCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		5E6F2220275E2B5800333B13 /* Fonts */ = {
@@ -186,9 +197,9 @@
 		5EFD44682755232100EFBA96 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				5EFD44692755232A00EFBA96 /* Utilities.swift */,
-				5EE5FA13275228ED00676A7D /* Constants.swift */,
 				5EB6201A27565BD2001D1FA4 /* DBHelper.swift */,
+				5EE5FA13275228ED00676A7D /* Constants.swift */,
+				5EFD44692755232A00EFBA96 /* Utilities.swift */,
 				5E60634527693F6700B15F61 /* DateHelper.swift */,
 			);
 			path = Helpers;
@@ -200,8 +211,8 @@
 				5EFD446C275566CC00EFBA96 /* HomeController.swift */,
 				5E490AAA27578A18000ED5C8 /* AddTaskController.swift */,
 				5E52B82427660C8400694952 /* TaskController.swift */,
-				5E9954102767A1A1007EE757 /* TaskCell.swift */,
-				5E9954112767A1A1007EE757 /* TaskCell.xib */,
+				5E2137D02775E40100F7DA27 /* ProfileController.swift */,
+				5E6774F82773C1F0006DD545 /* Cells */,
 			);
 			path = MainControllers;
 			sourceTree = "<group>";
@@ -337,6 +348,7 @@
 				5EDA2E97274442FD00546708 /* SplashController.swift in Sources */,
 				5EE5FA14275228ED00676A7D /* Constants.swift in Sources */,
 				5E943822274FD2F70099CF1C /* Extensions.swift in Sources */,
+				5E2137D12775E40100F7DA27 /* ProfileController.swift in Sources */,
 				5E9954122767A1A1007EE757 /* TaskCell.swift in Sources */,
 				5EDA2E93274442FD00546708 /* AppDelegate.swift in Sources */,
 				5E046BF52759110D0090B5A6 /* Task.swift in Sources */,

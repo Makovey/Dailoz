@@ -16,7 +16,7 @@ struct DBHelper {
     
     static var userInfo: UserInfo?
     
-    static let userId = Auth.auth().currentUser?.uid
+    static var userId: String? = nil
     
     static func saveDataTo(collection: String, documentName: String, data:[String: Any]) {
         db.collection(collection)
@@ -79,8 +79,9 @@ struct DBHelper {
                             let date = data[K.FStore.Field.date] as? Timestamp,
                             let startAt = data[K.FStore.Field.start] as? Timestamp,
                             let end = data[K.FStore.Field.end] as? Timestamp,
+                            let type = data[K.FStore.Field.type] as? String,
                             let descritpion = data[K.FStore.Field.description] as? String {
-                            let task = Task(id: id, title: title, dateBegin: date.dateValue(), startAt: startAt.dateValue(), endTo: end.dateValue(), description: descritpion)
+                            let task = Task(id: id, title: title, dateBegin: date.dateValue(), startAt: startAt.dateValue(), endTo: end.dateValue(), type: type, description: descritpion)
                             
                             userTasks.insert(task)
                         }

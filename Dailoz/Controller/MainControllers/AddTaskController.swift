@@ -18,12 +18,20 @@ class AddTaskController: UIViewController {
     @IBOutlet weak var endTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
     
+    @IBOutlet var typeButtons: [UIButton]!
+    @IBOutlet weak var typeWorkButton: UIButton!
+    @IBOutlet weak var typeHomeButton: UIButton!
+    @IBOutlet weak var typeStudyButton: UIButton!
+    @IBOutlet weak var typeOtherButton: UIButton!
+    
     let datePicker = UIDatePicker()
     let timePicker = UIDatePicker()
     
     let notification = NotificationCenter.default
     
     var timing = (start: Date(), end: Date())
+    
+    var typeOfTask: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,10 +45,55 @@ class AddTaskController: UIViewController {
         createDatePicker()
         createTimePicker()
     }
+
+    @IBAction func tagButtonPressed(_ sender: UIButton) {
+        discardAllButtonsExceptButton(sender)
+        
+        switch sender {
+        case typeWorkButton:
+            if typeOfTask != "work" {
+                Utilities.styleButton(typeWorkButton, borderWidth: 2.5, borderColor: UIColor.getPurpleType())
+                typeOfTask = "work"
+            } else {
+                Utilities.styleButton(typeWorkButton, borderWidth: 0, borderColor: nil)
+                typeOfTask = nil
+            }
+        case typeHomeButton:
+            if typeOfTask != "home" {
+                Utilities.styleButton(typeHomeButton, borderWidth: 2.5, borderColor: UIColor.getGreenType())
+                typeOfTask = "home"
+            } else {
+                Utilities.styleButton(typeWorkButton, borderWidth: 0, borderColor: nil)
+                typeOfTask = nil
+            }
+        case typeStudyButton:
+            if typeOfTask != "study" {
+                Utilities.styleButton(typeStudyButton, borderWidth: 2.5, borderColor: UIColor.getOrangeType())
+                typeOfTask = "study"
+            } else {
+                Utilities.styleButton(typeWorkButton, borderWidth: 0, borderColor: nil)
+                typeOfTask = nil
+            }
+        case typeOtherButton:
+            if typeOfTask != "other" {
+                Utilities.styleButton(typeOtherButton, borderWidth: 2.5, borderColor: UIColor.getBlueType())
+                typeOfTask = "other"
+            } else {
+                Utilities.styleButton(typeWorkButton, borderWidth: 0, borderColor: nil)
+                typeOfTask = nil
+            }
+        default:
+            fatalError("Unknown button")
+        }
+        
+    }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("user has \(DBHelper.userTasks.count) tasks")
+    func discardAllButtonsExceptButton(_ sender: UIButton) {
+        for button in typeButtons {
+            if button != sender {
+                Utilities.styleButton(button, borderWidth: 0, borderColor: nil)
+            }
+        }
     }
     
     
@@ -58,7 +111,7 @@ class AddTaskController: UIViewController {
         if let title = titleTextField.text, let date = dateTextField.text, let startAt = startAtTextField.text, let endTo = endTextField.text {
             if !title.isEmpty && !date.isEmpty && !startAt.isEmpty && !endTo.isEmpty {
                 
-                let task = Task(title: title, dateBegin: datePicker.date, startAt: timing.start, endTo: timing.end, description: descriptionTextField.text ?? "")
+                let task = Task(title: title, dateBegin: datePicker.date, startAt: timing.start, endTo: timing.end, type: typeOfTask, description: descriptionTextField.text ?? "")
                 
                 if checkAlreadyHasThisTask(task) {
                     Utilities.showBunner(title: "Oops", subtitle: "You're alredy planned \(task.title)", style: .warning)
@@ -75,6 +128,7 @@ class AddTaskController: UIViewController {
                         K.FStore.Field.date: task.dateBegin,
                         K.FStore.Field.start: task.startAt,
                         K.FStore.Field.end: task.endTo,
+                        K.FStore.Field.type: task.type ?? "",
                         K.FStore.Field.description: task.description ?? ""
                     ])
                 

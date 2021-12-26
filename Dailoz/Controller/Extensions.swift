@@ -66,3 +66,28 @@ extension UIViewController {
     }
 }
 
+// MARK: - Extensions for NotificationCenter name
+
+extension Notification.Name {
+    static let cellDeleted = Notification.Name("cellDeleted")
+}
+
+// MARK: - Getter color
+
+extension UIColor {
+    static func getPurpleType() -> UIColor {
+        return UIColor.init(named: "purpleTypeText")!
+    }
+    
+    static func getGreenType() -> UIColor {
+        return UIColor.init(named: "greenTypeText")!
+    }
+    
+    static func getOrangeType() -> UIColor {
+        return UIColor.init(named: "orangeTypeText")!
+    }
+    
+    static func getBlueType() -> UIColor {
+        return UIColor.init(named: "blueTypeText")!
+    }
+}

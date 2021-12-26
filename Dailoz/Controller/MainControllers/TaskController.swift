@@ -80,8 +80,3 @@ extension TaskController: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
-
-// TODO zamenit' na KONST
-extension Notification.Name {
-    static let cellDeleted = Notification.Name("cellDeleted")
-}

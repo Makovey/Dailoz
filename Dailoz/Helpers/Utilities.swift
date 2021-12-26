@@ -37,4 +37,10 @@ class Utilities {
         }
     }
     
+    static func styleButton(_ button: UIButton, borderWidth: Double, borderColor: UIColor?) {
+        button.layer.borderWidth = borderWidth
+        if let borderColor = borderColor {
+            button.layer.borderColor = borderColor.cgColor
+        }
+    }
 }
