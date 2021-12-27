@@ -1080,50 +1080,53 @@
                                     <string>Title</string>
                                 </scopeButtonTitles>
                             </searchBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mS6-5p-YeJ">
-                                <rect key="frame" x="25" y="194" width="62" height="30.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mS6-5p-YeJ">
+                                <rect key="frame" x="25" y="194" width="54" height="30.5"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="27"/>
                                 <color key="textColor" name="MainBlue"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pYX-2G-wOl">
-                                <rect key="frame" x="25" y="244.5" width="364" height="100"/>
-                                <color key="backgroundColor" name="CompletedCardBlue"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3aJ-xo-oV7">
+                                <rect key="frame" x="25" y="375" width="364" height="423"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4FW-7X-ANC">
+                                <rect key="frame" x="25" y="324.5" width="76.5" height="30.5"/>
+                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="27"/>
+                                <color key="textColor" name="MainBlue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose your day" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nOG-oV-tZf">
+                                <rect key="frame" x="25" y="244.5" width="364" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="dY8-5a-tDl"/>
+                                    <constraint firstAttribute="height" constant="45" id="s9e-un-DVU"/>
                                 </constraints>
-                            </tableView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3aJ-xo-oV7">
-                                <rect key="frame" x="25" y="430" width="364" height="368"/>
-                            </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4FW-7X-ANC">
-                                <rect key="frame" x="25" y="379.5" width="84.5" height="30.5"/>
-                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="27"/>
                                 <color key="textColor" name="MainBlue"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vM9-CY-14J"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="4FW-7X-ANC" firstAttribute="leading" secondItem="AuG-rm-gVB" secondAttribute="leading" constant="25" id="1P0-KP-LtG"/>
                             <constraint firstItem="mS6-5p-YeJ" firstAttribute="leading" secondItem="AuG-rm-gVB" secondAttribute="leading" constant="25" id="4CS-Or-DpL"/>
+                            <constraint firstItem="nOG-oV-tZf" firstAttribute="top" secondItem="mS6-5p-YeJ" secondAttribute="bottom" constant="20" id="5pR-ao-3S2"/>
                             <constraint firstItem="mS6-5p-YeJ" firstAttribute="top" secondItem="4u5-9f-dZL" secondAttribute="bottom" constant="35" id="6sh-ge-oIl"/>
-                            <constraint firstItem="pYX-2G-wOl" firstAttribute="top" secondItem="mS6-5p-YeJ" secondAttribute="bottom" constant="20" id="Boi-YI-byv"/>
                             <constraint firstItem="vM9-CY-14J" firstAttribute="trailing" secondItem="4u5-9f-dZL" secondAttribute="trailing" constant="25" id="Dvo-4e-Syc"/>
                             <constraint firstItem="4u5-9f-dZL" firstAttribute="top" secondItem="vM9-CY-14J" secondAttribute="top" constant="20" id="ExJ-4M-pZr"/>
                             <constraint firstItem="vM9-CY-14J" firstAttribute="bottom" secondItem="3aJ-xo-oV7" secondAttribute="bottom" constant="15" id="FJY-SQ-kh0"/>
                             <constraint firstItem="3aJ-xo-oV7" firstAttribute="top" secondItem="4FW-7X-ANC" secondAttribute="bottom" constant="20" id="FjN-HS-OVm"/>
-                            <constraint firstItem="vM9-CY-14J" firstAttribute="trailing" secondItem="pYX-2G-wOl" secondAttribute="trailing" constant="25" id="J1c-L4-Fhd"/>
+                            <constraint firstItem="4FW-7X-ANC" firstAttribute="top" secondItem="nOG-oV-tZf" secondAttribute="bottom" constant="35" id="N5D-NE-ljz"/>
                             <constraint firstItem="vM9-CY-14J" firstAttribute="trailing" secondItem="3aJ-xo-oV7" secondAttribute="trailing" constant="25" id="dVD-h3-bW6"/>
                             <constraint firstItem="3aJ-xo-oV7" firstAttribute="leading" secondItem="vM9-CY-14J" secondAttribute="leading" constant="25" id="lnt-Y4-ibC"/>
-                            <constraint firstItem="4FW-7X-ANC" firstAttribute="top" secondItem="pYX-2G-wOl" secondAttribute="bottom" constant="35" id="mlp-AI-b5l"/>
-                            <constraint firstItem="pYX-2G-wOl" firstAttribute="leading" secondItem="vM9-CY-14J" secondAttribute="leading" constant="25" id="p6S-BR-wqH"/>
                             <constraint firstItem="4u5-9f-dZL" firstAttribute="leading" secondItem="vM9-CY-14J" secondAttribute="leading" constant="25" id="qdl-gb-6FZ"/>
+                            <constraint firstItem="nOG-oV-tZf" firstAttribute="leading" secondItem="vM9-CY-14J" secondAttribute="leading" constant="25" id="wzl-2m-RYk"/>
+                            <constraint firstItem="vM9-CY-14J" firstAttribute="trailing" secondItem="nOG-oV-tZf" secondAttribute="trailing" constant="25" id="zLE-Xp-hoF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Z5m-5y-1jW"/>
                     <connections>
+                        <outlet property="dateTextField" destination="nOG-oV-tZf" id="qaY-gT-2Wd"/>
                         <outlet property="todayTaskTableView" destination="3aJ-xo-oV7" id="mu7-6j-9Jz"/>
                     </connections>
                 </viewController>
@@ -1292,16 +1295,16 @@
             <color red="0.17299999296665192" green="0.25099998712539673" blue="0.4309999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="blueTypeText">
-            <color red="0.01077780314" green="0.75663501020000001" blue="0.76078879830000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.010999999940395355" green="0.75700002908706665" blue="0.76099997758865356" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="greenTypeText">
             <color red="0.36500000953674316" green="0.85000002384185791" blue="0.54100000858306885" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="orangeTypeText">
-            <color red="0.95686274509803915" green="0.64313725490196072" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.9570000171661377" green="0.64300000667572021" blue="0.5690000057220459" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="purpleTypeText">
-            <color red="0.51874440909999997" green="0.52543121579999996" blue="0.96867209669999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.51899999380111694" green="0.52499997615814209" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -38,7 +38,16 @@ struct K {
     }
     
     struct Color {
-        static let mainPurple = UIColor(red: 91/255, green: 103/255, blue: 202/255, alpha: 1)
+        static let mainPurple = UIColor.init(named: "MainPurple")!
+        static let purpleTypeBirght = UIColor.init(named: "purpleTypeText")!
+        static let purpleType = UIColor.init(named: "purpleCellBackground")!
+        static let greenTypeBright = UIColor.init(named: "greenTypeText")!
+        static let greenType = UIColor.init(named: "greenCellBackground")!
+        static let orangeTypeBright = UIColor.init(named: "orangeTypeText")!
+        static let orangeType = UIColor.init(named: "orangeCellBackground")!
+        static let blueTypeBright = UIColor.init(named: "blueTypeText")!
+        static let blueType = UIColor.init(named: "blueCellBackground")!
+        static let graphic = UIColor.init(named: "GraphicBackground")
         static let red = UIColor(red: 231/255, green: 1245/255, blue: 125/255, alpha: 1)
     }
     

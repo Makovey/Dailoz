@@ -27,6 +27,20 @@ class AddTaskController: UIViewController {
     let datePicker = UIDatePicker()
     let timePicker = UIDatePicker()
     
+    let dateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateStyle = .full
+        df.timeStyle = .none
+        return df
+    }()
+    
+    let timeFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateStyle = .none
+        df.timeStyle = .short
+        return df
+    }()
+    
     let notification = NotificationCenter.default
     
     var timing = (start: Date(), end: Date())
@@ -52,7 +66,7 @@ class AddTaskController: UIViewController {
         switch sender {
         case typeWorkButton:
             if typeOfTask != "work" {
-                Utilities.styleButton(typeWorkButton, borderWidth: 2.5, borderColor: UIColor.getPurpleType())
+                Utilities.styleButton(typeWorkButton, borderWidth: 2.5, borderColor: K.Color.purpleTypeBirght)
                 typeOfTask = "work"
             } else {
                 Utilities.styleButton(typeWorkButton, borderWidth: 0, borderColor: nil)
@@ -60,26 +74,26 @@ class AddTaskController: UIViewController {
             }
         case typeHomeButton:
             if typeOfTask != "home" {
-                Utilities.styleButton(typeHomeButton, borderWidth: 2.5, borderColor: UIColor.getGreenType())
+                Utilities.styleButton(typeHomeButton, borderWidth: 2.5, borderColor: K.Color.greenTypeBright)
                 typeOfTask = "home"
             } else {
-                Utilities.styleButton(typeWorkButton, borderWidth: 0, borderColor: nil)
+                Utilities.styleButton(typeHomeButton, borderWidth: 0, borderColor: nil)
                 typeOfTask = nil
             }
         case typeStudyButton:
             if typeOfTask != "study" {
-                Utilities.styleButton(typeStudyButton, borderWidth: 2.5, borderColor: UIColor.getOrangeType())
+                Utilities.styleButton(typeStudyButton, borderWidth: 2.5, borderColor: K.Color.orangeTypeBright)
                 typeOfTask = "study"
             } else {
-                Utilities.styleButton(typeWorkButton, borderWidth: 0, borderColor: nil)
+                Utilities.styleButton(typeStudyButton, borderWidth: 0, borderColor: nil)
                 typeOfTask = nil
             }
         case typeOtherButton:
             if typeOfTask != "other" {
-                Utilities.styleButton(typeOtherButton, borderWidth: 2.5, borderColor: UIColor.getBlueType())
+                Utilities.styleButton(typeOtherButton, borderWidth: 2.5, borderColor: K.Color.blueTypeBright)
                 typeOfTask = "other"
             } else {
-                Utilities.styleButton(typeWorkButton, borderWidth: 0, borderColor: nil)
+                Utilities.styleButton(typeOtherButton, borderWidth: 0, borderColor: nil)
                 typeOfTask = nil
             }
         default:
@@ -134,7 +148,6 @@ class AddTaskController: UIViewController {
                 
                 Utilities.showBunner(title: "We're plained your task", subtitle: "\(task.title) - startAt \(startAt)", style: .success)
                 Utilities.clearAllTextFields(textFields: createTaskTextFields)
-                
             } else {
                 Utilities.showBunner(title: "Oh, we can't save your task", subtitle: "Please, fill all required fields", style: .danger)
             }
@@ -171,7 +184,7 @@ class AddTaskController: UIViewController {
     }
 }
 
-// MARK: Set UIDatePicker to Keyboard and work with it
+// MARK: - Set UIDatePicker to Keyboard and work with it
 
 extension AddTaskController: UITextFieldDelegate {
     
@@ -245,6 +258,7 @@ extension AddTaskController: UITextFieldDelegate {
         toolbar.sizeToFit()
         
         var doneBtn: UIBarButtonItem?
+        let flexButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         
         switch textField {
         case dateTextField:
@@ -262,7 +276,7 @@ extension AddTaskController: UITextFieldDelegate {
         }
         
         safetyDoneBtn.tintColor = K.Color.mainPurple
-        toolbar.setItems([safetyDoneBtn], animated: true)
+        toolbar.setItems([flexButton,safetyDoneBtn], animated: true)
         
         return toolbar
     }
@@ -280,32 +294,19 @@ extension AddTaskController: UITextFieldDelegate {
     }
     
     func inputDateToTextField() {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .full
-        dateFormatter.timeStyle = .none
-        
         self.dateTextField.text = dateFormatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
     
     func inputTimeStartToTextField() {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .none
-        dateFormatter.timeStyle = .short
-        
-        
         timing.start = timePicker.date
-        self.startAtTextField.text = dateFormatter.string(from: timePicker.date)
+        self.startAtTextField.text = timeFormatter.string(from: timePicker.date)
         self.view.endEditing(true)
     }
     
     func inputTimeEndToTextField() {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .none
-        dateFormatter.timeStyle = .short
-        
         timing.end = timePicker.date
-        self.endTextField.text = dateFormatter.string(from: timePicker.date)
+        self.endTextField.text = timeFormatter.string(from: timePicker.date)
         self.view.endEditing(true)
     }
 }
