@@ -118,9 +118,6 @@ extension TaskController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print("Tapped cell number \(indexPath.row).")
-
-        todayTaskTableView.reloadData()
     }
     
 }

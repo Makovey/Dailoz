@@ -70,4 +70,5 @@ extension UIViewController {
 
 extension Notification.Name {
     static let cellDeleted = Notification.Name("cellDeleted")
+    static let notification = Notification.Name("notification")
 }

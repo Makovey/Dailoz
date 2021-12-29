@@ -863,8 +863,8 @@
                                 <color key="textColor" name="MainBlue"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="ttZ-gP-84j">
-                                <rect key="frame" x="25" y="168.5" width="364" height="315"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="ttZ-gP-84j">
+                                <rect key="frame" x="25" y="168.5" width="364" height="300"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title (required)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n1N-SO-484">
                                         <rect key="frame" x="0.0" y="0.0" width="364" height="45"/>
@@ -876,7 +876,7 @@
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="When we start? (required)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oto-7y-ua6">
-                                        <rect key="frame" x="0.0" y="90" width="364" height="45"/>
+                                        <rect key="frame" x="0.0" y="85" width="364" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="bhm-Iw-la7"/>
                                         </constraints>
@@ -885,7 +885,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="AVO-vI-fbb">
-                                        <rect key="frame" x="0.0" y="180" width="364" height="45"/>
+                                        <rect key="frame" x="0.0" y="170" width="364" height="45"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Start at (required)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1jK-fO-TEz">
                                                 <rect key="frame" x="0.0" y="0.0" width="166" height="45"/>
@@ -905,7 +905,7 @@
                                         </constraints>
                                     </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description (optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZeR-kE-bK4">
-                                        <rect key="frame" x="0.0" y="270" width="364" height="45"/>
+                                        <rect key="frame" x="0.0" y="255" width="364" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="kKZ-hu-xC1"/>
                                         </constraints>
@@ -942,13 +942,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NqZ-my-zQv">
-                                <rect key="frame" x="25" y="518.5" width="65.5" height="30.5"/>
+                                <rect key="frame" x="25" y="503.5" width="65.5" height="30.5"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="27"/>
                                 <color key="textColor" name="MainBlue"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="9mJ-R8-vQ5">
-                                <rect key="frame" x="25" y="574" width="364" height="34.5"/>
+                                <rect key="frame" x="25" y="559" width="364" height="34.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZS0-Yh-g6K">
                                         <rect key="frame" x="0.0" y="0.0" width="86" height="34.5"/>
@@ -1020,6 +1020,24 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Dn-ka-s1d">
+                                <rect key="frame" x="25" y="685" width="181" height="38"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBc-vh-7Ma">
+                                        <rect key="frame" x="0.0" y="0.0" width="48" height="38"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="checkboxUnselected"/>
+                                        <connections>
+                                            <action selector="checkboxPressed:" destination="DAp-SU-M65" eventType="touchUpInside" id="Eok-fI-nmo"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind about this" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0s-FA-qGs">
+                                        <rect key="frame" x="48" y="0.0" width="133" height="38"/>
+                                        <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ikc-ME-eJs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1033,9 +1051,11 @@
                             <constraint firstItem="Ikc-ME-eJs" firstAttribute="trailing" secondItem="ttZ-gP-84j" secondAttribute="trailing" constant="25" id="H9o-GR-ypo"/>
                             <constraint firstItem="pl7-he-GNW" firstAttribute="leading" secondItem="Ikc-ME-eJs" secondAttribute="leading" constant="25" id="LRc-Bs-ACf"/>
                             <constraint firstItem="9mJ-R8-vQ5" firstAttribute="top" secondItem="NqZ-my-zQv" secondAttribute="bottom" constant="25" id="S2f-8O-oH9"/>
+                            <constraint firstItem="dbE-zt-otY" firstAttribute="top" secondItem="5Dn-ka-s1d" secondAttribute="bottom" constant="25" id="V70-JM-Gnv"/>
                             <constraint firstItem="ttZ-gP-84j" firstAttribute="top" secondItem="pl7-he-GNW" secondAttribute="bottom" constant="30" id="iXQ-3Z-Xky"/>
                             <constraint firstItem="Ikc-ME-eJs" firstAttribute="trailing" secondItem="dbE-zt-otY" secondAttribute="trailing" constant="25" id="msI-4S-FK4"/>
                             <constraint firstItem="Ikc-ME-eJs" firstAttribute="bottom" secondItem="dbE-zt-otY" secondAttribute="bottom" constant="15" id="unA-rr-c2p"/>
+                            <constraint firstItem="5Dn-ka-s1d" firstAttribute="leading" secondItem="Ikc-ME-eJs" secondAttribute="leading" constant="25" id="vci-n8-ZIF"/>
                             <constraint firstItem="pl7-he-GNW" firstAttribute="top" secondItem="Ikc-ME-eJs" secondAttribute="top" constant="20" id="xGO-fM-znK"/>
                         </constraints>
                     </view>
@@ -1044,10 +1064,11 @@
                         <outlet property="dateTextField" destination="oto-7y-ua6" id="HFl-BN-vG4"/>
                         <outlet property="descriptionTextField" destination="ZeR-kE-bK4" id="S86-vN-liL"/>
                         <outlet property="endTextField" destination="Mql-Vo-Snm" id="Feo-hV-2NT"/>
+                        <outlet property="remainderCheckbox" destination="qBc-vh-7Ma" id="P0F-JO-16b"/>
                         <outlet property="startAtTextField" destination="1jK-fO-TEz" id="GFe-JV-oeb"/>
                         <outlet property="titleTextField" destination="n1N-SO-484" id="fiC-iO-555"/>
                         <outlet property="typeHomeButton" destination="RGK-IO-Cis" id="bda-gJ-FtE"/>
-                        <outlet property="typeOtherButton" destination="yp7-S7-xrb" id="Hdp-GN-or5"/>
+                        <outlet property="typeOtherButton" destination="qBc-vh-7Ma" id="Fz3-pa-hZz"/>
                         <outlet property="typeStudyButton" destination="1t9-Fn-CTm" id="fLy-dO-qyI"/>
                         <outlet property="typeWorkButton" destination="ZS0-Yh-g6K" id="lxP-wn-d9W"/>
                         <outletCollection property="createTaskTextFields" destination="oto-7y-ua6" collectionClass="NSMutableArray" id="aFN-9Q-PVY"/>
@@ -1133,6 +1154,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g7x-lO-uhk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2095.6521739130435" y="-133.25892857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xe4-0C-ljZ">
+            <objects>
+                <viewController id="a4P-R0-gUY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fWP-1e-acy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="kTe-Ab-gFc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VM9-U2-HdY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2854" y="-133"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="D2y-eQ-BcT">
@@ -1250,12 +1286,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7QN-Qn-XoF"/>
+        <segue reference="zzc-1Q-sc0"/>
         <segue reference="Agv-Jj-gSE"/>
-        <segue reference="i8f-F3-Rta"/>
+        <segue reference="6Ki-i5-Yqh"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="activityIcon" width="24" height="24"/>
+        <image name="checkboxUnselected" width="24" height="24"/>
         <image name="documentIcon" width="24" height="24"/>
         <image name="elipse" width="6" height="6"/>
         <image name="facebookIcon" width="75" height="75"/>

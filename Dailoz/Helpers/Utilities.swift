@@ -11,6 +11,9 @@ import NotificationBannerSwift
 
 class Utilities {
     
+    private static let notificationCenter = UNUserNotificationCenter.current()
+    private static let content = UNMutableNotificationContent()
+    
     static func styleTextField(_ textfield:UITextField) {
         textfield.layer.borderColor = UIColor.init(red: 125/255, green: 136/255, blue: 231/255, alpha: 1).cgColor
         textfield.layer.borderWidth = 1.0
@@ -41,6 +44,34 @@ class Utilities {
         button.layer.borderWidth = borderWidth
         if let borderColor = borderColor {
             button.layer.borderColor = borderColor.cgColor
+        }
+    }
+    
+    static func scheduleNotificationToTask(_ task: Task, showBanner: Bool) {
+        content.title = "Dailoz"
+        content.sound = .default
+        
+        content.body = "\(task.title) starts now"
+        
+        var dateComponents = DateComponents()
+        dateComponents.calendar = Calendar.current
+        
+        dateComponents.year = Int(task.dateBegin.get(.year))
+        dateComponents.month = Int(task.dateBegin.get(.month))
+        dateComponents.day = Int(task.dateBegin.get(.day))
+        dateComponents.hour = Int(task.startAt.get(.hour))
+        dateComponents.minute = Int(task.startAt.get(.minute))
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: task.id, content: content, trigger: trigger)
+        notificationCenter.add(request) { error in
+            if error != nil {
+                fatalError("Cannot create remainder cause \(error?.localizedDescription)")
+            }
+        }
+        if showBanner {
+            showBunner(title: "We remaind you about your task", subtitle: "In \(task.startAt.get(.hour)) : \(task.startAt.get(.minute))", style: .success)
         }
     }
 }

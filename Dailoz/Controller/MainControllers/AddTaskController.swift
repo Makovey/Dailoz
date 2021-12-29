@@ -24,8 +24,13 @@ class AddTaskController: UIViewController {
     @IBOutlet weak var typeStudyButton: UIButton!
     @IBOutlet weak var typeOtherButton: UIButton!
     
+    @IBOutlet weak var remainderCheckbox: UIButton!
+    
     let datePicker = UIDatePicker()
     let timePicker = UIDatePicker()
+    
+    //    TODO
+    //    var changingTask = false
     
     let dateFormatter: DateFormatter = {
         let df = DateFormatter()
@@ -47,6 +52,8 @@ class AddTaskController: UIViewController {
     
     var typeOfTask: String?
     
+    var isNeededRemaind = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dismissKeyboardWhenTappedOut()
@@ -59,7 +66,7 @@ class AddTaskController: UIViewController {
         createDatePicker()
         createTimePicker()
     }
-
+    
     @IBAction func tagButtonPressed(_ sender: UIButton) {
         discardAllButtonsExceptButton(sender)
         
@@ -148,6 +155,11 @@ class AddTaskController: UIViewController {
                 
                 Utilities.showBunner(title: "We're plained your task", subtitle: "\(task.title) - startAt \(startAt)", style: .success)
                 Utilities.clearAllTextFields(textFields: createTaskTextFields)
+                
+                if isNeededRemaind {
+                    Utilities.scheduleNotificationToTask(task, showBanner: false)
+                }
+                
             } else {
                 Utilities.showBunner(title: "Oh, we can't save your task", subtitle: "Please, fill all required fields", style: .danger)
             }
@@ -181,6 +193,17 @@ class AddTaskController: UIViewController {
             }
         }
         return result
+    }
+    
+    @IBAction func checkboxPressed(_ sender: UIButton) {
+        if !isNeededRemaind {
+            remainderCheckbox.setImage(UIImage(named:"checkboxSelected"), for: .normal)
+
+        } else {
+            remainderCheckbox.setImage(UIImage(named:"checkboxUnselected"), for: .normal)
+        }
+        
+        isNeededRemaind = !isNeededRemaind
     }
 }
 

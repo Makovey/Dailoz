@@ -30,18 +30,18 @@ struct DBHelper {
             }
     }
     
-    static func getOnlyTodaysTask() -> [Task]? {
-        if userTasks.count != 0 && filterTaskByToday().count > 0 {
-            return filterTaskByToday()
+    static func getOnlyTaskOfDay(_ date: Date) -> [Task]? {
+        if userTasks.count != 0 && filterTaskByDay(date).count > 0 {
+            return filterTaskByDay(date)
         } else {
             return nil
         }
     }
     
-    private static func filterTaskByToday() -> [Task] {
+    private static func filterTaskByDay(_ date: Date) -> [Task] {
         return userTasks.filter { task in
             let component = DateHelper.getMonthAndDay(date: task.dateBegin)
-            let today = DateHelper.getMonthAndDay(date: Date())
+            let today = DateHelper.getMonthAndDay(date: date)
             
             let result = component.month == today.month! && component.day! == today.day
             return result
@@ -49,8 +49,6 @@ struct DBHelper {
     }
     
     static func saveDataToSubcollection(collection: String, documentName: String, subCollection: String, data:[String: Any]) {
-        userTasks.removeAll()
-        
         db.collection(collection)
             .document(documentName)
             .collection(subCollection)
@@ -64,9 +62,7 @@ struct DBHelper {
             }
     }
     
-    static func reloadUserTasks(completion:@escaping(() -> ())) {
-        userTasks.removeAll()
-        
+    static func reloadUserTasks(completion:@escaping(() -> ())) {        
         db.collection(K.FStore.Collection.tasks)
             .document(userId!)
             .collection(K.FStore.Collection.userTasks)
@@ -87,7 +83,7 @@ struct DBHelper {
                         }
                     }
                 } else {
-                    print("Doc is nil")
+                    print("No documents appeared")
                 }
                 completion()
             })

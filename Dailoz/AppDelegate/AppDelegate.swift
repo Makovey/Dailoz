@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         Firestore.firestore()
+        
+        UNUserNotificationCenter
+            .current()
+            .requestAuthorization(options: [.alert, .badge, .sound]) { granded, error in
+                print("Haven't permission cause \(error)")
+            }
         return true
     }
 

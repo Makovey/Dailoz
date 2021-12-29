@@ -67,10 +67,10 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9C-OK-wt6">
-                                <rect key="frame" x="203" y="17.5" width="75" height="75"/>
+                                <rect key="frame" x="228" y="30" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="aYS-hB-Ra3"/>
-                                    <constraint firstAttribute="height" constant="75" id="ghy-uT-IJa"/>
+                                    <constraint firstAttribute="width" constant="50" id="aYS-hB-Ra3"/>
+                                    <constraint firstAttribute="height" constant="50" id="ghy-uT-IJa"/>
                                 </constraints>
                                 <color key="tintColor" name="MainPurple"/>
                                 <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system"/>
