@@ -20,6 +20,7 @@
 		5E9954132767A1A1007EE757 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E9954112767A1A1007EE757 /* TaskCell.xib */; };
 		5EA5F5D22760F9A700EA9710 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA5F5D12760F9A700EA9710 /* UserInfo.swift */; };
 		5EB6201B27565BD2001D1FA4 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6201A27565BD2001D1FA4 /* DBHelper.swift */; };
+		5ED80BD62784A18800F267A9 /* TypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED80BD52784A18800F267A9 /* TypeController.swift */; };
 		5EDA2E93274442FD00546708 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA2E92274442FD00546708 /* AppDelegate.swift */; };
 		5EDA2E95274442FD00546708 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA2E94274442FD00546708 /* SceneDelegate.swift */; };
 		5EDA2E97274442FD00546708 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA2E96274442FD00546708 /* SplashController.swift */; };
@@ -48,6 +49,7 @@
 		5E9954112767A1A1007EE757 /* TaskCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
 		5EA5F5D12760F9A700EA9710 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		5EB6201A27565BD2001D1FA4 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
+		5ED80BD52784A18800F267A9 /* TypeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeController.swift; sourceTree = "<group>"; };
 		5EDA2E8F274442FD00546708 /* Dailoz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dailoz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EDA2E92274442FD00546708 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EDA2E94274442FD00546708 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				5E490AAA27578A18000ED5C8 /* AddTaskController.swift */,
 				5E52B82427660C8400694952 /* TaskController.swift */,
 				5E2137D02775E40100F7DA27 /* ProfileController.swift */,
+				5ED80BD52784A18800F267A9 /* TypeController.swift */,
 				5E6774F82773C1F0006DD545 /* Cells */,
 			);
 			path = MainControllers;
@@ -351,6 +354,7 @@
 				5E2137D12775E40100F7DA27 /* ProfileController.swift in Sources */,
 				5E9954122767A1A1007EE757 /* TaskCell.swift in Sources */,
 				5EDA2E93274442FD00546708 /* AppDelegate.swift in Sources */,
+				5ED80BD62784A18800F267A9 /* TypeController.swift in Sources */,
 				5E046BF52759110D0090B5A6 /* Task.swift in Sources */,
 				5E490AAB27578A18000ED5C8 /* AddTaskController.swift in Sources */,
 				5EDA2E95274442FD00546708 /* SceneDelegate.swift in Sources */,

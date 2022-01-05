@@ -112,7 +112,7 @@ struct DBHelper {
             }
     }
     
-    private static func getUserInfo(completion:@escaping(() -> ())) {
+    static func loadUserInfo() {
         db.collection(K.FStore.Collection.userInfo)
             .document(userId!)
             .getDocument { (document, error) in
@@ -122,13 +122,18 @@ struct DBHelper {
                    let email = data[K.FStore.Field.email] as? String {
                     userInfo = UserInfo(username: username, email: email)
                 }
-                completion()
             } else {
                 print("Document does not exist")
-                completion()
             }
         }
     }
     
+    static func getTasksByType(_ type: String) -> [Task]? {
+        if type == "all" {
+            return userTasks.count > 0 ? Array(userTasks) : nil
+        }
+        let filteredTask = userTasks.filter { $0.type == type }
+        return filteredTask.count > 0 ? Array(filteredTask) : nil
+    }
     
 }

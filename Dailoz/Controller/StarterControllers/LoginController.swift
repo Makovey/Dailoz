@@ -40,6 +40,7 @@ class LoginController: UIViewController {
                     Utilities.showBunner(title: "Oh, we can't login", subtitle: e.localizedDescription, style: .danger)
                 } else {
                     DBHelper.userId = Auth.auth().currentUser?.uid
+                    DBHelper.loadUserInfo()
                     self.passwordTextField.text = ""
                     self.performSegue(withIdentifier: K.loginSegue, sender: self)
                 }

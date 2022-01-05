@@ -10,6 +10,7 @@ import UIKit
 struct K {
     static let loginSegue = "loginToMain"
     static let signUpSegue = "signUpToMain"
+    static let profileSegue = "profileToType"
     
     static let mainFont = "Comfortaa"
     static let mainFontBolt = "Comfortaa-Bold"

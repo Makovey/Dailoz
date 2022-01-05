@@ -198,7 +198,6 @@ class AddTaskController: UIViewController {
     @IBAction func checkboxPressed(_ sender: UIButton) {
         if !isNeededRemaind {
             remainderCheckbox.setImage(UIImage(named:"checkboxSelected"), for: .normal)
-
         } else {
             remainderCheckbox.setImage(UIImage(named:"checkboxUnselected"), for: .normal)
         }
