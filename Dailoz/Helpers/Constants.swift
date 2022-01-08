@@ -11,6 +11,7 @@ struct K {
     static let loginSegue = "loginToMain"
     static let signUpSegue = "signUpToMain"
     static let profileSegue = "profileToType"
+    static let taskSegue = "tableToTask"
     
     static let mainFont = "Comfortaa"
     static let mainFontBolt = "Comfortaa-Bold"
@@ -48,7 +49,8 @@ struct K {
         static let orangeType = UIColor.init(named: "orangeCellBackground")!
         static let blueTypeBright = UIColor.init(named: "blueTypeText")!
         static let blueType = UIColor.init(named: "blueCellBackground")!
-        static let graphic = UIColor.init(named: "GraphicBackground")
+        static let graphic = UIColor.init(named: "GraphicBackground")!
+        static let mainBlue = UIColor.init(named: "MainBlue")!
         static let red = UIColor(red: 231/255, green: 1245/255, blue: 125/255, alpha: 1)
     }
     

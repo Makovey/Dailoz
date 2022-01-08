@@ -16,7 +16,7 @@ class TypeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         typeLabel.text = type!.capitalized
         
         typeTableView.delegate = self
@@ -29,7 +29,7 @@ class TypeController: UIViewController {
     @objc func deletedTaskNotification() {
         typeTableView.reloadData()
     }
-
+    
 }
 
 extension TypeController: UITableViewDelegate, UITableViewDataSource {
@@ -44,7 +44,7 @@ extension TypeController: UITableViewDelegate, UITableViewDataSource {
         if let safetyTasks = DBHelper.getTasksByType(type!) {
             let sortedByHourTasks = safetyTasks.sorted(by: {
                 Int($0.startAt.get(.hour))! <= Int($1.startAt.get(.hour))! &&
-                Int($0.startAt.get(.minute))! <= Int($1.startAt.get(.hour))!
+                Int($0.startAt.get(.minute))! <= Int($1.startAt.get(.minute))!
             })
             
             let task = sortedByHourTasks[indexPath.row]
@@ -97,7 +97,7 @@ extension TypeController: UITableViewDelegate, UITableViewDataSource {
             cell.typeLabel.text = ""
             cell.descriptionLabel.text = ""
         }
-    
+        
         return cell
     }
     

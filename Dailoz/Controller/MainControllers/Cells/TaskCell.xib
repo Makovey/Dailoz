@@ -26,7 +26,7 @@
                         <rect key="frame" x="5" y="5" width="278" height="110"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="6m2-66-S02">
-                                <rect key="frame" x="0.0" y="0.0" width="91.5" height="110"/>
+                                <rect key="frame" x="0.0" y="0.0" width="278" height="110"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2J-EW-1QP">
                                         <rect key="frame" x="0.0" y="35" width="2" height="40"/>
@@ -36,28 +36,28 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Ecu-Ap-ubl">
-                                        <rect key="frame" x="19" y="0.0" width="72.5" height="110"/>
+                                        <rect key="frame" x="19" y="0.0" width="259" height="110"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cT3-f0-BzV">
-                                                <rect key="frame" x="0.0" y="0.0" width="72.5" height="22.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="259" height="22.5"/>
                                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="20"/>
                                                 <color key="textColor" name="MainBlue"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00-01:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfP-vX-Ro9">
-                                                <rect key="frame" x="0.0" y="29.5" width="72.5" height="13.5"/>
+                                                <rect key="frame" x="0.0" y="29.5" width="259" height="13.5"/>
                                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="12"/>
                                                 <color key="textColor" name="MainGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KC6-yy-O6L">
-                                                <rect key="frame" x="0.0" y="50" width="72.5" height="13.5"/>
+                                                <rect key="frame" x="0.0" y="50" width="259" height="13.5"/>
                                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="12"/>
                                                 <color key="textColor" name="MainGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zi1-xb-Shi">
-                                                <rect key="frame" x="0.0" y="70.5" width="72.5" height="39.5"/>
+                                                <rect key="frame" x="0.0" y="70.5" width="259" height="39.5"/>
                                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="13"/>
                                                 <color key="textColor" name="MainBlue"/>
                                                 <nil key="highlightedColor"/>
@@ -66,18 +66,6 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9C-OK-wt6">
-                                <rect key="frame" x="228" y="30" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="aYS-hB-Ra3"/>
-                                    <constraint firstAttribute="height" constant="50" id="ghy-uT-IJa"/>
-                                </constraints>
-                                <color key="tintColor" name="MainPurple"/>
-                                <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system"/>
-                                <connections>
-                                    <action selector="removeButtonPressed:" destination="z32-pZ-RYF" eventType="touchUpInside" id="tmG-Mb-Tkh"/>
-                                </connections>
-                            </button>
                         </subviews>
                     </stackView>
                 </subviews>
@@ -92,7 +80,6 @@
             <connections>
                 <outlet property="cellContent" destination="tJH-Uh-PWb" id="YmZ-Pk-SZk"/>
                 <outlet property="descriptionLabel" destination="KC6-yy-O6L" id="cQt-Ia-Mym"/>
-                <outlet property="removeButton" destination="g9C-OK-wt6" id="Ljn-co-Tpe"/>
                 <outlet property="time" destination="pfP-vX-Ro9" id="13B-Yy-zWQ"/>
                 <outlet property="title" destination="cT3-f0-BzV" id="Dh5-PS-Csc"/>
                 <outlet property="typeLabel" destination="Zi1-xb-Shi" id="LqO-KB-JhJ"/>
@@ -102,7 +89,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="trash" catalog="system" width="121" height="128"/>
         <namedColor name="GraphicBackground">
             <color red="0.97600001096725464" green="0.98000001907348633" blue="0.99199998378753662" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
@@ -111,9 +97,6 @@
         </namedColor>
         <namedColor name="MainGray">
             <color red="0.34099999070167542" green="0.34099999070167542" blue="0.34099999070167542" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="MainPurple">
-            <color red="0.35699999332427979" green="0.40400001406669617" blue="0.79199999570846558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

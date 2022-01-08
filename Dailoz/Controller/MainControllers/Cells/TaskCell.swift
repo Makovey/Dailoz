@@ -33,12 +33,4 @@ class TaskCell: UITableViewCell {
 
         cellContent.frame = cellContent.frame.inset(by: UIEdgeInsets(top: 2, left: 0, bottom: 2, right: 0))
     }
-    
-    @IBAction func removeButtonPressed(_ sender: UIButton) {
-        if let id = idOfTask {
-            DBHelper.removeUserTaskWithId(id) {
-                NotificationCenter.default.post(name: Notification.Name.cellDeleted, object: nil)
-            }
-        }
-    }
 }

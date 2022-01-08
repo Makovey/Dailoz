@@ -21,6 +21,8 @@ class TaskController: UIViewController {
         return df
     }()
     
+    var selectedTask: Task?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dismissKeyboardWhenTappedOut()
@@ -32,34 +34,35 @@ class TaskController: UIViewController {
         createDatePicker()
         
         todayTaskTableView.register(UINib(nibName: K.Cell.taskCell, bundle: nil), forCellReuseIdentifier: K.Cell.taskCell)
-        NotificationCenter.default.addObserver(self, selector: #selector(deletedTaskNotification), name: Notification.Name.cellDeleted, object: nil)
     }
-     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         todayTaskTableView.reloadData()
     }
-    
-    @objc func deletedTaskNotification() {
-        todayTaskTableView.reloadData()
-    }
-
-
 }
 
 extension TaskController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DBHelper.getOnlyTaskOfDay(datePicker.date)?.count ?? 1
-    }
+        var countOfTaskToday = DBHelper.getOnlyTaskOfDay(datePicker.date)?.count
         
+        if let _ = countOfTaskToday {
+            self.todayTaskTableView.restore()
+        } else {
+            countOfTaskToday = 0
+            self.todayTaskTableView.setImageWithMessage("You don’t have any schedule today.")
+        }
+        return countOfTaskToday!
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: K.Cell.taskCell, for: indexPath) as! TaskCell
-
+        
         if let safetyTasks = DBHelper.getOnlyTaskOfDay(datePicker.date) {
             let sortedByHourTasks = safetyTasks.sorted(by: {
-                DateHelper.getHourAndMinutes(date: $0.startAt).hour! <= DateHelper.getHourAndMinutes(date: $1.startAt).hour! &&
-                DateHelper.getHourAndMinutes(date: $0.startAt).minute! <= DateHelper.getHourAndMinutes(date: $1.startAt).minute!
+                Int($0.startAt.get(.hour))! <= Int($1.startAt.get(.hour))! &&
+                Int($0.startAt.get(.minute))! <= Int($1.startAt.get(.minute))!
             })
             
             let task = sortedByHourTasks[indexPath.row]
@@ -68,6 +71,7 @@ extension TaskController: UITableViewDelegate, UITableViewDataSource {
             cell.title.text = task.title
             cell.time.text = "\(task.startAt.get(.hour)):\(task.startAt.get(.minute)) - \(task.endTo.get(.hour)):\(task.endTo.get(.minute))"
             cell.descriptionLabel.text = task.description
+            cell.time.alpha = 1.0
             
             switch task.type {
             case "work":
@@ -95,24 +99,8 @@ extension TaskController: UITableViewDelegate, UITableViewDataSource {
                 cell.cellContent.backgroundColor = K.Color.graphic
                 cell.typeLabel.text = ""
             }
-            
-            if !cell.removeButton.isEnabled {
-                cell.removeButton.alpha = 1.0
-                cell.removeButton.isEnabled = true
-                cell.time.alpha = 1.0
-            }
-            
-        } else {
-            cell.title.text = "No task for today"
-            cell.time.alpha = 0.0
-            cell.verticalLineView.backgroundColor = .clear
-            cell.cellContent.backgroundColor = K.Color.graphic
-            cell.removeButton.alpha = 0.0
-            cell.removeButton.isEnabled = false
-            cell.typeLabel.text = ""
-            cell.descriptionLabel.text = ""
         }
-    
+        
         return cell
     }
     
@@ -120,6 +108,69 @@ extension TaskController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+}
+
+// MARK: - Swipable cells
+
+extension TaskController {
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let selectedCell = tableView.cellForRow(at: indexPath) as! TaskCell
+        
+        if let safetySelectedTask = DBHelper.userTasks.filter({ $0.id == selectedCell.idOfTask }).first {
+            selectedTask = safetySelectedTask
+        } else {
+            return UISwipeActionsConfiguration()
+        }
+        
+        let deleteAction = UIContextualAction(style: .normal, title: nil) { action, view, completion in
+            DBHelper.removeUserTaskWithId(self.selectedTask!.id) {
+                self.todayTaskTableView.deleteRows(at: [indexPath], with: .left)
+            }
+            completion(true)
+        }
+        deleteAction.image = UIImage(systemName: "trash.circle")
+        deleteAction.title = "Delete"
+        deleteAction.backgroundColor = UIColor.init(named: "orangeTypeText")
+        
+        let updateAction = UIContextualAction(style: .normal, title: "") { action, view, completion in
+            self.performSegue(withIdentifier: K.taskSegue, sender: self)
+            completion(true)
+        }
+        updateAction.image = UIImage(systemName: "pencil.tip.crop.circle")
+        updateAction.title = "Update"
+        updateAction.backgroundColor = UIColor.init(named: "CompletedCardBlue")
+        
+        let doneAction = UIContextualAction(style: .normal, title: "") { action, view, completion in
+            self.performSegue(withIdentifier: K.taskSegue, sender: self)
+            completion(true)
+        }
+        doneAction.image = UIImage(systemName: "checkmark.shield")
+        doneAction.title = "Done"
+        doneAction.backgroundColor = UIColor.init(named: "PendingCardPurple")
+        
+        let notDoneAction = UIContextualAction(style: .normal, title: "") { action, view, completion in
+            self.performSegue(withIdentifier: K.taskSegue, sender: self)
+            completion(true)
+        }
+        notDoneAction.image = UIImage(systemName: "xmark.shield")
+        notDoneAction.backgroundColor = UIColor.init(named: "GraphicBorder")
+        
+        // if statement
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction, updateAction, doneAction])
+        configuration.performsFirstActionWithFullSwipe = false
+        
+        return configuration
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! TaskDetailController
+        destinationVC.task = selectedTask
+    }
 }
 
 // MARK: - Set UIDatePicker to Keyboard and work with it
@@ -139,7 +190,7 @@ extension TaskController: UITextFieldDelegate {
     func createToolbarToTextField(_ textField: UITextField) -> UIToolbar {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
-                
+        
         let flexButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(dateTextFieldDonePressed))
         

@@ -15,6 +15,7 @@
 		5E60634627693F6700B15F61 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E60634527693F6700B15F61 /* DateHelper.swift */; };
 		5E6F221F275E2B4900333B13 /* Comfortaa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E6F221E275E2B4900333B13 /* Comfortaa.ttf */; };
 		5E6F2222275E4BF900333B13 /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E6F2221275E4BF900333B13 /* Comfortaa-Bold.ttf */; };
+		5E8670C62785EAD600A07862 /* TaskDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8670C52785EAD600A07862 /* TaskDetailController.swift */; };
 		5E943822274FD2F70099CF1C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E943821274FD2F70099CF1C /* Extensions.swift */; };
 		5E9954122767A1A1007EE757 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9954102767A1A1007EE757 /* TaskCell.swift */; };
 		5E9954132767A1A1007EE757 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E9954112767A1A1007EE757 /* TaskCell.xib */; };
@@ -44,6 +45,7 @@
 		5E60634527693F6700B15F61 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		5E6F221E275E2B4900333B13 /* Comfortaa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Comfortaa.ttf; sourceTree = "<group>"; };
 		5E6F2221275E4BF900333B13 /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
+		5E8670C52785EAD600A07862 /* TaskDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailController.swift; sourceTree = "<group>"; };
 		5E943821274FD2F70099CF1C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Dailoz/Controller/Extensions.swift; sourceTree = SOURCE_ROOT; };
 		5E9954102767A1A1007EE757 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		5E9954112767A1A1007EE757 /* TaskCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				5E52B82427660C8400694952 /* TaskController.swift */,
 				5E2137D02775E40100F7DA27 /* ProfileController.swift */,
 				5ED80BD52784A18800F267A9 /* TypeController.swift */,
+				5E8670C52785EAD600A07862 /* TaskDetailController.swift */,
 				5E6774F82773C1F0006DD545 /* Cells */,
 			);
 			path = MainControllers;
@@ -349,6 +352,7 @@
 			files = (
 				5E52B82627660C8400694952 /* TaskController.swift in Sources */,
 				5EDA2E97274442FD00546708 /* SplashController.swift in Sources */,
+				5E8670C62785EAD600A07862 /* TaskDetailController.swift in Sources */,
 				5EE5FA14275228ED00676A7D /* Constants.swift in Sources */,
 				5E943822274FD2F70099CF1C /* Extensions.swift in Sources */,
 				5E2137D12775E40100F7DA27 /* ProfileController.swift in Sources */,
