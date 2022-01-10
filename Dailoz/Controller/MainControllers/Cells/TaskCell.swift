@@ -16,8 +16,8 @@ class TaskCell: UITableViewCell {
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var verticalLineView: UIView!
-    @IBOutlet weak var removeButton: UIButton!
     @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var doneImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

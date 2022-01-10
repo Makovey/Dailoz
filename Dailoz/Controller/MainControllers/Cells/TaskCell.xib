@@ -23,10 +23,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xZi-Qq-LLi">
-                        <rect key="frame" x="5" y="5" width="278" height="110"/>
+                        <rect key="frame" x="5" y="5" width="273" height="110"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="6m2-66-S02">
-                                <rect key="frame" x="0.0" y="0.0" width="278" height="110"/>
+                                <rect key="frame" x="0.0" y="0.0" width="273" height="110"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2J-EW-1QP">
                                         <rect key="frame" x="0.0" y="35" width="2" height="40"/>
@@ -36,34 +36,42 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Ecu-Ap-ubl">
-                                        <rect key="frame" x="19" y="0.0" width="259" height="110"/>
+                                        <rect key="frame" x="19" y="0.0" width="207" height="110"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cT3-f0-BzV">
-                                                <rect key="frame" x="0.0" y="0.0" width="259" height="22.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="22.5"/>
                                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="20"/>
                                                 <color key="textColor" name="MainBlue"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00-01:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfP-vX-Ro9">
-                                                <rect key="frame" x="0.0" y="29.5" width="259" height="13.5"/>
+                                                <rect key="frame" x="0.0" y="29.5" width="207" height="13.5"/>
                                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="12"/>
                                                 <color key="textColor" name="MainGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KC6-yy-O6L">
-                                                <rect key="frame" x="0.0" y="50" width="259" height="13.5"/>
+                                                <rect key="frame" x="0.0" y="50" width="207" height="13.5"/>
                                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="12"/>
                                                 <color key="textColor" name="MainGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zi1-xb-Shi">
-                                                <rect key="frame" x="0.0" y="70.5" width="259" height="39.5"/>
+                                                <rect key="frame" x="0.0" y="70.5" width="207" height="39.5"/>
                                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="13"/>
                                                 <color key="textColor" name="MainBlue"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Uj9-Tn-7vs">
+                                        <rect key="frame" x="243" y="40.5" width="30" height="29"/>
+                                        <color key="tintColor" name="MainPurple"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="TkQ-Sg-xqi"/>
+                                            <constraint firstAttribute="width" constant="30" id="yMh-wZ-kDy"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -73,13 +81,14 @@
                 <constraints>
                     <constraint firstItem="xZi-Qq-LLi" firstAttribute="leading" secondItem="tJH-Uh-PWb" secondAttribute="leading" constant="5" id="3Dz-bz-Hqm"/>
                     <constraint firstItem="xZi-Qq-LLi" firstAttribute="top" secondItem="tJH-Uh-PWb" secondAttribute="top" constant="5" id="R4n-ux-9yh"/>
-                    <constraint firstAttribute="trailing" secondItem="xZi-Qq-LLi" secondAttribute="trailing" constant="5" id="eUg-Q1-Mrg"/>
+                    <constraint firstAttribute="trailing" secondItem="xZi-Qq-LLi" secondAttribute="trailing" constant="10" id="eUg-Q1-Mrg"/>
                     <constraint firstAttribute="bottom" secondItem="xZi-Qq-LLi" secondAttribute="bottom" constant="5" id="ycf-KY-e61"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="cellContent" destination="tJH-Uh-PWb" id="YmZ-Pk-SZk"/>
                 <outlet property="descriptionLabel" destination="KC6-yy-O6L" id="cQt-Ia-Mym"/>
+                <outlet property="doneImage" destination="Uj9-Tn-7vs" id="bds-V2-JDD"/>
                 <outlet property="time" destination="pfP-vX-Ro9" id="13B-Yy-zWQ"/>
                 <outlet property="title" destination="cT3-f0-BzV" id="Dh5-PS-Csc"/>
                 <outlet property="typeLabel" destination="Zi1-xb-Shi" id="LqO-KB-JhJ"/>
@@ -89,6 +98,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="GraphicBackground">
             <color red="0.97600001096725464" green="0.98000001907348633" blue="0.99199998378753662" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
@@ -97,6 +107,9 @@
         </namedColor>
         <namedColor name="MainGray">
             <color red="0.34099999070167542" green="0.34099999070167542" blue="0.34099999070167542" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainPurple">
+            <color red="0.35699999332427979" green="0.40400001406669617" blue="0.79199999570846558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -10,6 +10,7 @@
 		5E046BF52759110D0090B5A6 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E046BF42759110D0090B5A6 /* Task.swift */; };
 		5E0D11EC2746F1EF00F4F905 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0D11EB2746F1EF00F4F905 /* SignUpController.swift */; };
 		5E2137D12775E40100F7DA27 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2137D02775E40100F7DA27 /* ProfileController.swift */; };
+		5E239B4C278B77DA000BBE50 /* TableViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E239B4B278B77DA000BBE50 /* TableViewUtils.swift */; };
 		5E490AAB27578A18000ED5C8 /* AddTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E490AAA27578A18000ED5C8 /* AddTaskController.swift */; };
 		5E52B82627660C8400694952 /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E52B82427660C8400694952 /* TaskController.swift */; };
 		5E60634627693F6700B15F61 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E60634527693F6700B15F61 /* DateHelper.swift */; };
@@ -40,6 +41,7 @@
 		5E046BF42759110D0090B5A6 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		5E0D11EB2746F1EF00F4F905 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		5E2137D02775E40100F7DA27 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		5E239B4B278B77DA000BBE50 /* TableViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewUtils.swift; sourceTree = "<group>"; };
 		5E490AAA27578A18000ED5C8 /* AddTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskController.swift; sourceTree = "<group>"; };
 		5E52B82427660C8400694952 /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
 		5E60634527693F6700B15F61 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				5EE5FA13275228ED00676A7D /* Constants.swift */,
 				5EFD44692755232A00EFBA96 /* Utilities.swift */,
 				5E60634527693F6700B15F61 /* DateHelper.swift */,
+				5E239B4B278B77DA000BBE50 /* TableViewUtils.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				5E943822274FD2F70099CF1C /* Extensions.swift in Sources */,
 				5E2137D12775E40100F7DA27 /* ProfileController.swift in Sources */,
 				5E9954122767A1A1007EE757 /* TaskCell.swift in Sources */,
+				5E239B4C278B77DA000BBE50 /* TableViewUtils.swift in Sources */,
 				5EDA2E93274442FD00546708 /* AppDelegate.swift in Sources */,
 				5ED80BD62784A18800F267A9 /* TypeController.swift in Sources */,
 				5E046BF52759110D0090B5A6 /* Task.swift in Sources */,

@@ -63,15 +63,22 @@ extension TaskController: UITableViewDelegate, UITableViewDataSource {
             let sortedByHourTasks = safetyTasks.sorted(by: {
                 Int($0.startAt.get(.hour))! <= Int($1.startAt.get(.hour))! &&
                 Int($0.startAt.get(.minute))! <= Int($1.startAt.get(.minute))!
+            }).sorted(by: {
+                $0.title.lowercased() <= $1.title.lowercased()
             })
             
             let task = sortedByHourTasks[indexPath.row]
             
             cell.idOfTask = task.id
             cell.title.text = task.title
-            cell.time.text = "\(task.startAt.get(.hour)):\(task.startAt.get(.minute)) - \(task.endTo.get(.hour)):\(task.endTo.get(.minute))"
+            cell.time.text = "\(task.startAt.get(.hour)):\(task.startAt.get(.minute)) - \(task.until.get(.hour)):\(task.until.get(.minute))"
             cell.descriptionLabel.text = task.description
-            cell.time.alpha = 1.0
+            
+            if task.isDone {
+                cell.doneImage.alpha = 1
+            } else {
+                cell.doneImage.alpha = 0
+            }
             
             switch task.type {
             case "work":
@@ -100,7 +107,7 @@ extension TaskController: UITableViewDelegate, UITableViewDataSource {
                 cell.typeLabel.text = ""
             }
         }
-        
+                
         return cell
     }
     
@@ -127,41 +134,18 @@ extension TaskController {
             return UISwipeActionsConfiguration()
         }
         
-        let deleteAction = UIContextualAction(style: .normal, title: nil) { action, view, completion in
-            DBHelper.removeUserTaskWithId(self.selectedTask!.id) {
-                self.todayTaskTableView.deleteRows(at: [indexPath], with: .left)
-            }
-            completion(true)
-        }
-        deleteAction.image = UIImage(systemName: "trash.circle")
-        deleteAction.title = "Delete"
-        deleteAction.backgroundColor = UIColor.init(named: "orangeTypeText")
+        let deleteAction = TableViewUtils.createDeleteAction(task: selectedTask!, indexPath: indexPath, tableView: todayTaskTableView)
+        let updateAction = TableViewUtils.createUpdateAction(task: selectedTask!, tableView: todayTaskTableView, viewController: self)
+        let finishable = TableViewUtils.createDoneAction(task: selectedTask!, cell: selectedCell)
         
-        let updateAction = UIContextualAction(style: .normal, title: "") { action, view, completion in
-            self.performSegue(withIdentifier: K.taskSegue, sender: self)
-            completion(true)
-        }
-        updateAction.image = UIImage(systemName: "pencil.tip.crop.circle")
-        updateAction.title = "Update"
-        updateAction.backgroundColor = UIColor.init(named: "CompletedCardBlue")
+        var configuration: UISwipeActionsConfiguration
         
-        let doneAction = UIContextualAction(style: .normal, title: "") { action, view, completion in
-            self.performSegue(withIdentifier: K.taskSegue, sender: self)
-            completion(true)
+        if selectedTask!.isDone {
+            configuration = UISwipeActionsConfiguration(actions: [deleteAction, finishable])
+        } else {
+            configuration = UISwipeActionsConfiguration(actions: [deleteAction, updateAction, finishable])
         }
-        doneAction.image = UIImage(systemName: "checkmark.shield")
-        doneAction.title = "Done"
-        doneAction.backgroundColor = UIColor.init(named: "PendingCardPurple")
         
-        let notDoneAction = UIContextualAction(style: .normal, title: "") { action, view, completion in
-            self.performSegue(withIdentifier: K.taskSegue, sender: self)
-            completion(true)
-        }
-        notDoneAction.image = UIImage(systemName: "xmark.shield")
-        notDoneAction.backgroundColor = UIColor.init(named: "GraphicBorder")
-        
-        // if statement
-        let configuration = UISwipeActionsConfiguration(actions: [deleteAction, updateAction, doneAction])
         configuration.performsFirstActionWithFullSwipe = false
         
         return configuration

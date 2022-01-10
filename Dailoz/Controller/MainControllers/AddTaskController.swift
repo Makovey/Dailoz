@@ -58,9 +58,11 @@ class AddTaskController: UIViewController {
         super.viewDidLoad()
         self.dismissKeyboardWhenTappedOut()
         
+        titleTextField.delegate = self
         dateTextField.delegate = self
         startAtTextField.delegate = self
         endTextField.delegate = self
+        descriptionTextField.delegate = self
         
         styleTextFields()
         createDatePicker()
@@ -141,16 +143,16 @@ class AddTaskController: UIViewController {
                 
                 DBHelper.saveDataToSubcollection(
                     collection: K.FStore.Collection.tasks,
-                    documentName: DBHelper.userId!,
                     subCollection: K.FStore.Collection.userTasks,
                     data: [
                         K.FStore.Field.id: task.id,
                         K.FStore.Field.title: task.title,
                         K.FStore.Field.date: task.dateBegin,
                         K.FStore.Field.start: task.startAt,
-                        K.FStore.Field.end: task.endTo,
+                        K.FStore.Field.end: task.until,
                         K.FStore.Field.type: task.type ?? "",
-                        K.FStore.Field.description: task.description ?? ""
+                        K.FStore.Field.description: task.description ?? "",
+                        K.FStore.Field.isDone: task.isDone
                     ])
                 
                 Utilities.showBunner(title: "We're plained your task", subtitle: "\(task.title) - startAt \(startAt)", style: .success)
@@ -171,7 +173,7 @@ class AddTaskController: UIViewController {
         
         let taskDate = DateHelper.getMonthAndDay(date: task.dateBegin)
         let taskStartTime = DateHelper.getHourAndMinutes(date: task.startAt)
-        let taskEndTime = DateHelper.getHourAndMinutes(date: task.endTo)
+        let taskEndTime = DateHelper.getHourAndMinutes(date: task.until)
         
         if !DBHelper.userTasks.isEmpty {
             for taskFromDB in DBHelper.userTasks {
@@ -180,7 +182,7 @@ class AddTaskController: UIViewController {
                     if taskDate.month! == dbTaskDate.month! && taskDate.day! == dbTaskDate.day! {
                         
                         let dbTaskStartTime = DateHelper.getHourAndMinutes(date: taskFromDB.startAt)
-                        let dbTaskEndTime = DateHelper.getHourAndMinutes(date: task.endTo)
+                        let dbTaskEndTime = DateHelper.getHourAndMinutes(date: task.until)
                         
                         if taskStartTime.hour == dbTaskStartTime.hour && taskStartTime.minute == dbTaskStartTime.minute {
                             if taskEndTime.hour == dbTaskEndTime.hour && taskEndTime.minute == dbTaskEndTime.minute {

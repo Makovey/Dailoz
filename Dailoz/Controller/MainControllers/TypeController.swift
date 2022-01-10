@@ -13,6 +13,7 @@ class TypeController: UIViewController {
     @IBOutlet weak var typeLabel: UILabel!
     
     var type: String?
+    var selectedTask: Task?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +24,6 @@ class TypeController: UIViewController {
         typeTableView.dataSource = self
         
         typeTableView.register(UINib(nibName: K.Cell.taskCell, bundle: nil), forCellReuseIdentifier: K.Cell.taskCell)
-        NotificationCenter.default.addObserver(self, selector: #selector(deletedTaskNotification), name: Notification.Name.cellDeleted, object: nil)
-    }
-    
-    @objc func deletedTaskNotification() {
-        typeTableView.reloadData()
     }
     
 }
@@ -35,7 +31,15 @@ class TypeController: UIViewController {
 extension TypeController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DBHelper.getTasksByType(type!)?.count ?? 1
+        var countOfTaskToday = DBHelper.getTasksByType(type!)?.count
+        
+        if let _ = countOfTaskToday {
+            self.typeTableView.restore()
+        } else {
+            countOfTaskToday = 0
+            self.typeTableView.setImageWithMessage("You don’t have any task in this type")
+        }
+        return countOfTaskToday!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -45,14 +49,22 @@ extension TypeController: UITableViewDelegate, UITableViewDataSource {
             let sortedByHourTasks = safetyTasks.sorted(by: {
                 Int($0.startAt.get(.hour))! <= Int($1.startAt.get(.hour))! &&
                 Int($0.startAt.get(.minute))! <= Int($1.startAt.get(.minute))!
+            }).sorted(by: {
+                $0.title.lowercased() <= $1.title.lowercased()
             })
             
             let task = sortedByHourTasks[indexPath.row]
             
             cell.idOfTask = task.id
             cell.title.text = task.title
-            cell.time.text = "\(task.startAt.get(.hour)):\(task.startAt.get(.minute)) - \(task.endTo.get(.hour)):\(task.endTo.get(.minute))"
+            cell.time.text = "\(task.startAt.get(.hour)):\(task.startAt.get(.minute)) - \(task.until.get(.hour)):\(task.until.get(.minute))"
             cell.descriptionLabel.text = task.description
+            
+            if task.isDone {
+                cell.doneImage.alpha = 1
+            } else {
+                cell.doneImage.alpha = 0
+            }
             
             switch task.type {
             case "work":
@@ -81,21 +93,6 @@ extension TypeController: UITableViewDelegate, UITableViewDataSource {
                 cell.typeLabel.text = ""
             }
             
-            if !cell.removeButton.isEnabled {
-                cell.removeButton.alpha = 1.0
-                cell.removeButton.isEnabled = true
-                cell.time.alpha = 1.0
-            }
-            
-        } else {
-            cell.title.text = "No task in this category"
-            cell.time.alpha = 0.0
-            cell.verticalLineView.backgroundColor = .clear
-            cell.cellContent.backgroundColor = K.Color.graphic
-            cell.removeButton.alpha = 0.0
-            cell.removeButton.isEnabled = false
-            cell.typeLabel.text = ""
-            cell.descriptionLabel.text = ""
         }
         
         return cell
@@ -103,5 +100,45 @@ extension TypeController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+// MARK: - Swipable cells
+
+extension TypeController {
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let selectedCell = tableView.cellForRow(at: indexPath) as! TaskCell
+        
+        if let safetySelectedTask = DBHelper.userTasks.filter({ $0.id == selectedCell.idOfTask }).first {
+            selectedTask = safetySelectedTask
+        } else {
+            return UISwipeActionsConfiguration()
+        }
+        
+        let deleteAction = TableViewUtils.createDeleteAction(task: selectedTask!, indexPath: indexPath, tableView: typeTableView)
+        let updateAction = TableViewUtils.createUpdateAction(task: selectedTask!, tableView: typeTableView, viewController: self)
+        let finishable = TableViewUtils.createDoneAction(task: selectedTask!, cell: selectedCell)
+        
+        var configuration: UISwipeActionsConfiguration
+        
+        if finishable.title == "Active" {
+            configuration = UISwipeActionsConfiguration(actions: [deleteAction, finishable])
+        } else {
+            configuration = UISwipeActionsConfiguration(actions: [deleteAction, updateAction, finishable])
+        }
+        
+        configuration.performsFirstActionWithFullSwipe = false
+        
+        return configuration
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! TaskDetailController
+        destinationVC.task = selectedTask
     }
 }

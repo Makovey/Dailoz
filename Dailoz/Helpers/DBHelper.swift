@@ -18,9 +18,9 @@ struct DBHelper {
     
     static var userId: String? = nil
     
-    static func saveDataTo(collection: String, documentName: String, data:[String: Any]) {
+    static func saveDataTo(collection: String, data:[String: Any]) {
         db.collection(collection)
-            .document(documentName)
+            .document(userId!)
             .setData(data) { error in
                 if let e = error {
                     print("There was an issue saving data to Firestore \(e)")
@@ -48,9 +48,9 @@ struct DBHelper {
         }
     }
     
-    static func saveDataToSubcollection(collection: String, documentName: String, subCollection: String, data:[String: Any]) {
+    static func saveDataToSubcollection(collection: String, subCollection: String, data: [String: Any]) {
         db.collection(collection)
-            .document(documentName)
+            .document(userId!)
             .collection(subCollection)
             .document()
             .setData(data) { error in
@@ -58,6 +58,30 @@ struct DBHelper {
                     print("There was an issue saving data to Firestore \(e)")
                 } else {
                     print("Successfully saving data to collection: \(collection) and subcollection \(subCollection)")
+                }
+            }
+    }
+    
+    static func updateUserTask(updatableTask: Task, data: [String: Any] ,completion:@escaping(() -> ())) {
+        db.collection(K.FStore.Collection.tasks)
+            .document(userId!)
+            .collection(K.FStore.Collection.userTasks)
+            .getDocuments { querySnaphost, error in
+                if let e = error {
+                    print("Can't update document cause: \(e)")
+                } else {
+                    for document in querySnaphost!.documents {
+                        if document.data()[K.FStore.Field.id] as? String == updatableTask.id {
+                            document.reference.updateData(data)
+                            for task in userTasks {
+                                if task.id == updatableTask.id {
+                                    userTasks.remove(task)
+                                    userTasks.insert(updatableTask)
+                                }
+                            }
+                            completion()
+                        }
+                    }
                 }
             }
     }
@@ -76,8 +100,9 @@ struct DBHelper {
                             let startAt = data[K.FStore.Field.start] as? Timestamp,
                             let end = data[K.FStore.Field.end] as? Timestamp,
                             let type = data[K.FStore.Field.type] as? String,
-                            let descritpion = data[K.FStore.Field.description] as? String {
-                            let task = Task(id: id, title: title, dateBegin: date.dateValue(), startAt: startAt.dateValue(), endTo: end.dateValue(), type: type, description: descritpion)
+                            let descritpion = data[K.FStore.Field.description] as? String,
+                            let isDone = data[K.FStore.Field.isDone] as? Bool {
+                            let task = Task(id: id, title: title, dateBegin: date.dateValue(), startAt: startAt.dateValue(), endTo: end.dateValue(), type: type, description: descritpion, isDone: isDone)
                             
                             userTasks.insert(task)
                         }

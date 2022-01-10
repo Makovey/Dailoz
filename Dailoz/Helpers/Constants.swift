@@ -35,6 +35,7 @@ struct K {
             static let end = "end"
             static let type = "type"
             static let description = "description"
+            static let isDone = "isDone"
         }
 
     }

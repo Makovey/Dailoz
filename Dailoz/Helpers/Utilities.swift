@@ -67,7 +67,7 @@ class Utilities {
         let request = UNNotificationRequest(identifier: task.id, content: content, trigger: trigger)
         notificationCenter.add(request) { error in
             if error != nil {
-                fatalError("Cannot create remainder cause \(error?.localizedDescription)")
+                fatalError("Cannot create remainder cause: \(error?.localizedDescription)")
             }
         }
         if showBanner {

@@ -44,7 +44,6 @@ class SignUpController: UIViewController {
                 } else {
                     DBHelper.saveDataTo(
                         collection: K.FStore.Collection.userInfo,
-                        documentName: DBHelper.userId!,
                         data: [
                             K.FStore.Field.name : username,
                             K.FStore.Field.email : email
