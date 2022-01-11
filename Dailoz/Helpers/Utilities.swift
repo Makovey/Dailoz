@@ -9,10 +9,12 @@ import Foundation
 import UIKit
 import NotificationBannerSwift
 
-class Utilities {
+struct Utilities {
     
     private static let notificationCenter = UNUserNotificationCenter.current()
     private static let content = UNMutableNotificationContent()
+    
+    // MARK: - Style
     
     static func styleTextField(_ textfield:UITextField) {
         textfield.layer.borderColor = UIColor.init(red: 125/255, green: 136/255, blue: 231/255, alpha: 1).cgColor
@@ -20,10 +22,27 @@ class Utilities {
         textfield.layer.cornerRadius = 10.0
     }
     
+    static func styleButton(_ button: UIButton, borderWidth: Double, borderColor: UIColor?) {
+        button.layer.borderWidth = borderWidth
+        if let borderColor = borderColor {
+            button.layer.borderColor = borderColor.cgColor
+        }
+    }
+    
+    // MARK: - TextFields
+    
     static func isPasswordValid(_ password : String) -> Bool {
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
         return passwordTest.evaluate(with: password)
     }
+    
+    static func clearAllTextFields(textFields: [UITextField]) {
+        for textField in textFields {
+            textField.text = ""
+        }
+    }
+    
+    // MARK: - Show bunner
     
     static func showBunner(title: String, subtitle: String, style: BannerStyle) {
         let banner = GrowingNotificationBanner(title: title, subtitle: subtitle, style: style)
@@ -34,18 +53,7 @@ class Utilities {
         banner.show(queuePosition: .front)
     }
     
-    static func clearAllTextFields(textFields: [UITextField]) {
-        for textField in textFields {
-            textField.text = ""
-        }
-    }
-    
-    static func styleButton(_ button: UIButton, borderWidth: Double, borderColor: UIColor?) {
-        button.layer.borderWidth = borderWidth
-        if let borderColor = borderColor {
-            button.layer.borderColor = borderColor.cgColor
-        }
-    }
+    // MARK: - Notifications
     
     static func scheduleNotificationToTask(_ task: Task, showBanner: Bool) {
         content.title = "Dailoz"
@@ -66,12 +74,43 @@ class Utilities {
         
         let request = UNNotificationRequest(identifier: task.id, content: content, trigger: trigger)
         notificationCenter.add(request) { error in
-            if error != nil {
-                fatalError("Cannot create remainder cause: \(error?.localizedDescription)")
+            if let e = error {
+                fatalError("Cannot create remainder cause: \(e.localizedDescription)")
             }
         }
+        
         if showBanner {
             showBunner(title: "We remaind you about your task", subtitle: "In \(task.startAt.get(.hour)) : \(task.startAt.get(.minute))", style: .success)
         }
+    }
+    
+    static func deleteNotificationById(_ id: String) {
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: [id])
+    }
+    
+    // MARK: - Pickers
+    
+    static func setUpDatePicker(_ datePicker: UIDatePicker) {
+        if #available(iOS 14.0, *) {
+            datePicker.preferredDatePickerStyle = .inline
+        } else if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        }
+        
+        datePicker.datePickerMode = .date
+        datePicker.backgroundColor = .white
+        datePicker.timeZone = .autoupdatingCurrent
+        datePicker.tintColor = K.Color.mainPurple
+    }
+    
+    static func setUpTimePicker(_ timePicker: UIDatePicker) {
+        if #available(iOS 13.4, *) {
+            timePicker.preferredDatePickerStyle = .wheels
+        }
+        
+        timePicker.datePickerMode = .time
+        timePicker.backgroundColor = .white
+        timePicker.timeZone = .autoupdatingCurrent
+        timePicker.tintColor = K.Color.mainPurple
     }
 }

@@ -20,7 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter
             .current()
             .requestAuthorization(options: [.alert, .badge, .sound]) { granded, error in
-                print("Haven't permission cause \(error)")
+                if let e = error {
+                    print("Haven't permission cause \(e)")
+                }
             }
         return true
     }

@@ -28,10 +28,7 @@ class AddTaskController: UIViewController {
     
     let datePicker = UIDatePicker()
     let timePicker = UIDatePicker()
-    
-    //    TODO
-    //    var changingTask = false
-    
+        
     let dateFormatter: DateFormatter = {
         let df = DateFormatter()
         df.dateStyle = .full
@@ -52,7 +49,7 @@ class AddTaskController: UIViewController {
     
     var typeOfTask: String?
     
-    var isNeededRemaind = false
+    var isRemindChecked = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,8 +62,9 @@ class AddTaskController: UIViewController {
         descriptionTextField.delegate = self
         
         styleTextFields()
-        createDatePicker()
-        createTimePicker()
+        
+        Utilities.setUpDatePicker(datePicker)
+        Utilities.setUpTimePicker(timePicker)
     }
     
     @IBAction func tagButtonPressed(_ sender: UIButton) {
@@ -127,14 +125,16 @@ class AddTaskController: UIViewController {
     }
     
     @IBAction func createButtonPressed(_ sender: UIButton) {
-        validateAndSaveTask()
-    }
-    
-    func validateAndSaveTask() {
         if let title = titleTextField.text, let date = dateTextField.text, let startAt = startAtTextField.text, let endTo = endTextField.text {
             if !title.isEmpty && !date.isEmpty && !startAt.isEmpty && !endTo.isEmpty {
                 
-                let task = Task(title: title, dateBegin: datePicker.date, startAt: timing.start, endTo: timing.end, type: typeOfTask, description: descriptionTextField.text ?? "")
+                let task = Task(title: title,
+                                dateBegin: datePicker.date,
+                                startAt: timing.start,
+                                until: timing.end,
+                                type: typeOfTask,
+                                description: descriptionTextField.text ?? "",
+                                isNeededRemind: isRemindChecked)
                 
                 if checkAlreadyHasThisTask(task) {
                     Utilities.showBunner(title: "Oops", subtitle: "You're alredy planned \(task.title)", style: .warning)
@@ -152,13 +152,14 @@ class AddTaskController: UIViewController {
                         K.FStore.Field.end: task.until,
                         K.FStore.Field.type: task.type ?? "",
                         K.FStore.Field.description: task.description ?? "",
-                        K.FStore.Field.isDone: task.isDone
+                        K.FStore.Field.isDone: task.isDone,
+                        K.FStore.Field.isNeededRemind: task.isNeededRemind
                     ])
                 
                 Utilities.showBunner(title: "We're plained your task", subtitle: "\(task.title) - startAt \(startAt)", style: .success)
                 Utilities.clearAllTextFields(textFields: createTaskTextFields)
                 
-                if isNeededRemaind {
+                if isRemindChecked {
                     Utilities.scheduleNotificationToTask(task, showBanner: false)
                 }
                 
@@ -198,13 +199,13 @@ class AddTaskController: UIViewController {
     }
     
     @IBAction func checkboxPressed(_ sender: UIButton) {
-        if !isNeededRemaind {
+        if !isRemindChecked {
             remainderCheckbox.setImage(UIImage(named:"checkboxSelected"), for: .normal)
         } else {
             remainderCheckbox.setImage(UIImage(named:"checkboxUnselected"), for: .normal)
         }
         
-        isNeededRemaind = !isNeededRemaind
+        isRemindChecked = !isRemindChecked
     }
 }
 
@@ -217,7 +218,7 @@ extension AddTaskController: UITextFieldDelegate {
         case titleTextField:
             dateTextField.becomeFirstResponder()
         case descriptionTextField:
-            validateAndSaveTask()
+            view.endEditing(true)
         default: break
             
         }
@@ -247,31 +248,7 @@ extension AddTaskController: UITextFieldDelegate {
         }
     }
     
-    func createDatePicker() {
-        if #available(iOS 14.0, *) {
-            datePicker.preferredDatePickerStyle = .inline
-        } else if #available(iOS 13.4, *) {
-            datePicker.preferredDatePickerStyle = .wheels
-        }
-        
-        datePicker.datePickerMode = .date
-        datePicker.backgroundColor = .white
-        datePicker.timeZone = .autoupdatingCurrent
-        datePicker.tintColor = K.Color.mainPurple
-    }
-    
-    func createTimePicker() {
-        if #available(iOS 13.4, *) {
-            timePicker.preferredDatePickerStyle = .wheels
-        }
-        
-        timePicker.datePickerMode = .time
-        timePicker.backgroundColor = .white
-        timePicker.timeZone = .autoupdatingCurrent
-        timePicker.tintColor = K.Color.mainPurple
-    }
-    
-    
+
     func bindPicker(picker: UIDatePicker,to textField: UITextField) {
         textField.inputView = picker
         textField.inputAccessoryView = createToolbarToTextField(textField)

@@ -60,12 +60,7 @@ extension TaskController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.Cell.taskCell, for: indexPath) as! TaskCell
         
         if let safetyTasks = DBHelper.getOnlyTaskOfDay(datePicker.date) {
-            let sortedByHourTasks = safetyTasks.sorted(by: {
-                Int($0.startAt.get(.hour))! <= Int($1.startAt.get(.hour))! &&
-                Int($0.startAt.get(.minute))! <= Int($1.startAt.get(.minute))!
-            }).sorted(by: {
-                $0.title.lowercased() <= $1.title.lowercased()
-            })
+            let sortedByHourTasks = safetyTasks.sorted(by: { $0.startAt.compare($1.startAt) == .orderedAscending })
             
             let task = sortedByHourTasks[indexPath.row]
             
@@ -153,7 +148,7 @@ extension TaskController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! TaskDetailController
-        destinationVC.task = selectedTask
+        destinationVC.currentTask = selectedTask
     }
 }
 

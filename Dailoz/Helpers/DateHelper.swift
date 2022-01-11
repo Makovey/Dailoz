@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DateHelper {
+struct DateHelper {
     
     private static let calendar = Calendar.current
     

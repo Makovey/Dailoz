@@ -101,8 +101,17 @@ struct DBHelper {
                             let end = data[K.FStore.Field.end] as? Timestamp,
                             let type = data[K.FStore.Field.type] as? String,
                             let descritpion = data[K.FStore.Field.description] as? String,
-                            let isDone = data[K.FStore.Field.isDone] as? Bool {
-                            let task = Task(id: id, title: title, dateBegin: date.dateValue(), startAt: startAt.dateValue(), endTo: end.dateValue(), type: type, description: descritpion, isDone: isDone)
+                            let isDone = data[K.FStore.Field.isDone] as? Bool,
+                            let isNeededRemind = data[K.FStore.Field.isNeededRemind] as? Bool {
+                            let task = Task(id: id,
+                                            title: title,
+                                            dateBegin: date.dateValue(),
+                                            startAt: startAt.dateValue(),
+                                            until: end.dateValue(),
+                                            type: type,
+                                            description: descritpion,
+                                            isDone: isDone,
+                                            isNeededRemind: isNeededRemind)
                             
                             userTasks.insert(task)
                         }
