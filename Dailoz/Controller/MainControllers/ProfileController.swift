@@ -33,15 +33,6 @@ class ProfileController: UIViewController {
     
     var typeTapped: String?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        if let name = DBHelper.userInfo?.username, let email = DBHelper.userInfo?.email {
-            usernameLabel.text = name
-            emailLabel.text = email
-        }
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -50,6 +41,13 @@ class ProfileController: UIViewController {
         studyTaskCountLabel.text = prepareTextByType("study")
         otherTaskCountLabel.text = prepareTextByType("other")
         allTaskCountLabel.text = prepareTextByType("all")
+        
+        guard let userInfo = DBHelper.userInfo else {
+            fatalError("UserInfo not loaded")
+        }
+        
+        usernameLabel.text = userInfo.username
+        emailLabel.text = userInfo.email
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -99,8 +97,8 @@ class ProfileController: UIViewController {
             try Auth.auth().signOut()
             self.parent?.navigationController?.popViewController(animated: true)
             DBHelper.userId = nil
-        } catch let signOutError as NSError {
-            print("Error signing out: %@", signOutError)
+        } catch {
+            print("Error signing out cause: \(error)")
         }
     }
     

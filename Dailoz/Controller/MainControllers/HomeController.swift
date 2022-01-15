@@ -15,18 +15,16 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        usernameLabel.text = DBHelper.userInfo?.username
+        DBHelper.fetchUsersData {
+            print("1")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("Home Controller called")
-        updateUI()
     }
     
-    func updateUI() {
-        DBHelper.reloadUserTasks {
-            print("Home Controller \(DBHelper.userTasks.count)")
-            self.usernameLabel.text = String(DBHelper.userTasks.count)
-        }
-    }
 }

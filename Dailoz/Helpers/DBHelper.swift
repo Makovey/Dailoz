@@ -68,7 +68,7 @@ struct DBHelper {
             .collection(K.FStore.Collection.userTasks)
             .getDocuments { querySnaphost, error in
                 if let e = error {
-                    print("Can't update document cause: \(e)")
+                    print("Can't update task cause: \(e)")
                 } else {
                     for document in querySnaphost!.documents {
                         if document.data()[K.FStore.Field.id] as? String == updatableTask.id {
@@ -86,7 +86,31 @@ struct DBHelper {
             }
     }
     
-    static func reloadUserTasks(completion:@escaping(() -> ())) {        
+    static func updateUserInfo(data: [String: Any] ,completion:@escaping(() -> ())) {
+        let user = Auth.auth().currentUser!
+        
+        db.collection(K.FStore.Collection.userInfo)
+            .document(userId!)
+            .updateData(data) { error in
+                if let e = error {
+                    print("Can't update users data cause: \(e)")
+                } else {
+                    if data.keys.contains(K.FStore.Field.name) {
+                        let newName = data[K.FStore.Field.name] as! String
+                        userInfo?.username = newName
+                    } else {
+                        let newEmail = data[K.FStore.Field.email] as! String
+                        userInfo?.email = newEmail
+                        user.updateEmail(to: newEmail) { error in
+                            print("Can't update email in firebase")
+                        }
+                    }
+                }
+                completion()
+            }
+    }
+    
+    static func fetchUsersData(completion:@escaping(() -> ())) {
         db.collection(K.FStore.Collection.tasks)
             .document(userId!)
             .collection(K.FStore.Collection.userTasks)
@@ -150,16 +174,16 @@ struct DBHelper {
         db.collection(K.FStore.Collection.userInfo)
             .document(userId!)
             .getDocument { (document, error) in
-            if let document = document, document.exists {
-                let data = document.data()!
-                if let username = data[K.FStore.Field.name] as? String,
-                   let email = data[K.FStore.Field.email] as? String {
-                    userInfo = UserInfo(username: username, email: email)
+                if let document = document, document.exists {
+                    let data = document.data()!
+                    if let username = data[K.FStore.Field.name] as? String,
+                       let email = data[K.FStore.Field.email] as? String {
+                        userInfo = UserInfo(username: username, email: email)
+                    }
+                } else {
+                    print("Document does not exist")
                 }
-            } else {
-                print("Document does not exist")
             }
-        }
     }
     
     static func getTasksByType(_ type: String) -> [Task]? {
@@ -170,4 +194,25 @@ struct DBHelper {
         return filteredTask.count > 0 ? Array(filteredTask) : nil
     }
     
+    static func deleteAccountAndTasks(completion:@escaping(() -> ())) {
+        db.collection(K.FStore.Collection.userInfo)
+            .document(userId!)
+            .delete { error in
+                if let e = error {
+                    print("Can't delete account cause \(e)")
+                } else {
+                    db.collection(K.FStore.Collection.tasks)
+                        .document(userId!)
+                        .delete()
+                    // TODO Tasks not deeted
+                    
+                    Auth.auth().currentUser?.delete(completion: { error in
+                        if let e = error {
+                            print("Can't delete firebase cause \(e)")
+                        }
+                    })
+                }
+                completion()
+            }
+    }
 }

@@ -21,6 +21,10 @@ struct TableViewUtils {
         deleteAction.image = UIImage(systemName: "trash.circle")
         deleteAction.backgroundColor = UIColor.init(named: "orangeTypeText")
         
+        if task.isNeededRemind {
+            Utilities.deleteNotificationById(task.id)
+        }
+        
         return deleteAction
     }
     

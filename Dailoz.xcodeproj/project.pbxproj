@@ -13,6 +13,7 @@
 		5E239B4C278B77DA000BBE50 /* TableViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E239B4B278B77DA000BBE50 /* TableViewUtils.swift */; };
 		5E490AAB27578A18000ED5C8 /* AddTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E490AAA27578A18000ED5C8 /* AddTaskController.swift */; };
 		5E52B82627660C8400694952 /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E52B82427660C8400694952 /* TaskController.swift */; };
+		5E5693E62790337800F4C1FE /* UserSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5693E52790337800F4C1FE /* UserSettingsController.swift */; };
 		5E60634627693F6700B15F61 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E60634527693F6700B15F61 /* DateHelper.swift */; };
 		5E6F221F275E2B4900333B13 /* Comfortaa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E6F221E275E2B4900333B13 /* Comfortaa.ttf */; };
 		5E6F2222275E4BF900333B13 /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E6F2221275E4BF900333B13 /* Comfortaa-Bold.ttf */; };
@@ -44,6 +45,7 @@
 		5E239B4B278B77DA000BBE50 /* TableViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewUtils.swift; sourceTree = "<group>"; };
 		5E490AAA27578A18000ED5C8 /* AddTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskController.swift; sourceTree = "<group>"; };
 		5E52B82427660C8400694952 /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
+		5E5693E52790337800F4C1FE /* UserSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsController.swift; sourceTree = "<group>"; };
 		5E60634527693F6700B15F61 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		5E6F221E275E2B4900333B13 /* Comfortaa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Comfortaa.ttf; sourceTree = "<group>"; };
 		5E6F2221275E4BF900333B13 /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
@@ -112,6 +114,15 @@
 			path = StarterControllers;
 			sourceTree = "<group>";
 		};
+		5E5693E42790334800F4C1FE /* AdditionalControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5E8670C52785EAD600A07862 /* TaskDetailController.swift */,
+				5E5693E52790337800F4C1FE /* UserSettingsController.swift */,
+			);
+			path = AdditionalControllers;
+			sourceTree = "<group>";
+		};
 		5E6774F82773C1F0006DD545 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +188,7 @@
 			children = (
 				5E0D11EA2746E5AD00F4F905 /* StarterControllers */,
 				5EFD446B2755669C00EFBA96 /* MainControllers */,
+				5E5693E42790334800F4C1FE /* AdditionalControllers */,
 				5E943821274FD2F70099CF1C /* Extensions.swift */,
 			);
 			path = Controller;
@@ -220,7 +232,6 @@
 				5E52B82427660C8400694952 /* TaskController.swift */,
 				5E2137D02775E40100F7DA27 /* ProfileController.swift */,
 				5ED80BD52784A18800F267A9 /* TypeController.swift */,
-				5E8670C52785EAD600A07862 /* TaskDetailController.swift */,
 				5E6774F82773C1F0006DD545 /* Cells */,
 			);
 			path = MainControllers;
@@ -359,6 +370,7 @@
 				5EE5FA14275228ED00676A7D /* Constants.swift in Sources */,
 				5E943822274FD2F70099CF1C /* Extensions.swift in Sources */,
 				5E2137D12775E40100F7DA27 /* ProfileController.swift in Sources */,
+				5E5693E62790337800F4C1FE /* UserSettingsController.swift in Sources */,
 				5E9954122767A1A1007EE757 /* TaskCell.swift in Sources */,
 				5E239B4C278B77DA000BBE50 /* TableViewUtils.swift in Sources */,
 				5EDA2E93274442FD00546708 /* AppDelegate.swift in Sources */,
@@ -525,6 +537,7 @@
 				DEVELOPMENT_TEAM = QY32558B3C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Dailoz/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Taskly;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -556,6 +569,7 @@
 				DEVELOPMENT_TEAM = QY32558B3C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Dailoz/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Taskly;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

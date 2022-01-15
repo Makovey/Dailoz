@@ -33,23 +33,31 @@ class SignUpController: UIViewController {
     }
     
     func signUp() {
+        disableSignUpButton()
         if let username = usernameTextField.text, let email = emailTextField.text, let password = passwordTextField.text {
             if username.isEmpty {
                 Utilities.showBunner(title: "Oh, we can't sign up", subtitle: "Please, fill username field", style: .danger)
+                enableSignUpButton()
                 return
             }
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if let e = error {
                     Utilities.showBunner(title: "Oh, we can't sign up", subtitle: e.localizedDescription, style: .danger)
                 } else {
+                    DBHelper.userId = Auth.auth().currentUser?.uid
+
                     DBHelper.saveDataTo(
                         collection: K.FStore.Collection.userInfo,
                         data: [
                             K.FStore.Field.name : username,
                             K.FStore.Field.email : email
                         ])
+                    
+                    DBHelper.loadUserInfo()
                     self.performSegue(withIdentifier: K.signUpSegue, sender: self)
+                    self.passwordTextField.text = ""
                 }
+                self.enableSignUpButton()
             }
         }
     }
@@ -58,6 +66,16 @@ class SignUpController: UIViewController {
         for textField in [usernameTextField, emailTextField, passwordTextField] {
             Utilities.styleTextField(textField!)
         }
+    }
+    
+    func disableSignUpButton() {
+        signUpButton.isEnabled = false
+        signUpButton.alpha = 0.8
+    }
+    
+    func enableSignUpButton() {
+        signUpButton.isEnabled = true
+        signUpButton.alpha = 1.0
     }
     
 }
