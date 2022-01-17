@@ -38,13 +38,14 @@ class LoginController: UIViewController {
             Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
                 if let e = error {
                     Utilities.showBunner(title: "Oh, we can't login", subtitle: e.localizedDescription, style: .danger)
+                    self.enableLoginButton()
                 } else {
-                    DBHelper.userId = Auth.auth().currentUser?.uid
-                    DBHelper.loadUserInfo()
-                    self.passwordTextField.text = ""
-                    self.performSegue(withIdentifier: K.loginSegue, sender: self)
+                    DBHelper.prepareData {
+                        self.passwordTextField.text = ""
+                        self.enableLoginButton()
+                        self.performSegue(withIdentifier: K.loginSegue, sender: self)
+                    }
                 }
-                self.enableLoginButton()
             }
         }
     }

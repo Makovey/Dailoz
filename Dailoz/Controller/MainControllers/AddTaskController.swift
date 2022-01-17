@@ -28,7 +28,7 @@ class AddTaskController: UIViewController {
     
     let datePicker = UIDatePicker()
     let timePicker = UIDatePicker()
-        
+    
     let dateFormatter: DateFormatter = {
         let df = DateFormatter()
         df.dateStyle = .full
@@ -156,8 +156,11 @@ class AddTaskController: UIViewController {
                         K.FStore.Field.isNeededRemind: task.isNeededRemind
                     ])
                 
+                //                DBHelper.reloadUserTasks {
+                DBHelper.userTasks.insert(task)
                 Utilities.showBunner(title: "We're plained your task", subtitle: "\(task.title) - startAt \(startAt)", style: .success)
-                Utilities.clearAllTextFields(textFields: createTaskTextFields)
+                Utilities.clearAllTextFields(textFields: self.createTaskTextFields)
+                //                }
                 
                 if isRemindChecked {
                     Utilities.scheduleNotificationToTask(task, showBanner: false)
@@ -248,7 +251,7 @@ extension AddTaskController: UITextFieldDelegate {
         }
     }
     
-
+    
     func bindPicker(picker: UIDatePicker,to textField: UITextField) {
         textField.inputView = picker
         textField.inputAccessoryView = createToolbarToTextField(textField)

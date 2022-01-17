@@ -43,6 +43,7 @@ class SignUpController: UIViewController {
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if let e = error {
                     Utilities.showBunner(title: "Oh, we can't sign up", subtitle: e.localizedDescription, style: .danger)
+                    self.enableSignUpButton()
                 } else {
                     DBHelper.userId = Auth.auth().currentUser?.uid
 
@@ -53,11 +54,12 @@ class SignUpController: UIViewController {
                             K.FStore.Field.email : email
                         ])
                     
-                    DBHelper.loadUserInfo()
-                    self.performSegue(withIdentifier: K.signUpSegue, sender: self)
-                    self.passwordTextField.text = ""
+                    DBHelper.prepareData {
+                        self.passwordTextField.text = ""
+                        self.enableSignUpButton()
+                        self.performSegue(withIdentifier: K.signUpSegue, sender: self)
+                    }
                 }
-                self.enableSignUpButton()
             }
         }
     }

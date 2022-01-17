@@ -110,41 +110,68 @@ struct DBHelper {
             }
     }
     
-    static func fetchUsersData(completion:@escaping(() -> ())) {
+    static func prepareData(completion:@escaping(() -> ())) {
+        userId = Auth.auth().currentUser?.uid
+        loadUserInfo {
+            fetchUserTasks {
+                completion()
+            }
+        }
+    }
+    
+    static func reloadUserTasks(completion:@escaping(() -> ())) {
         db.collection(K.FStore.Collection.tasks)
             .document(userId!)
             .collection(K.FStore.Collection.userTasks)
             .addSnapshotListener({ querySnapshot, error in
                 if let snapshotDocument = querySnapshot?.documents {
-                    for doc in snapshotDocument {
-                        let data = doc.data()
-                        if  let id = data[K.FStore.Field.id] as? String,
-                            let title = data[K.FStore.Field.title] as? String,
-                            let date = data[K.FStore.Field.date] as? Timestamp,
-                            let startAt = data[K.FStore.Field.start] as? Timestamp,
-                            let end = data[K.FStore.Field.end] as? Timestamp,
-                            let type = data[K.FStore.Field.type] as? String,
-                            let descritpion = data[K.FStore.Field.description] as? String,
-                            let isDone = data[K.FStore.Field.isDone] as? Bool,
-                            let isNeededRemind = data[K.FStore.Field.isNeededRemind] as? Bool {
-                            let task = Task(id: id,
-                                            title: title,
-                                            dateBegin: date.dateValue(),
-                                            startAt: startAt.dateValue(),
-                                            until: end.dateValue(),
-                                            type: type,
-                                            description: descritpion,
-                                            isDone: isDone,
-                                            isNeededRemind: isNeededRemind)
-                            
-                            userTasks.insert(task)
-                        }
-                    }
+                    fillCollectionWithData(snapshotDocument: snapshotDocument)
                 } else {
                     print("No documents appeared")
                 }
                 completion()
             })
+    }
+    
+    // if hotswap works correctly, remove it
+    static func fetchUserTasks(completion:@escaping(() -> ())) {
+        db.collection(K.FStore.Collection.tasks)
+            .document(userId!)
+            .collection(K.FStore.Collection.userTasks)
+            .getDocuments { querySnapshot, error in
+                if let snapshotDocument = querySnapshot?.documents {
+                    fillCollectionWithData(snapshotDocument: snapshotDocument)
+                }
+                completion()
+            }
+    }
+    
+    static func fillCollectionWithData(snapshotDocument: [QueryDocumentSnapshot]) {
+        for doc in snapshotDocument {
+            let data = doc.data()
+            
+            if  let id = data[K.FStore.Field.id] as? String,
+                let title = data[K.FStore.Field.title] as? String,
+                let date = data[K.FStore.Field.date] as? Timestamp,
+                let startAt = data[K.FStore.Field.start] as? Timestamp,
+                let end = data[K.FStore.Field.end] as? Timestamp,
+                let type = data[K.FStore.Field.type] as? String,
+                let descritpion = data[K.FStore.Field.description] as? String,
+                let isDone = data[K.FStore.Field.isDone] as? Bool,
+                let isNeededRemind = data[K.FStore.Field.isNeededRemind] as? Bool {
+                let task = Task(id: id,
+                                title: title,
+                                dateBegin: date.dateValue(),
+                                startAt: startAt.dateValue(),
+                                until: end.dateValue(),
+                                type: type,
+                                description: descritpion,
+                                isDone: isDone,
+                                isNeededRemind: isNeededRemind)
+                
+                userTasks.insert(task)
+            }
+        }
     }
     
     static func removeUserTaskWithId(_ id: String, completion:@escaping(() -> ())) {
@@ -170,7 +197,7 @@ struct DBHelper {
             }
     }
     
-    static func loadUserInfo() {
+    private static func loadUserInfo(completion: @escaping(() -> ())) {
         db.collection(K.FStore.Collection.userInfo)
             .document(userId!)
             .getDocument { (document, error) in
@@ -183,6 +210,7 @@ struct DBHelper {
                 } else {
                     print("Document does not exist")
                 }
+                completion()
             }
     }
     
@@ -203,12 +231,20 @@ struct DBHelper {
                 } else {
                     db.collection(K.FStore.Collection.tasks)
                         .document(userId!)
-                        .delete()
-                    // TODO Tasks not deeted
+                        .collection(K.FStore.Collection.userTasks)
+                        .getDocuments { querySnapshot, error in
+                            if let e = error {
+                                print("Can't delete all documents cause: \(e)")
+                            }
+                            for doc in querySnapshot!.documents {
+                                doc.reference.delete()
+                                DBHelper.userTasks.removeAll()
+                            }
+                        }
                     
                     Auth.auth().currentUser?.delete(completion: { error in
                         if let e = error {
-                            print("Can't delete firebase cause \(e)")
+                            print("Can't delete user from firebase cause \(e)")
                         }
                     })
                 }

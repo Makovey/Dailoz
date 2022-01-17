@@ -64,11 +64,13 @@ class UserSettingsController: UIViewController {
     
     
     @IBAction func deleteButtonPressed(_ sender: Any) {
-        let alert = UIAlertController(title: "Are you sure?", message: "You definitely want to delete your account with your tasks?", preferredStyle: UIAlertController.Style.alert)
+        let alertMeesage = "You definitely want to delete your account with tasks?"
+        let alert = UIAlertController(title: "Are you sure?", message: alertMeesage, preferredStyle: UIAlertController.Style.alert)
 
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default) { _ in
             DBHelper.deleteAccountAndTasks() {
                 DBHelper.userId = nil
+                DBHelper.userTasks.removeAll()
                 self.parent?.navigationController?.popViewController(animated: true)
             }
         })
