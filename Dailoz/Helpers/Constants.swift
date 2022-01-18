@@ -12,6 +12,7 @@ struct K {
     static let signUpSegue = "signUpToMain"
     static let profileSegue = "profileToType"
     static let taskSegue = "tableToTask"
+    static let homeSegue = "homeToDone"
     
     static let mainFont = "Comfortaa"
     static let mainFontBolt = "Comfortaa-Bold"

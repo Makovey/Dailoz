@@ -26,7 +26,6 @@
 		5ED80BD62784A18800F267A9 /* TypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED80BD52784A18800F267A9 /* TypeController.swift */; };
 		5EDA2E93274442FD00546708 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA2E92274442FD00546708 /* AppDelegate.swift */; };
 		5EDA2E95274442FD00546708 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA2E94274442FD00546708 /* SceneDelegate.swift */; };
-		5EDA2E97274442FD00546708 /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA2E96274442FD00546708 /* SplashController.swift */; };
 		5EDA2E9A274442FD00546708 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDA2E98274442FD00546708 /* Main.storyboard */; };
 		5EDA2E9C2744430100546708 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EDA2E9B2744430100546708 /* Assets.xcassets */; };
 		5EDA2E9F2744430100546708 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDA2E9D2744430100546708 /* LaunchScreen.storyboard */; };
@@ -59,7 +58,6 @@
 		5EDA2E8F274442FD00546708 /* Dailoz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dailoz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EDA2E92274442FD00546708 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EDA2E94274442FD00546708 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5EDA2E96274442FD00546708 /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
 		5EDA2E99274442FD00546708 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5EDA2E9B2744430100546708 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5EDA2E9E2744430100546708 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 		5E0D11EA2746E5AD00F4F905 /* StarterControllers */ = {
 			isa = PBXGroup;
 			children = (
-				5EDA2E96274442FD00546708 /* SplashController.swift */,
 				5E0D11EB2746F1EF00F4F905 /* SignUpController.swift */,
 				5EED98E6274A55DA00918BE7 /* LoginController.swift */,
 			);
@@ -365,7 +362,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E52B82627660C8400694952 /* TaskController.swift in Sources */,
-				5EDA2E97274442FD00546708 /* SplashController.swift in Sources */,
 				5E8670C62785EAD600A07862 /* TaskDetailController.swift in Sources */,
 				5EE5FA14275228ED00676A7D /* Constants.swift in Sources */,
 				5E943822274FD2F70099CF1C /* Extensions.swift in Sources */,

@@ -222,6 +222,54 @@ struct DBHelper {
         return filteredTask.count > 0 ? Array(filteredTask) : nil
     }
     
+    static func getTasksByDonable(_ type: String) -> [Task]? {
+        var filteredTask: [Task]? = [Task]()
+        let today = Date()
+        
+        
+        switch type {
+        case "active":
+            for task in userTasks {
+                if task.isDone { break }
+                if task.dateBegin.get(.year) > today.get(.year) {
+                    filteredTask?.append(task)
+                } else if task.dateBegin.get(.month) > today.get(.month) {
+                    filteredTask?.append(task)
+                } else if task.dateBegin.get(.day) > today.get(.day) {
+                    filteredTask?.append(task)
+                } else if task.dateBegin.get(.day) == today.get(.day) && task.dateBegin.get(.hour) > today.get(.hour) {
+                    filteredTask?.append(task)
+                } else if task.dateBegin.get(.day) == today.get(.day) && task.startAt.get(.hour) == today.get(.hour) && task.startAt.get(.minute) >= today.get(.minute) {
+                    filteredTask?.append(task)
+                }
+            }
+        case "expired":
+            for task in userTasks {
+                if task.isDone { break }
+                if task.dateBegin.get(.year) < today.get(.year) {
+                    filteredTask?.append(task)
+                } else if task.dateBegin.get(.month) < today.get(.month) {
+                    filteredTask?.append(task)
+                } else if task.dateBegin.get(.day) < today.get(.day) {
+                    filteredTask?.append(task)
+                } else if task.dateBegin.get(.day) == today.get(.day) && task.dateBegin.get(.hour) < today.get(.hour) {
+                    filteredTask?.append(task)
+                } else if task.dateBegin.get(.day) == today.get(.day) && task.startAt.get(.hour) == today.get(.hour) && task.startAt.get(.minute) < today.get(.minute) {
+                    filteredTask?.append(task)
+                }
+            }
+        case "done":
+            filteredTask = userTasks.filter { $0.isDone == true }
+        default:
+            filteredTask = nil
+        }
+        
+        if let filteredTask = filteredTask {
+            if filteredTask.count > 0 { return filteredTask }
+            else { return nil }
+        } else { return nil }
+    }
+    
     static func deleteAccountAndTasks(completion:@escaping(() -> ())) {
         db.collection(K.FStore.Collection.userInfo)
             .document(userId!)

@@ -14,6 +14,7 @@ class TypeController: UIViewController {
     
     var type: String?
     var selectedTask: Task?
+    var isFromHomeView = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,21 +32,36 @@ class TypeController: UIViewController {
 extension TypeController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var countOfTaskToday = DBHelper.getTasksByType(type!)?.count
+        var countOfTask: Int?
         
-        if let _ = countOfTaskToday {
+        if isFromHomeView {
+            countOfTask = DBHelper.getTasksByDonable(type!)?.count
+        } else {
+            countOfTask = DBHelper.getTasksByType(type!)?.count
+        }
+        
+        if let _ = countOfTask {
             self.typeTableView.restore()
         } else {
-            countOfTaskToday = 0
+            countOfTask = 0
             self.typeTableView.setImageWithMessage("You don’t have any task in this type.")
         }
-        return countOfTaskToday!
+        
+        return countOfTask!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.Cell.taskCell, for: indexPath) as! TaskCell
         
-        if let safetyTasks = DBHelper.getTasksByType(type!) {
+        let neededTask : [Task]?
+        
+        if isFromHomeView {
+            neededTask = DBHelper.getTasksByDonable(type!)
+        } else {
+            neededTask = DBHelper.getTasksByType(type!)
+        }
+        
+        if let safetyTasks = neededTask {
             let sortedByHourTasks = safetyTasks.sorted(by: { $0.startAt.compare($1.startAt) == .orderedAscending })
             
             let task = sortedByHourTasks[indexPath.row]
