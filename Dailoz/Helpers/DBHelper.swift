@@ -228,34 +228,54 @@ struct DBHelper {
         
         
         switch type {
+            // BUG ПОСЛЕ ПЕРЕИМЕНОВАНИЯ!
         case "active":
             for task in userTasks {
                 if task.isDone { break }
+                
                 if task.dateBegin.get(.year) > today.get(.year) {
                     filteredTask?.append(task)
-                } else if task.dateBegin.get(.month) > today.get(.month) {
-                    filteredTask?.append(task)
-                } else if task.dateBegin.get(.day) > today.get(.day) {
-                    filteredTask?.append(task)
-                } else if task.dateBegin.get(.day) == today.get(.day) && task.dateBegin.get(.hour) > today.get(.hour) {
-                    filteredTask?.append(task)
-                } else if task.dateBegin.get(.day) == today.get(.day) && task.startAt.get(.hour) == today.get(.hour) && task.startAt.get(.minute) >= today.get(.minute) {
-                    filteredTask?.append(task)
+                } else if task.dateBegin.get(.year) == today.get(.year) {
+                    if task.dateBegin.get(.month) > today.get(.month) {
+                        filteredTask?.append(task)
+                    } else if task.dateBegin.get(.month) == today.get(.month) {
+                        if task.dateBegin.get(.day) > today.get(.day) {
+                            filteredTask?.append(task)
+                        } else if task.dateBegin.get(.day) == today.get(.day) {
+                            if task.dateBegin.get(.hour) > today.get(.hour) {
+                                filteredTask?.append(task)
+                            } else if task.dateBegin.get(.hour) == today.get(.hour) {
+                                if task.startAt.get(.minute) >= today.get(.minute) {
+                                    filteredTask?.append(task)
+                                }
+                            }
+                        }
+                    }
                 }
             }
+            
         case "expired":
             for task in userTasks {
                 if task.isDone { break }
+                
                 if task.dateBegin.get(.year) < today.get(.year) {
                     filteredTask?.append(task)
-                } else if task.dateBegin.get(.month) < today.get(.month) {
-                    filteredTask?.append(task)
-                } else if task.dateBegin.get(.day) < today.get(.day) {
-                    filteredTask?.append(task)
-                } else if task.dateBegin.get(.day) == today.get(.day) && task.dateBegin.get(.hour) < today.get(.hour) {
-                    filteredTask?.append(task)
-                } else if task.dateBegin.get(.day) == today.get(.day) && task.startAt.get(.hour) == today.get(.hour) && task.startAt.get(.minute) < today.get(.minute) {
-                    filteredTask?.append(task)
+                } else if task.dateBegin.get(.year) == today.get(.year) {
+                    if task.dateBegin.get(.month) < today.get(.month) {
+                        filteredTask?.append(task)
+                    } else if task.dateBegin.get(.month) == today.get(.month) {
+                        if task.dateBegin.get(.day) < today.get(.day) {
+                            filteredTask?.append(task)
+                        } else if task.dateBegin.get(.day) == today.get(.day) {
+                            if task.dateBegin.get(.hour) < today.get(.hour) {
+                                filteredTask?.append(task)
+                            } else if task.dateBegin.get(.hour) == today.get(.hour) {
+                                if task.startAt.get(.minute) < today.get(.minute) {
+                                    filteredTask?.append(task)
+                                }
+                            }
+                        }
+                    }
                 }
             }
         case "done":

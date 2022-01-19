@@ -1180,6 +1180,7 @@
                     <navigationItem key="navigationItem" id="Z5m-5y-1jW"/>
                     <connections>
                         <outlet property="dateTextField" destination="nOG-oV-tZf" id="qaY-gT-2Wd"/>
+                        <outlet property="searchBar" destination="4u5-9f-dZL" id="DjX-1T-D5b"/>
                         <outlet property="todayTaskTableView" destination="3aJ-xo-oV7" id="mu7-6j-9Jz"/>
                         <segue destination="wcE-hg-0O4" kind="show" identifier="tableToTask" id="DrQ-H5-Q6u"/>
                     </connections>
@@ -2048,7 +2049,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="q2y-Ig-QGk"/>
-        <segue reference="1Y4-Ba-Ojz"/>
+        <segue reference="DrQ-H5-Q6u"/>
         <segue reference="7QN-Qn-XoF"/>
         <segue reference="Agv-Jj-gSE"/>
         <segue reference="i8f-F3-Rta"/>

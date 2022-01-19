@@ -27,6 +27,11 @@ class TypeController: UIViewController {
         typeTableView.register(UINib(nibName: K.Cell.taskCell, bundle: nil), forCellReuseIdentifier: K.Cell.taskCell)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        typeTableView.reloadData()
+    }
+    
 }
 
 extension TypeController: UITableViewDelegate, UITableViewDataSource {

@@ -12,6 +12,8 @@ class TaskController: UIViewController {
     @IBOutlet weak var todayTaskTableView: UITableView!
     @IBOutlet weak var dateTextField: UITextField!
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     let datePicker = UIDatePicker()
     
     let dateFormatter: DateFormatter = {
@@ -27,8 +29,12 @@ class TaskController: UIViewController {
         super.viewDidLoad()
         self.dismissKeyboardWhenTappedOut()
         
+        searchBar.searchTextField.font = UIFont(name: K.mainFont, size: 16)
+        
         todayTaskTableView.delegate = self
         todayTaskTableView.dataSource = self
+        
+        searchBar.delegate = self
         
         dateTextField.delegate = self
         createDatePicker()
@@ -202,5 +208,16 @@ extension TaskController: UITextFieldDelegate {
     func dateUpdated() {
         dateTextField.text = dateFormatter.string(from: datePicker.date)
         todayTaskTableView.reloadData()
+    }
+}
+
+extension TaskController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // search right here
     }
 }
