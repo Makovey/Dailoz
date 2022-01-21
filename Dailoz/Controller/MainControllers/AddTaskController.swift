@@ -26,13 +26,25 @@ class AddTaskController: UIViewController {
     
     @IBOutlet weak var remainderCheckbox: UIButton!
     
-    let datePicker = UIDatePicker()
-    let timePicker = UIDatePicker()
+    let datePicker: UIDatePicker = {
+        let dp = UIDatePicker()
+        dp.timeZone = .current
+        dp.minimumDate = Date()
+        return dp
+    }()
+    
+    let timePicker: UIDatePicker = {
+        let dp = UIDatePicker()
+        dp.timeZone = .current
+        dp.minimumDate = Date()
+        return dp
+    }()
     
     let dateFormatter: DateFormatter = {
         let df = DateFormatter()
         df.dateStyle = .full
         df.timeStyle = .none
+        df.timeZone = .current
         return df
     }()
     
@@ -40,6 +52,7 @@ class AddTaskController: UIViewController {
         let df = DateFormatter()
         df.dateStyle = .none
         df.timeStyle = .short
+        df.timeZone = .current
         return df
     }()
     

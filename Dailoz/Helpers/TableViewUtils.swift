@@ -13,6 +13,7 @@ struct TableViewUtils {
     static func createDeleteAction(task: Task, indexPath: IndexPath, tableView: UITableView) -> UIContextualAction {
         let deleteAction = UIContextualAction(style: .normal, title: "Delete") { action, view, completion in
             DBHelper.removeUserTaskWithId(task.id) {
+                NotificationCenter.default.post(name: Notification.Name.deletetdTask, object: nil, userInfo: ["DeletedTask": task])
                 tableView.deleteRows(at: [indexPath], with: .right)
             }
             completion(true)

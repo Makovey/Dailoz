@@ -70,6 +70,7 @@ extension UIViewController {
 
 extension Notification.Name {
     static let notification = Notification.Name("notification")
+    static let deletetdTask = Notification.Name("deletedTask")
 }
 
 // MARK: - Extension for empty TableView

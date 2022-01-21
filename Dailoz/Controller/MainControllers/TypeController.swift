@@ -12,9 +12,13 @@ class TypeController: UIViewController {
     @IBOutlet weak var typeTableView: UITableView!
     @IBOutlet weak var typeLabel: UILabel!
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     var type: String?
     var selectedTask: Task?
     var isFromHomeView = false
+    
+    var displayedTasks: Set<Task>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +28,28 @@ class TypeController: UIViewController {
         typeTableView.delegate = self
         typeTableView.dataSource = self
         
+        searchBar.delegate = self
+        searchBar.searchTextField.font = UIFont(name: K.mainFont, size: 16)
+        
         typeTableView.register(UINib(nibName: K.Cell.taskCell, bundle: nil), forCellReuseIdentifier: K.Cell.taskCell)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.deletedDisplayTask(_:)), name: Notification.Name.deletetdTask, object: nil)
+    }
+    
+    @objc func deletedDisplayTask(_ notification: Notification) {
+        if let task = notification.userInfo?["DeletedTask"] as? Task {
+            displayedTasks?.remove(task)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if isFromHomeView {
+            displayedTasks = DBHelper.getTasksByDonable(type!)
+        } else {
+            displayedTasks = DBHelper.getTasksByType(type!)
+        }
+        
         typeTableView.reloadData()
     }
     
@@ -37,36 +58,23 @@ class TypeController: UIViewController {
 extension TypeController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var countOfTask: Int?
+        var countOfTask = 0
+            
+        countOfTask = displayedTasks?.count ?? 0
         
-        if isFromHomeView {
-            countOfTask = DBHelper.getTasksByDonable(type!)?.count
-        } else {
-            countOfTask = DBHelper.getTasksByType(type!)?.count
-        }
-        
-        if let _ = countOfTask {
+        if countOfTask != 0 {
             self.typeTableView.restore()
         } else {
-            countOfTask = 0
-            self.typeTableView.setImageWithMessage("You don’t have any task in this type.")
+            self.typeTableView.setImageWithMessage("There are no such tasks.")
         }
         
-        return countOfTask!
+        return countOfTask
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.Cell.taskCell, for: indexPath) as! TaskCell
-        
-        let neededTask : [Task]?
-        
-        if isFromHomeView {
-            neededTask = DBHelper.getTasksByDonable(type!)
-        } else {
-            neededTask = DBHelper.getTasksByType(type!)
-        }
-        
-        if let safetyTasks = neededTask {
+ 
+        if let safetyTasks = displayedTasks {
             let sortedByHourTasks = safetyTasks.sorted(by: { $0.startAt.compare($1.startAt) == .orderedAscending })
             
             let task = sortedByHourTasks[indexPath.row]
@@ -156,5 +164,31 @@ extension TypeController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! TaskDetailController
         destinationVC.currentTask = selectedTask
+    }
+}
+
+extension TypeController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // search right here
+        
+        if let safetyFilteredTask = DBHelper.getTasksByType(type!) {
+            
+            displayedTasks = safetyFilteredTask.filter { $0.title.lowercased().contains(searchText.lowercased()) }
+            
+            if searchText.isEmpty {
+                if isFromHomeView {
+                    displayedTasks = DBHelper.getTasksByDonable(type!)
+                } else {
+                    displayedTasks = DBHelper.getTasksByType(type!)
+                }
+            }
+        }
+        
+        typeTableView.reloadData()
     }
 }

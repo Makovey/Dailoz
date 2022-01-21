@@ -1110,15 +1110,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for" translatesAutoresizingMaskIntoConstraints="NO" id="4u5-9f-dZL">
-                                <rect key="frame" x="25" y="88" width="364" height="51"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                            </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mS6-5p-YeJ">
-                                <rect key="frame" x="25" y="169" width="54" height="30.5"/>
+                                <rect key="frame" x="25" y="108" width="54" height="30.5"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="27"/>
                                 <color key="textColor" name="MainBlue"/>
                                 <nil key="highlightedColor"/>
@@ -1132,10 +1125,10 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3aJ-xo-oV7">
-                                <rect key="frame" x="25" y="345" width="364" height="453"/>
+                                <rect key="frame" x="25" y="284" width="364" height="514"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4FW-7X-ANC">
-                                <rect key="frame" x="25" y="294.5" width="76.5" height="30.5"/>
+                                <rect key="frame" x="25" y="233.5" width="76.5" height="30.5"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="27"/>
                                 <color key="textColor" name="MainBlue"/>
                                 <nil key="highlightedColor"/>
@@ -1149,7 +1142,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose your day" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nOG-oV-tZf">
-                                <rect key="frame" x="25" y="219.5" width="364" height="45"/>
+                                <rect key="frame" x="25" y="158.5" width="364" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="s9e-un-DVU"/>
                                 </constraints>
@@ -1164,15 +1157,12 @@
                             <constraint firstItem="4FW-7X-ANC" firstAttribute="leading" secondItem="AuG-rm-gVB" secondAttribute="leading" constant="25" id="1P0-KP-LtG"/>
                             <constraint firstItem="mS6-5p-YeJ" firstAttribute="leading" secondItem="AuG-rm-gVB" secondAttribute="leading" constant="25" id="4CS-Or-DpL"/>
                             <constraint firstItem="nOG-oV-tZf" firstAttribute="top" secondItem="mS6-5p-YeJ" secondAttribute="bottom" constant="20" id="5pR-ao-3S2"/>
-                            <constraint firstItem="mS6-5p-YeJ" firstAttribute="top" secondItem="4u5-9f-dZL" secondAttribute="bottom" constant="30" id="6sh-ge-oIl"/>
-                            <constraint firstItem="vM9-CY-14J" firstAttribute="trailing" secondItem="4u5-9f-dZL" secondAttribute="trailing" constant="25" id="Dvo-4e-Syc"/>
-                            <constraint firstItem="4u5-9f-dZL" firstAttribute="top" secondItem="vM9-CY-14J" secondAttribute="top" id="ExJ-4M-pZr"/>
                             <constraint firstItem="vM9-CY-14J" firstAttribute="bottom" secondItem="3aJ-xo-oV7" secondAttribute="bottom" constant="15" id="FJY-SQ-kh0"/>
                             <constraint firstItem="3aJ-xo-oV7" firstAttribute="top" secondItem="4FW-7X-ANC" secondAttribute="bottom" constant="20" id="FjN-HS-OVm"/>
                             <constraint firstItem="4FW-7X-ANC" firstAttribute="top" secondItem="nOG-oV-tZf" secondAttribute="bottom" constant="30" id="N5D-NE-ljz"/>
+                            <constraint firstItem="mS6-5p-YeJ" firstAttribute="top" secondItem="vM9-CY-14J" secondAttribute="top" constant="20" id="bB4-MO-7l3"/>
                             <constraint firstItem="vM9-CY-14J" firstAttribute="trailing" secondItem="3aJ-xo-oV7" secondAttribute="trailing" constant="25" id="dVD-h3-bW6"/>
                             <constraint firstItem="3aJ-xo-oV7" firstAttribute="leading" secondItem="vM9-CY-14J" secondAttribute="leading" constant="25" id="lnt-Y4-ibC"/>
-                            <constraint firstItem="4u5-9f-dZL" firstAttribute="leading" secondItem="vM9-CY-14J" secondAttribute="leading" constant="25" id="qdl-gb-6FZ"/>
                             <constraint firstItem="nOG-oV-tZf" firstAttribute="leading" secondItem="vM9-CY-14J" secondAttribute="leading" constant="25" id="wzl-2m-RYk"/>
                             <constraint firstItem="vM9-CY-14J" firstAttribute="trailing" secondItem="nOG-oV-tZf" secondAttribute="trailing" constant="25" id="zLE-Xp-hoF"/>
                         </constraints>
@@ -1180,7 +1170,6 @@
                     <navigationItem key="navigationItem" id="Z5m-5y-1jW"/>
                     <connections>
                         <outlet property="dateTextField" destination="nOG-oV-tZf" id="qaY-gT-2Wd"/>
-                        <outlet property="searchBar" destination="4u5-9f-dZL" id="DjX-1T-D5b"/>
                         <outlet property="todayTaskTableView" destination="3aJ-xo-oV7" id="mu7-6j-9Jz"/>
                         <segue destination="wcE-hg-0O4" kind="show" identifier="tableToTask" id="DrQ-H5-Q6u"/>
                     </connections>
@@ -1780,7 +1769,7 @@
         <!--User Settings Controller-->
         <scene sceneID="H7O-Ur-3Ep">
             <objects>
-                <viewController id="R2S-iK-bVX" customClass="UserSettingsController" customModule="Dailoz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="R2S-iK-bVX" customClass="UserSettingsController" customModule="Dailoz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ygr-g5-1nY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1909,13 +1898,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCx-1l-8O8">
-                                <rect key="frame" x="25" y="672" width="364" height="16"/>
+                                <rect key="frame" x="25" y="721" width="364" height="16"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOd-mM-BRi">
-                                <rect key="frame" x="25" y="738" width="364" height="50"/>
+                                <rect key="frame" x="25" y="787" width="364" height="50"/>
                                 <color key="backgroundColor" name="CanceledCardRed"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8bN-dq-Gyf"/>
@@ -2037,6 +2026,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="asD-WF-qbq"/>
                     <connections>
+                        <outlet property="searchBar" destination="RgL-Yl-EUP" id="yo5-7O-xNS"/>
                         <outlet property="typeLabel" destination="xH3-J4-8u0" id="Hez-J1-9Ub"/>
                         <outlet property="typeTableView" destination="Z4E-Be-UeX" id="dwM-dR-hdJ"/>
                         <segue destination="wcE-hg-0O4" kind="show" identifier="tableToTask" id="1Y4-Ba-Ojz"/>
@@ -2049,7 +2039,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="q2y-Ig-QGk"/>
-        <segue reference="DrQ-H5-Q6u"/>
+        <segue reference="1Y4-Ba-Ojz"/>
         <segue reference="7QN-Qn-XoF"/>
         <segue reference="Agv-Jj-gSE"/>
         <segue reference="i8f-F3-Rta"/>

@@ -214,16 +214,16 @@ struct DBHelper {
             }
     }
     
-    static func getTasksByType(_ type: String) -> [Task]? {
+    static func getTasksByType(_ type: String) -> Set<Task>? {
         if type == "all" {
-            return userTasks.count > 0 ? Array(userTasks) : nil
+            return userTasks.count > 0 ? userTasks : nil
         }
         let filteredTask = userTasks.filter { $0.type == type }
-        return filteredTask.count > 0 ? Array(filteredTask) : nil
+        return filteredTask.count > 0 ? filteredTask : nil
     }
     
-    static func getTasksByDonable(_ type: String) -> [Task]? {
-        var filteredTask: [Task]? = [Task]()
+    static func getTasksByDonable(_ type: String) -> Set<Task>? {
+        var filteredTask: Set<Task>? = Set<Task>()
         let today = Date()
         
         
@@ -231,22 +231,22 @@ struct DBHelper {
             // BUG ПОСЛЕ ПЕРЕИМЕНОВАНИЯ!
         case "active":
             for task in userTasks {
-                if task.isDone { break }
+                if task.isDone { continue }
                 
                 if task.dateBegin.get(.year) > today.get(.year) {
-                    filteredTask?.append(task)
+                    filteredTask?.insert(task)
                 } else if task.dateBegin.get(.year) == today.get(.year) {
                     if task.dateBegin.get(.month) > today.get(.month) {
-                        filteredTask?.append(task)
+                        filteredTask?.insert(task)
                     } else if task.dateBegin.get(.month) == today.get(.month) {
                         if task.dateBegin.get(.day) > today.get(.day) {
-                            filteredTask?.append(task)
+                            filteredTask?.insert(task)
                         } else if task.dateBegin.get(.day) == today.get(.day) {
                             if task.dateBegin.get(.hour) > today.get(.hour) {
-                                filteredTask?.append(task)
+                                filteredTask?.insert(task)
                             } else if task.dateBegin.get(.hour) == today.get(.hour) {
                                 if task.startAt.get(.minute) >= today.get(.minute) {
-                                    filteredTask?.append(task)
+                                    filteredTask?.insert(task)
                                 }
                             }
                         }
@@ -256,22 +256,22 @@ struct DBHelper {
             
         case "expired":
             for task in userTasks {
-                if task.isDone { break }
+                if task.isDone { continue }
                 
                 if task.dateBegin.get(.year) < today.get(.year) {
-                    filteredTask?.append(task)
+                    filteredTask?.insert(task)
                 } else if task.dateBegin.get(.year) == today.get(.year) {
                     if task.dateBegin.get(.month) < today.get(.month) {
-                        filteredTask?.append(task)
+                        filteredTask?.insert(task)
                     } else if task.dateBegin.get(.month) == today.get(.month) {
                         if task.dateBegin.get(.day) < today.get(.day) {
-                            filteredTask?.append(task)
+                            filteredTask?.insert(task)
                         } else if task.dateBegin.get(.day) == today.get(.day) {
                             if task.dateBegin.get(.hour) < today.get(.hour) {
-                                filteredTask?.append(task)
+                                filteredTask?.insert(task)
                             } else if task.dateBegin.get(.hour) == today.get(.hour) {
                                 if task.startAt.get(.minute) < today.get(.minute) {
-                                    filteredTask?.append(task)
+                                    filteredTask?.insert(task)
                                 }
                             }
                         }
