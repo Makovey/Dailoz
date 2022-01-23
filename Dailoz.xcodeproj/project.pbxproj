@@ -11,6 +11,7 @@
 		5E0D11EC2746F1EF00F4F905 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0D11EB2746F1EF00F4F905 /* SignUpController.swift */; };
 		5E2137D12775E40100F7DA27 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2137D02775E40100F7DA27 /* ProfileController.swift */; };
 		5E239B4C278B77DA000BBE50 /* TableViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E239B4B278B77DA000BBE50 /* TableViewUtils.swift */; };
+		5E2FD2D9279C2F1000A06872 /* SplashContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2FD2D8279C2F1000A06872 /* SplashContoller.swift */; };
 		5E490AAB27578A18000ED5C8 /* AddTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E490AAA27578A18000ED5C8 /* AddTaskController.swift */; };
 		5E52B82627660C8400694952 /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E52B82427660C8400694952 /* TaskController.swift */; };
 		5E5693E62790337800F4C1FE /* UserSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5693E52790337800F4C1FE /* UserSettingsController.swift */; };
@@ -42,6 +43,7 @@
 		5E0D11EB2746F1EF00F4F905 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		5E2137D02775E40100F7DA27 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		5E239B4B278B77DA000BBE50 /* TableViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewUtils.swift; sourceTree = "<group>"; };
+		5E2FD2D8279C2F1000A06872 /* SplashContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashContoller.swift; sourceTree = "<group>"; };
 		5E490AAA27578A18000ED5C8 /* AddTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskController.swift; sourceTree = "<group>"; };
 		5E52B82427660C8400694952 /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
 		5E5693E52790337800F4C1FE /* UserSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		5E0D11EA2746E5AD00F4F905 /* StarterControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5E2FD2D8279C2F1000A06872 /* SplashContoller.swift */,
 				5E0D11EB2746F1EF00F4F905 /* SignUpController.swift */,
 				5EED98E6274A55DA00918BE7 /* LoginController.swift */,
 			);
@@ -376,6 +379,7 @@
 				5EDA2E95274442FD00546708 /* SceneDelegate.swift in Sources */,
 				5E60634627693F6700B15F61 /* DateHelper.swift in Sources */,
 				5EFD446D275566CC00EFBA96 /* HomeController.swift in Sources */,
+				5E2FD2D9279C2F1000A06872 /* SplashContoller.swift in Sources */,
 				5EA5F5D22760F9A700EA9710 /* UserInfo.swift in Sources */,
 				5E0D11EC2746F1EF00F4F905 /* SignUpController.swift in Sources */,
 				5EB6201B27565BD2001D1FA4 /* DBHelper.swift in Sources */,
@@ -535,7 +539,7 @@
 				INFOPLIST_FILE = Dailoz/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Taskly;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -567,7 +571,7 @@
 				INFOPLIST_FILE = Dailoz/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Taskly;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

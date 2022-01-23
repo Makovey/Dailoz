@@ -18,7 +18,7 @@ class ProfileController: UIViewController {
     @IBOutlet weak var studyView: UIView!
     @IBOutlet weak var otherView: UIView!
     @IBOutlet weak var allTypeView: UIView!
-        
+    
     @IBOutlet weak var workStack: UIStackView!
     @IBOutlet weak var homeStack: UIStackView!
     @IBOutlet weak var studyStack: UIStackView!
@@ -95,7 +95,11 @@ class ProfileController: UIViewController {
     @IBAction func logoutButtonPressed(_ sender: UIButton) {
         do {
             try Auth.auth().signOut()
-            self.parent?.navigationController?.popViewController(animated: true)
+            
+            let navigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
+            navigation.modalPresentationStyle = .fullScreen
+            self.present(navigation, animated: true, completion: nil)
+            
             DBHelper.userId = nil
         } catch {
             print("Error signing out cause: \(error)")

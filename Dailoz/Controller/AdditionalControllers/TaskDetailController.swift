@@ -28,8 +28,19 @@ class TaskDetailController: UIViewController {
     
     @IBOutlet weak var remainderCheckbox: UIButton!
     
-    let datePicker = UIDatePicker()
-    let timePicker = UIDatePicker()
+    let datePicker: UIDatePicker = {
+        let dp = UIDatePicker()
+        dp.timeZone = .current
+        dp.minimumDate = Date()
+        return dp
+    }()
+    
+    let timePicker: UIDatePicker = {
+        let dp = UIDatePicker()
+        dp.timeZone = .current
+        dp.minimumDate = Date()
+        return dp
+    }()
     
     let dateFormatter: DateFormatter = {
         let df = DateFormatter()

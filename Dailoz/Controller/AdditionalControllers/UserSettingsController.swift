@@ -70,8 +70,12 @@ class UserSettingsController: UIViewController {
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default) { _ in
             DBHelper.deleteAccountAndTasks() {
                 DBHelper.userId = nil
+                DBHelper.userInfo = nil
                 DBHelper.userTasks.removeAll()
-                self.parent?.navigationController?.popViewController(animated: true)
+                                                
+                let navigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
+                navigation.modalPresentationStyle = .fullScreen
+                self.present(navigation, animated: true, completion: nil)
             }
         })
                         

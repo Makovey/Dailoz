@@ -26,12 +26,6 @@ class HomeController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         usernameLabel.text = DBHelper.userInfo?.username
-        
-        
-        for task in DBHelper.userTasks {
-            print("\(task.title) \(task.dateBegin)")
-            print("\(task.title) - \(task.dateBegin > Date())")
-        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

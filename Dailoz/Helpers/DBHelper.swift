@@ -133,8 +133,7 @@ struct DBHelper {
             })
     }
     
-    // if hotswap works correctly, remove it
-    static func fetchUserTasks(completion:@escaping(() -> ())) {
+    private static func fetchUserTasks(completion:@escaping(() -> ())) {
         db.collection(K.FStore.Collection.tasks)
             .document(userId!)
             .collection(K.FStore.Collection.userTasks)
@@ -146,7 +145,7 @@ struct DBHelper {
             }
     }
     
-    static func fillCollectionWithData(snapshotDocument: [QueryDocumentSnapshot]) {
+    private static func fillCollectionWithData(snapshotDocument: [QueryDocumentSnapshot]) {
         for doc in snapshotDocument {
             let data = doc.data()
             
@@ -228,7 +227,6 @@ struct DBHelper {
         
         
         switch type {
-            // BUG ПОСЛЕ ПЕРЕИМЕНОВАНИЯ!
         case "active":
             for task in userTasks {
                 if task.isDone { continue }
@@ -311,12 +309,19 @@ struct DBHelper {
                         }
                     
                     Auth.auth().currentUser?.delete(completion: { error in
+                        do {
+                            try Auth.auth().signOut()
+                        } catch {
+                            print(error)
+                        }
+
                         if let e = error {
                             print("Can't delete user from firebase cause \(e)")
                         }
+                        
+                        completion()
                     })
                 }
-                completion()
             }
     }
 }

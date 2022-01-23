@@ -130,6 +130,12 @@ class AddTaskController: UIViewController {
         }
     }
     
+    func resetTypeButtons() {
+        for button in typeButtons {
+            Utilities.styleButton(button, borderWidth: 0, borderColor: nil)
+        }
+        typeOfTask = nil
+    }
     
     func styleTextFields() {
         for textField in createTaskTextFields {
@@ -169,11 +175,10 @@ class AddTaskController: UIViewController {
                         K.FStore.Field.isNeededRemind: task.isNeededRemind
                     ])
                 
-                //                DBHelper.reloadUserTasks {
                 DBHelper.userTasks.insert(task)
                 Utilities.showBunner(title: "We're plained your task", subtitle: "\(task.title) - startAt \(startAt)", style: .success)
                 Utilities.clearAllTextFields(textFields: self.createTaskTextFields)
-                //                }
+                self.resetTypeButtons()
                 
                 if isRemindChecked {
                     Utilities.scheduleNotificationToTask(task, showBanner: false)
