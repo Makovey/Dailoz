@@ -56,6 +56,8 @@ struct K {
         static let blueType = UIColor.init(named: "blueCellBackground")!
         static let graphic = UIColor.init(named: "GraphicBackground")!
         static let mainBlue = UIColor.init(named: "MainBlue")!
+        static let darkGreen = UIColor.init(named: "darkGreen")!
+        static let darkRed = UIColor.init(named: "darkRed")!
         static let red = UIColor(red: 231/255, green: 1245/255, blue: 125/255, alpha: 1)
     }
     

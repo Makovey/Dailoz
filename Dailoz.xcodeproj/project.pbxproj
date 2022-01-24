@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		5E046BF52759110D0090B5A6 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E046BF42759110D0090B5A6 /* Task.swift */; };
 		5E0D11EC2746F1EF00F4F905 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0D11EB2746F1EF00F4F905 /* SignUpController.swift */; };
+		5E19EDB9279EFA1D008CE75F /* DailozTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E19EDB8279EFA1D008CE75F /* DailozTests.swift */; };
+		5E19EDC7279F1425008CE75F /* DailozUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E19EDC6279F1425008CE75F /* DailozUITests.swift */; };
+		5E19EDD0279F215D008CE75F /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E19EDCF279F215D008CE75F /* WelcomeScreen.swift */; };
+		5E19EDD3279F22EA008CE75F /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E19EDD2279F22EA008CE75F /* LoginScreen.swift */; };
+		5E19EDD7279F28F8008CE75F /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E19EDD6279F28F8008CE75F /* HomeScreen.swift */; };
+		5E19EDD9279F2D99008CE75F /* TaskScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E19EDD8279F2D99008CE75F /* TaskScreen.swift */; };
+		5E19EDDD279F2FCB008CE75F /* AddTaskScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E19EDDC279F2FCB008CE75F /* AddTaskScreen.swift */; };
+		5E19EDDF279F335A008CE75F /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E19EDDE279F335A008CE75F /* ProfileScreen.swift */; };
 		5E2137D12775E40100F7DA27 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2137D02775E40100F7DA27 /* ProfileController.swift */; };
 		5E239B4C278B77DA000BBE50 /* TableViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E239B4B278B77DA000BBE50 /* TableViewUtils.swift */; };
 		5E2FD2D9279C2F1000A06872 /* SplashContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2FD2D8279C2F1000A06872 /* SplashContoller.swift */; };
@@ -38,9 +46,36 @@
 		ADD058DFF97A1ED1B673ECE9 /* Pods_Dailoz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6DC0AE9312D7E6053DFBB1D /* Pods_Dailoz.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5E19EDBA279EFA1D008CE75F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5EDA2E87274442FD00546708 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5EDA2E8E274442FD00546708;
+			remoteInfo = Dailoz;
+		};
+		5E19EDCA279F1425008CE75F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5EDA2E87274442FD00546708 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5EDA2E8E274442FD00546708;
+			remoteInfo = Dailoz;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		5E046BF42759110D0090B5A6 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		5E0D11EB2746F1EF00F4F905 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		5E19EDB6279EFA1D008CE75F /* DailozTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailozTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E19EDB8279EFA1D008CE75F /* DailozTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailozTests.swift; sourceTree = "<group>"; };
+		5E19EDC4279F1425008CE75F /* DailozUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailozUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E19EDC6279F1425008CE75F /* DailozUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailozUITests.swift; sourceTree = "<group>"; };
+		5E19EDCF279F215D008CE75F /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
+		5E19EDD2279F22EA008CE75F /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		5E19EDD6279F28F8008CE75F /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		5E19EDD8279F2D99008CE75F /* TaskScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskScreen.swift; sourceTree = "<group>"; };
+		5E19EDDC279F2FCB008CE75F /* AddTaskScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskScreen.swift; sourceTree = "<group>"; };
+		5E19EDDE279F335A008CE75F /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		5E2137D02775E40100F7DA27 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		5E239B4B278B77DA000BBE50 /* TableViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewUtils.swift; sourceTree = "<group>"; };
 		5E2FD2D8279C2F1000A06872 /* SplashContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashContoller.swift; sourceTree = "<group>"; };
@@ -75,6 +110,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5E19EDB3279EFA1D008CE75F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E19EDC1279F1425008CE75F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5EDA2E8C274442FD00546708 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -114,6 +163,52 @@
 			path = StarterControllers;
 			sourceTree = "<group>";
 		};
+		5E19EDB7279EFA1D008CE75F /* DailozTests */ = {
+			isa = PBXGroup;
+			children = (
+				5E19EDB8279EFA1D008CE75F /* DailozTests.swift */,
+			);
+			path = DailozTests;
+			sourceTree = "<group>";
+		};
+		5E19EDC5279F1425008CE75F /* DailozUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5E19EDD1279F216B008CE75F /* Screen */,
+				5E19EDC6279F1425008CE75F /* DailozUITests.swift */,
+			);
+			path = DailozUITests;
+			sourceTree = "<group>";
+		};
+		5E19EDD1279F216B008CE75F /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				5E19EDDA279F2D9F008CE75F /* StarterScreen */,
+				5E19EDDB279F2DB4008CE75F /* MainScreen */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		5E19EDDA279F2D9F008CE75F /* StarterScreen */ = {
+			isa = PBXGroup;
+			children = (
+				5E19EDCF279F215D008CE75F /* WelcomeScreen.swift */,
+				5E19EDD2279F22EA008CE75F /* LoginScreen.swift */,
+			);
+			path = StarterScreen;
+			sourceTree = "<group>";
+		};
+		5E19EDDB279F2DB4008CE75F /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				5E19EDD6279F28F8008CE75F /* HomeScreen.swift */,
+				5E19EDD8279F2D99008CE75F /* TaskScreen.swift */,
+				5E19EDDC279F2FCB008CE75F /* AddTaskScreen.swift */,
+				5E19EDDE279F335A008CE75F /* ProfileScreen.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
 		5E5693E42790334800F4C1FE /* AdditionalControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +240,8 @@
 			isa = PBXGroup;
 			children = (
 				5EDA2E91274442FD00546708 /* Dailoz */,
+				5E19EDB7279EFA1D008CE75F /* DailozTests */,
+				5E19EDC5279F1425008CE75F /* DailozUITests */,
 				5EDA2E90274442FD00546708 /* Products */,
 				0A242517D44DAC95D39B85CD /* Pods */,
 				B42321999E0EA71DFF1C1BE0 /* Frameworks */,
@@ -155,6 +252,8 @@
 			isa = PBXGroup;
 			children = (
 				5EDA2E8F274442FD00546708 /* Dailoz.app */,
+				5E19EDB6279EFA1D008CE75F /* DailozTests.xctest */,
+				5E19EDC4279F1425008CE75F /* DailozUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -248,6 +347,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5E19EDB5279EFA1D008CE75F /* DailozTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E19EDBE279EFA1D008CE75F /* Build configuration list for PBXNativeTarget "DailozTests" */;
+			buildPhases = (
+				5E19EDB2279EFA1D008CE75F /* Sources */,
+				5E19EDB3279EFA1D008CE75F /* Frameworks */,
+				5E19EDB4279EFA1D008CE75F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5E19EDBB279EFA1D008CE75F /* PBXTargetDependency */,
+			);
+			name = DailozTests;
+			productName = DailozTests;
+			productReference = 5E19EDB6279EFA1D008CE75F /* DailozTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5E19EDC3279F1425008CE75F /* DailozUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E19EDCC279F1425008CE75F /* Build configuration list for PBXNativeTarget "DailozUITests" */;
+			buildPhases = (
+				5E19EDC0279F1425008CE75F /* Sources */,
+				5E19EDC1279F1425008CE75F /* Frameworks */,
+				5E19EDC2279F1425008CE75F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5E19EDCB279F1425008CE75F /* PBXTargetDependency */,
+			);
+			name = DailozUITests;
+			productName = DailozUITests;
+			productReference = 5E19EDC4279F1425008CE75F /* DailozUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		5EDA2E8E274442FD00546708 /* Dailoz */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5EDA2EA32744430100546708 /* Build configuration list for PBXNativeTarget "Dailoz" */;
@@ -274,9 +409,17 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1310;
+				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
+					5E19EDB5279EFA1D008CE75F = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 5EDA2E8E274442FD00546708;
+					};
+					5E19EDC3279F1425008CE75F = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 5EDA2E8E274442FD00546708;
+					};
 					5EDA2E8E274442FD00546708 = {
 						CreatedOnToolsVersion = 13.1;
 					};
@@ -296,11 +439,27 @@
 			projectRoot = "";
 			targets = (
 				5EDA2E8E274442FD00546708 /* Dailoz */,
+				5E19EDB5279EFA1D008CE75F /* DailozTests */,
+				5E19EDC3279F1425008CE75F /* DailozUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5E19EDB4279EFA1D008CE75F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E19EDC2279F1425008CE75F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5EDA2E8D274442FD00546708 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -360,6 +519,28 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5E19EDB2279EFA1D008CE75F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E19EDB9279EFA1D008CE75F /* DailozTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E19EDC0279F1425008CE75F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E19EDDD279F2FCB008CE75F /* AddTaskScreen.swift in Sources */,
+				5E19EDDF279F335A008CE75F /* ProfileScreen.swift in Sources */,
+				5E19EDD7279F28F8008CE75F /* HomeScreen.swift in Sources */,
+				5E19EDD0279F215D008CE75F /* WelcomeScreen.swift in Sources */,
+				5E19EDC7279F1425008CE75F /* DailozUITests.swift in Sources */,
+				5E19EDD9279F2D99008CE75F /* TaskScreen.swift in Sources */,
+				5E19EDD3279F22EA008CE75F /* LoginScreen.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5EDA2E8B274442FD00546708 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -390,6 +571,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5E19EDBB279EFA1D008CE75F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5EDA2E8E274442FD00546708 /* Dailoz */;
+			targetProxy = 5E19EDBA279EFA1D008CE75F /* PBXContainerItemProxy */;
+		};
+		5E19EDCB279F1425008CE75F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5EDA2E8E274442FD00546708 /* Dailoz */;
+			targetProxy = 5E19EDCA279F1425008CE75F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		5EDA2E98274442FD00546708 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -410,6 +604,82 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5E19EDBC279EFA1D008CE75F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QY32558B3C;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/Pods/Firebase/CoreOnly/Sources";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makovej.DailozTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dailoz.app/Dailoz";
+			};
+			name = Debug;
+		};
+		5E19EDBD279EFA1D008CE75F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QY32558B3C;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/Pods/Firebase/CoreOnly/Sources";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makovej.DailozTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dailoz.app/Dailoz";
+			};
+			name = Release;
+		};
+		5E19EDCD279F1425008CE75F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QY32558B3C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makovej.DailozUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Dailoz;
+			};
+			name = Debug;
+		};
+		5E19EDCE279F1425008CE75F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QY32558B3C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makovej.DailozUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Dailoz;
+			};
+			name = Release;
+		};
 		5EDA2EA12744430100546708 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -554,7 +824,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -586,13 +856,31 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5E19EDBE279EFA1D008CE75F /* Build configuration list for PBXNativeTarget "DailozTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E19EDBC279EFA1D008CE75F /* Debug */,
+				5E19EDBD279EFA1D008CE75F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E19EDCC279F1425008CE75F /* Build configuration list for PBXNativeTarget "DailozUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E19EDCD279F1425008CE75F /* Debug */,
+				5E19EDCE279F1425008CE75F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5EDA2E8A274442FD00546708 /* Build configuration list for PBXProject "Dailoz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

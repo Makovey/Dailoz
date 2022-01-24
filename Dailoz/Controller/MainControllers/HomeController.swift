@@ -25,7 +25,20 @@ class HomeController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setUpInitScreen()
+    }
+    
+    func setUpInitScreen() {
         usernameLabel.text = DBHelper.userInfo?.username
+
+        inProgressView.layer.borderWidth = 2
+        inProgressView.layer.borderColor = K.Color.mainBlue.cgColor
+        
+        doneView.layer.borderWidth = 2
+        doneView.layer.borderColor = K.Color.darkGreen.cgColor
+        
+        expiredView.layer.borderWidth = 2
+        expiredView.layer.borderColor = K.Color.darkRed.cgColor
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
