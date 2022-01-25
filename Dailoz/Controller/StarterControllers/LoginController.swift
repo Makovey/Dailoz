@@ -37,7 +37,7 @@ class LoginController: UIViewController {
         if let email = loginTextField.text, let password = passwordTextField.text {
             Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
                 if let e = error {
-                    Utilities.showBunner(title: "Oh, we can't login", subtitle: e.localizedDescription, style: .danger)
+                    Utilities.showBunner(title: "Oh, we can't login".localize(), subtitle: e.localizedDescription.localize(), style: .danger)
                     self.enableLoginButton()
                 } else {
                     DBHelper.prepareData {

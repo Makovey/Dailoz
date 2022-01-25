@@ -54,19 +54,19 @@ class ProfileController: UIViewController {
         if let touch = touches.first {
             switch touch.view {
             case workView, workStack:
-                typeTapped = "work"
+                typeTapped = "work".localize()
                 performSegue(withIdentifier: K.profileSegue, sender: self)
             case homeView, homeStack:
-                typeTapped = "home"
+                typeTapped = "home".localize()
                 performSegue(withIdentifier: K.profileSegue, sender: self)
             case studyView, studyStack:
-                typeTapped = "study"
+                typeTapped = "study".localize()
                 performSegue(withIdentifier: K.profileSegue, sender: self)
             case otherView, otherStack:
-                typeTapped = "other"
+                typeTapped = "other".localize()
                 performSegue(withIdentifier: K.profileSegue, sender: self)
             case allTypeView, allStack:
-                typeTapped = "all"
+                typeTapped = "all".localize()
                 performSegue(withIdentifier: K.profileSegue, sender: self)
             default:
                 return
@@ -76,11 +76,11 @@ class ProfileController: UIViewController {
     
     func prepareTextByType(_ type: String) -> String {
         if type == "all" {
-            return DBHelper.userTasks.count > 1 ? "\(DBHelper.userTasks.count) Tasks" : "\(DBHelper.userTasks.count) Task"
+            return DBHelper.userTasks.count > 1 ? "\(DBHelper.userTasks.count) " + "Tasks".localize() : "\(DBHelper.userTasks.count) " + "Task".localize()
         }
         
         let tasks = DBHelper.userTasks.filter { $0.type == type }
-        return tasks.count > 1 ? "\(tasks.count) Tasks" : "\(tasks.count) Task"
+        return tasks.count > 1 ? "\(tasks.count) " + "Tasks".localize() : "\(tasks.count) " + "Task".localize()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

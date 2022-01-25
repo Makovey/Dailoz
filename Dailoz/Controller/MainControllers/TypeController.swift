@@ -65,7 +65,7 @@ extension TypeController: UITableViewDelegate, UITableViewDataSource {
         if countOfTask != 0 {
             self.typeTableView.restore()
         } else {
-            self.typeTableView.setImageWithMessage("There are no such tasks.")
+            self.typeTableView.setImageWithMessage("There are no such tasks.".localize())
         }
         
         return countOfTask

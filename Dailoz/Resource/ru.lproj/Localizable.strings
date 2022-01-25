@@ -1,0 +1,72 @@
+/* 
+  Localizable.strings
+  Dailoz
+
+  Created by MAKOVEY Vladislav on 25.01.2022.
+  
+*/
+
+// TableView
+"Delete" = "Удалить";
+"Update" = "Обновить";
+"Done" = "Завершить";
+"Active" = "Возобновить";
+
+//SignUp Controller
+"Oh, we can't sign up" = "Не зарегистрировали";
+"Please, fill username field" = "Заполните все поля";
+"The password must be 6 characters long or more." = "Пароль должен содержать 6 символов или более.";
+
+//Login Controller
+"Oh, we can't login" = "Не можем войти";
+"The password is invalid or the user does not have a password." = "Что-то не так с паролем :(";
+"The email address is badly formatted." = "Email в неверном формате.";
+"There is no user record corresponding to this identifier. The user may have been deleted." = "Неверный email или пароль. Или может пользователь был удален. 🤷‍♂️";
+
+//Home Controller
+"active" = "В процессе";
+"done" = "Завершенные";
+"expired" = "Просроченные";
+
+//Add Task Controller
+"Oops" = "Упс";
+"You're alredy planned" = "А вы уже запланировали";
+"We're plained your task" = "Задача запланирована";
+"Oh, we can't save your task" = "Не смогли запланировать задачу";
+"Please, fill all required fields" = "Заполните все обязательные поля";
+
+//Task Controller
+"You don’t have any schedule today." = "На сегодня ничего не запланировано.";
+
+//Profile Controller
+"Tasks" = "Задач(и)";
+"Task" = "Задач(а)";
+"work" = "Работа";
+"home" = "Дом";
+"study" = "Учеба";
+"other" = "Другое";
+"all" = "Все";
+
+//Type Controller
+"There are no such tasks." = "Нет таких задач 🤷‍♂️";
+
+//TaskDetail Controller
+"Task has not changed" = "Задача не изменилась";
+"Сhange anything before updating" = "Поменяте что-нибудь для обновления";
+"Woohoo" = "Успех";
+"Task updated" = "Задача обновлена";
+"Oh, we can't update your task" = "Не можем обновить задачу";
+"Please, fill all required fields" = "Заполните все обязательные поля";
+
+//UserSetting Controller
+"Your current name is similar" = "Имена совпадают";
+"Woohoo" = "Ура";
+"Now your name is" = "Теперь ваше имя";
+"Check your email" = "Проверьте Email";
+"Please, enter your email in correct format" = "Кажись он в неверном формате";
+"Your current email is similar" = "Email совпадает";
+"Now your email is" = "Теперь ваш Email";
+"You definitely want to delete your account with tasks?" = "Вы и правда хотите удалить аккаунт со всеми задачами?";
+"Are you sure?" = "А вы уверены?";
+"Yes" = "Ага, да";
+"No" = "Нет";

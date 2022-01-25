@@ -1,0 +1,309 @@
+
+/* Class = "UIButton"; configuration.title = "Don’t have an account? Sign Up"; ObjectID = "0Vk-L8-67K"; */
+"0Vk-L8-67K.configuration.title" = "Еще нет аккаунта? Зарегистрируйся";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "0Vk-L8-67K"; */
+"0Vk-L8-67K.normalTitle" = "Еще нет аккаунта? Зарегистрируйся";
+
+/* Class = "UILabel"; text = "Hi,"; ObjectID = "1gM-bI-KvY"; */
+"1gM-bI-KvY.text" = "Привет,";
+
+/* Class = "UITextField"; placeholder = "Start at (required)"; ObjectID = "1jK-fO-TEz"; */
+"1jK-fO-TEz.placeholder" = "Начинаем с (обязательно)";
+
+/* Class = "UIButton"; configuration.title = "Study"; ObjectID = "1t9-Fn-CTm"; */
+"1t9-Fn-CTm.configuration.title" = "Учеба";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "1t9-Fn-CTm"; */
+"1t9-Fn-CTm.normalTitle" = "Учеба";
+
+/* Class = "UIViewController"; title = "Splash Screen"; ObjectID = "22A-V1-BI8"; */
+"22A-V1-BI8.title" = "Splash Screen";
+
+/* Class = "UILabel"; text = "Update Task"; ObjectID = "2gl-aF-cDx"; */
+"2gl-aF-cDx.text" = "Обновить задачу";
+
+/* Class = "UILabel"; text = "Tasks"; ObjectID = "4FW-7X-ANC"; */
+"4FW-7X-ANC.text" = "Задачи";
+
+/* Class = "UIButton"; configuration.title = "Sign Up"; ObjectID = "4qH-Ol-LmO"; */
+"4qH-Ol-LmO.configuration.title" = "Зарегистрироваться";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "4qH-Ol-LmO"; */
+"4qH-Ol-LmO.normalTitle" = "Зарегистрироваться";
+
+/* Class = "UILabel"; text = "Home"; ObjectID = "7Xi-T3-5Dm"; */
+"7Xi-T3-5Dm.text" = "Дом";
+
+/* Class = "UIButton"; configuration.title = "Update name"; ObjectID = "8dJ-Qn-7LN"; */
+"8dJ-Qn-7LN.configuration.title" = "Обновить имя";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "8dJ-Qn-7LN"; */
+"8dJ-Qn-7LN.normalTitle" = "Обновить имя";
+
+/* Class = "UILabel"; text = "Expired"; ObjectID = "A3N-5x-qMg"; */
+"A3N-5x-qMg.text" = "Просроченные";
+
+/* Class = "UILabel"; text = "Login"; ObjectID = "B4t-fb-TDZ"; */
+"B4t-fb-TDZ.text" = "Вход";
+
+/* Class = "UILabel"; text = "username@gmail.com"; ObjectID = "BdW-Jk-geF"; */
+"BdW-Jk-geF.text" = "username@gmail.com";
+
+/* Class = "UILabel"; text = "Let’s make this day productive"; ObjectID = "BgS-vo-b5K"; */
+"BgS-vo-b5K.text" = "Сделаем этот день более продуктивным";
+
+/* Class = "UITextField"; placeholder = "Email ID"; ObjectID = "DAb-h3-PG6"; */
+"DAb-h3-PG6.placeholder" = "Email ID";
+
+/* Class = "UILabel"; text = "0 Task"; ObjectID = "DyR-53-Yzs"; */
+"DyR-53-Yzs.text" = "0 Задач";
+
+/* Class = "UILabel"; text = "User Settings"; ObjectID = "GV5-as-Gb1"; */
+"GV5-as-Gb1.text" = "Настройки";
+
+/* Class = "UIButton"; configuration.title = "Forgot Password?"; ObjectID = "Gz7-Ul-WXl"; */
+"Gz7-Ul-WXl.configuration.title" = "Забыли пароль?";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Gz7-Ul-WXl"; */
+"Gz7-Ul-WXl.normalTitle" = "Забыли пароль?";
+
+/* Class = "UILabel"; text = "0 Task"; ObjectID = "HWM-zX-m6g"; */
+"HWM-zX-m6g.text" = "0 Задач";
+
+/* Class = "UILabel"; text = "or with"; ObjectID = "ImK-GO-zAV"; */
+"ImK-GO-zAV.text" = "или с";
+
+/* Class = "UILabel"; text = "or with"; ObjectID = "JL3-I3-kee"; */
+"JL3-I3-kee.text" = "или с";
+
+/* Class = "UILabel"; text = "OR"; ObjectID = "KCx-1l-8O8"; */
+"KCx-1l-8O8.text" = "ИЛИ";
+
+/* Class = "UIButton"; configuration.title = "Create"; ObjectID = "Kwq-CG-3pX"; */
+"Kwq-CG-3pX.configuration.title" = "Создать";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Kwq-CG-3pX"; */
+"Kwq-CG-3pX.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "0 Task"; ObjectID = "L8b-0W-Y1P"; */
+"L8b-0W-Y1P.text" = "0 Задач";
+
+/* Class = "UIButton"; configuration.title = "Update email"; ObjectID = "MgD-yl-2XO"; */
+"MgD-yl-2XO.configuration.title" = "Обновить Email";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "MgD-yl-2XO"; */
+"MgD-yl-2XO.normalTitle" = "Обновить Email";
+
+/* Class = "UITextField"; placeholder = "Until (required)"; ObjectID = "Mql-Vo-Snm"; */
+"Mql-Vo-Snm.placeholder" = "По (обязательное)";
+
+/* Class = "UITextField"; placeholder = "When we start? (required)"; ObjectID = "N8m-qR-0of"; */
+"N8m-qR-0of.placeholder" = "Когда начинаем? (обязательное)";
+
+/* Class = "UILabel"; text = "Type"; ObjectID = "NqZ-my-zQv"; */
+"NqZ-my-zQv.text" = "Тип";
+
+/* Class = "UILabel"; text = "Remind about this"; ObjectID = "Pzo-is-AxX"; */
+"Pzo-is-AxX.text" = "Напомнить";
+
+/* Class = "UIButton"; configuration.title = "Home"; ObjectID = "RGK-IO-Cis"; */
+"RGK-IO-Cis.configuration.title" = "Дом";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "RGK-IO-Cis"; */
+"RGK-IO-Cis.normalTitle" = "Дом";
+
+/* Class = "UISearchBar"; placeholder = "Search for"; ObjectID = "RgL-Yl-EUP"; */
+"RgL-Yl-EUP.placeholder" = "Поиск";
+
+/* Class = "UISearchBar"; RgL-Yl-EUP.scopeButtonTitles[0] = "Title"; ObjectID = "RgL-Yl-EUP"; */
+"RgL-Yl-EUP.scopeButtonTitles[0]" = "Поиск";
+
+/* Class = "UITextField"; placeholder = "Your Name"; ObjectID = "TT7-ee-liD"; */
+"TT7-ee-liD.placeholder" = "Ваше новое имя";
+
+/* Class = "UIButton"; configuration.title = "Home"; ObjectID = "USk-ks-qQI"; */
+"USk-ks-qQI.configuration.title" = "Дом";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "USk-ks-qQI"; */
+"USk-ks-qQI.normalTitle" = "Дом";
+
+/* Class = "UIButton"; configuration.title = "Work"; ObjectID = "VY6-dZ-0uJ"; */
+"VY6-dZ-0uJ.configuration.title" = "Работа";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "VY6-dZ-0uJ"; */
+"VY6-dZ-0uJ.normalTitle" = "Работа";
+
+/* Class = "UILabel"; text = "Taskly"; ObjectID = "XgD-fo-tJV"; */
+"XgD-fo-tJV.text" = "Taskly";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "Y6M-tK-bgj"; */
+"Y6M-tK-bgj.placeholder" = "Пароль";
+
+/* Class = "UILabel"; text = "Plan what you will do to be more organized for today, tomorrow and beyond"; ObjectID = "YWf-XU-iSv"; */
+"YWf-XU-iSv.text" = "Планируйте ваши дела сегодня, завтра и всегда";
+
+/* Class = "UITextField"; placeholder = "Start at (required)"; ObjectID = "Z6Z-kH-PBZ"; */
+"Z6Z-kH-PBZ.placeholder" = "Начинаем (обязательно)";
+
+/* Class = "UIButton"; configuration.title = "Work"; ObjectID = "ZS0-Yh-g6K"; */
+"ZS0-Yh-g6K.configuration.title" = "Работа";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ZS0-Yh-g6K"; */
+"ZS0-Yh-g6K.normalTitle" = "Работа";
+
+/* Class = "UITextField"; placeholder = "Description (optional)"; ObjectID = "ZeR-kE-bK4"; */
+"ZeR-kE-bK4.placeholder" = "Описание (опциональное)";
+
+/* Class = "UILabel"; text = "0 Task"; ObjectID = "ad8-2B-m0F"; */
+"ad8-2B-m0F.text" = "0 Задач";
+
+/* Class = "UIButton"; configuration.title = "Login"; ObjectID = "bjD-Ol-uzL"; */
+"bjD-Ol-uzL.configuration.title" = "Войти";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "bjD-Ol-uzL"; */
+"bjD-Ol-uzL.normalTitle" = "Войти";
+
+/* Class = "UILabel"; text = "Type"; ObjectID = "bsQ-l3-7gn"; */
+"bsQ-l3-7gn.text" = "Тип";
+
+/* Class = "UIButton"; configuration.title = "View"; ObjectID = "byA-Kz-yot"; */
+"byA-Kz-yot.configuration.title" = "View";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "byA-Kz-yot"; */
+"byA-Kz-yot.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "My"; ObjectID = "c38-95-j5t"; */
+"c38-95-j5t.text" = "Мои...";
+
+/* Class = "UIViewController"; title = "Sign Up Screen"; ObjectID = "cgp-rf-bin"; */
+"cgp-rf-bin.title" = "Sign Up Screen";
+
+/* Class = "UILabel"; text = "Work"; ObjectID = "cvM-v4-ugl"; */
+"cvM-v4-ugl.text" = "Работа";
+
+/* Class = "UIButton"; configuration.title = "Delete Account"; ObjectID = "dOd-mM-BRi"; */
+"dOd-mM-BRi.configuration.title" = "Удалить аккаунт";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "dOd-mM-BRi"; */
+"dOd-mM-BRi.normalTitle" = "Удалить аккаунт";
+
+/* Class = "UILabel"; text = "All"; ObjectID = "dWZ-Qf-b2b"; */
+"dWZ-Qf-b2b.text" = "Все";
+
+/* Class = "UIButton"; configuration.title = "Create"; ObjectID = "dbE-zt-otY"; */
+"dbE-zt-otY.configuration.title" = "Создать";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "dbE-zt-otY"; */
+"dbE-zt-otY.normalTitle" = "Создать";
+
+/* Class = "UIButton"; configuration.title = "Study"; ObjectID = "eQH-DH-3oR"; */
+"eQH-DH-3oR.configuration.title" = "Учеба";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "eQH-DH-3oR"; */
+"eQH-DH-3oR.normalTitle" = "Учеба";
+
+/* Class = "UIButton"; configuration.title = "Have any account? Sign In"; ObjectID = "ek5-Tx-fZM"; */
+"ek5-Tx-fZM.configuration.title" = "Уже есть аккаунт? Войти";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ek5-Tx-fZM"; */
+"ek5-Tx-fZM.normalTitle" = "Уже есть аккаунт? Войти";
+
+/* Class = "UITextField"; placeholder = "Until (required)"; ObjectID = "etR-3W-JJq"; */
+"etR-3W-JJq.placeholder" = "По (обязательно)";
+
+/* Class = "UILabel"; text = "Change your name"; ObjectID = "fOK-MQ-LtT"; */
+"fOK-MQ-LtT.text" = "Поменять имя";
+
+/* Class = "UILabel"; text = "0 Task"; ObjectID = "gu3-ey-oyx"; */
+"gu3-ey-oyx.text" = "0 Задач";
+
+/* Class = "UILabel"; text = "Done"; ObjectID = "hEi-4Y-NS6"; */
+"hEi-4Y-NS6.text" = "Завершенные";
+
+/* Class = "UILabel"; text = "${name}"; ObjectID = "hQf-7O-cpl"; */
+"hQf-7O-cpl.text" = "${name}";
+
+/* Class = "UIButton"; configuration.title = "Update"; ObjectID = "hsO-gm-j9Q"; */
+"hsO-gm-j9Q.configuration.title" = "Обновить";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "hsO-gm-j9Q"; */
+"hsO-gm-j9Q.normalTitle" = "Обновить";
+
+/* Class = "UILabel"; text = "In Progress"; ObjectID = "iyN-tb-a9b"; */
+"iyN-tb-a9b.text" = "В процессе";
+
+/* Class = "UILabel"; text = "Remind about this"; ObjectID = "k0s-FA-qGs"; */
+"k0s-FA-qGs.text" = "Напомнить";
+
+/* Class = "UITextField"; placeholder = "Your Email"; ObjectID = "m9e-PP-fge"; */
+"m9e-PP-fge.placeholder" = "Ваш новый Email";
+
+/* Class = "UILabel"; text = "Day"; ObjectID = "mS6-5p-YeJ"; */
+"mS6-5p-YeJ.text" = "День";
+
+/* Class = "UITextField"; placeholder = "Title (required)"; ObjectID = "n1N-SO-484"; */
+"n1N-SO-484.placeholder" = "Название (обязательно)";
+
+/* Class = "UILabel"; text = "${username}"; ObjectID = "nE1-vt-gjv"; */
+"nE1-vt-gjv.text" = "${username}";
+
+/* Class = "UITextField"; placeholder = "Choose your day"; ObjectID = "nOG-oV-tZf"; */
+"nOG-oV-tZf.placeholder" = "Выберите день";
+
+/* Class = "UIButton"; configuration.title = "Other"; ObjectID = "oPh-OQ-UNF"; */
+"oPh-OQ-UNF.configuration.title" = "Другое";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "oPh-OQ-UNF"; */
+"oPh-OQ-UNF.normalTitle" = "Другое";
+
+/* Class = "UITextField"; placeholder = "When we start? (required)"; ObjectID = "oto-7y-ua6"; */
+"oto-7y-ua6.placeholder" = "Когда начинаем? (обязательное)";
+
+/* Class = "UIViewController"; title = "Login Screen"; ObjectID = "p4b-tE-Lw8"; */
+"p4b-tE-Lw8.title" = "Login Screen";
+
+/* Class = "UILabel"; text = "Add Task"; ObjectID = "pl7-he-GNW"; */
+"pl7-he-GNW.text" = "Создать задачу";
+
+/* Class = "UILabel"; text = "Change your email"; ObjectID = "qeq-GA-bf3"; */
+"qeq-GA-bf3.text" = "Поменять Email";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "sCB-ZZ-fnt"; */
+"sCB-ZZ-fnt.placeholder" = "Пароль";
+
+/* Class = "UILabel"; text = "Today"; ObjectID = "suI-Cm-ZTO"; */
+"suI-Cm-ZTO.text" = "Сегодня";
+
+/* Class = "UITextField"; placeholder = "Description (optional)"; ObjectID = "tqv-xS-5z9"; */
+"tqv-xS-5z9.placeholder" = "Описание (опционально)";
+
+/* Class = "UILabel"; text = "Sign Up"; ObjectID = "uIY-2M-FG2"; */
+"uIY-2M-FG2.text" = "Регистрация";
+
+/* Class = "UITextField"; placeholder = "Username"; ObjectID = "vX7-l3-1sF"; */
+"vX7-l3-1sF.placeholder" = "Имя";
+
+/* Class = "UITextField"; placeholder = "Email ID"; ObjectID = "vXI-wv-KIJ"; */
+"vXI-wv-KIJ.placeholder" = "Email ID";
+
+/* Class = "UILabel"; text = "Other"; ObjectID = "vv9-K2-cng"; */
+"vv9-K2-cng.text" = "Другое";
+
+/* Class = "UILabel"; text = "Tasks"; ObjectID = "xH3-J4-8u0"; */
+"xH3-J4-8u0.text" = "Задачи";
+
+/* Class = "UIButton"; configuration.title = "Login"; ObjectID = "xHN-5F-Af1"; */
+"xHN-5F-Af1.configuration.title" = "Войти";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "xHN-5F-Af1"; */
+"xHN-5F-Af1.normalTitle" = "Войти";
+
+/* Class = "UILabel"; text = "Study"; ObjectID = "y0B-JY-0o9"; */
+"y0B-JY-0o9.text" = "Учеба";
+
+/* Class = "UIButton"; configuration.title = "Other"; ObjectID = "yp7-S7-xrb"; */
+"yp7-S7-xrb.configuration.title" = "Другое";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "yp7-S7-xrb"; */
+"yp7-S7-xrb.normalTitle" = "Другое";

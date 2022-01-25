@@ -35,10 +35,10 @@ class UserSettingsController: UIViewController {
     @IBAction func updateNamePressed(_ sender: UIButton) {
         if let newName = usernameTextField.text, let currentName = DBHelper.userInfo?.username {
             if newName == currentName {
-                Utilities.showBunner(title: "Oops", subtitle: "Your current name is similar", style: .info)
+                Utilities.showBunner(title: "Oops".localize(), subtitle: "Your current name is similar".localize(), style: .info)
             } else {
                 DBHelper.updateUserInfo(data: [K.FStore.Field.name : newName]) {
-                    Utilities.showBunner(title: "Woohoo", subtitle: "Now your name is \(newName)", style: .success)
+                    Utilities.showBunner(title: "Woohoo".localize(), subtitle: "Now your name is".localize() + " - \(newName)", style: .success)
                 }
                 self.usernameTextField.text = ""
             }
@@ -48,14 +48,14 @@ class UserSettingsController: UIViewController {
     @IBAction func updateEmailPressed(_ sender: UIButton) {
         if let newEmail = emailTextField.text, let currentEmail = DBHelper.userInfo?.email {
             if !Utilities.isEmailValid(newEmail) {
-                Utilities.showBunner(title: "Check your email", subtitle: "Please, enter your email in correct format", style: .info)
+                Utilities.showBunner(title: "Check your email".localize(), subtitle: "Please, enter your email in correct format".localize(), style: .info)
                 return
             } else if newEmail == currentEmail {
-                Utilities.showBunner(title: "Oops", subtitle: "Your current email is similar", style: .info)
+                Utilities.showBunner(title: "Oops".localize(), subtitle: "Your current email is similar".localize(), style: .info)
                 return
             } else {
                 DBHelper.updateUserInfo(data: [K.FStore.Field.email : newEmail]) {
-                    Utilities.showBunner(title: "Woohoo", subtitle: "Now your email is \(newEmail)", style: .success)
+                    Utilities.showBunner(title: "Woohoo".localize(), subtitle: "Now your email is" + " - \(newEmail)", style: .success)
                 }
                 self.emailTextField.text = ""
             }
@@ -64,10 +64,10 @@ class UserSettingsController: UIViewController {
     
     
     @IBAction func deleteButtonPressed(_ sender: Any) {
-        let alertMeesage = "You definitely want to delete your account with tasks?"
-        let alert = UIAlertController(title: "Are you sure?", message: alertMeesage, preferredStyle: UIAlertController.Style.alert)
+        let alertMeesage = "You definitely want to delete your account with tasks?".localize()
+        let alert = UIAlertController(title: "Are you sure?".localize(), message: alertMeesage, preferredStyle: UIAlertController.Style.alert)
 
-        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default) { _ in
+        alert.addAction(UIAlertAction(title: "Yes".localize(), style: UIAlertAction.Style.default) { _ in
             DBHelper.deleteAccountAndTasks() {
                 DBHelper.userId = nil
                 DBHelper.userInfo = nil
@@ -79,7 +79,7 @@ class UserSettingsController: UIViewController {
             }
         })
                         
-        alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "No".localize(), style: UIAlertAction.Style.cancel, handler: nil))
 
         self.present(alert, animated: true, completion: nil)
     }

@@ -36,13 +36,13 @@ class SignUpController: UIViewController {
         disableSignUpButton()
         if let username = usernameTextField.text, let email = emailTextField.text, let password = passwordTextField.text {
             if username.isEmpty {
-                Utilities.showBunner(title: "Oh, we can't sign up", subtitle: "Please, fill username field", style: .danger)
+                Utilities.showBunner(title: "Oh, we can't sign up".localize(), subtitle: "Please, fill username field".localize(), style: .danger)
                 enableSignUpButton()
                 return
             }
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if let e = error {
-                    Utilities.showBunner(title: "Oh, we can't sign up", subtitle: e.localizedDescription, style: .danger)
+                    Utilities.showBunner(title: "Oh, we can't sign up".localize(), subtitle: e.localizedDescription.localize(), style: .danger)
                     self.enableSignUpButton()
                 } else {
                     DBHelper.userId = Auth.auth().currentUser?.uid

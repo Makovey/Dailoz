@@ -45,13 +45,13 @@ class HomeController: UIViewController {
         if let touch = touches.first {
             switch touch.view {
             case inProgressView, inProgressStack:
-                viewTapped = "active"
+                viewTapped = "active".localize()
                 performSegue(withIdentifier: K.homeSegue, sender: self)
             case doneView, doneStack:
-                viewTapped = "done"
+                viewTapped = "done".localize()
                 performSegue(withIdentifier: K.homeSegue, sender: self)
             case expiredView, expiredStack:
-                viewTapped = "expired"
+                viewTapped = "expired".localize()
                 performSegue(withIdentifier: K.homeSegue, sender: self)
             default:
                 return

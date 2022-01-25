@@ -83,7 +83,7 @@ class TaskDetailController: UIViewController {
     
     func setUpInitialData() {
         if let currentTask = currentTask {
-            mainLabel.text = "Update \"\(currentTask.title)\""
+            mainLabel.text = "Update".localize() + " \"\(currentTask.title)\""
             dateTextField.text = dateFormatter.string(from: currentTask.dateBegin)
             startAtTextField.text = timeFormatter.string(from: currentTask.startAt)
             untilTextField.text = timeFormatter.string(from: currentTask.until)
@@ -198,7 +198,7 @@ class TaskDetailController: UIViewController {
                                     isNeededRemind: isRemindChecked)
                     
                     if currentTask == task {
-                        Utilities.showBunner(title: "Task has not changed", subtitle: "Сhange anything before updating", style: .info)
+                        Utilities.showBunner(title: "Task has not changed".localize(), subtitle: "Сhange anything before updating".localize(), style: .info)
                     } else {
                         DBHelper.updateUserTask(updatableTask: task, data: [
                             K.FStore.Field.date: datePicker.date,
@@ -208,7 +208,7 @@ class TaskDetailController: UIViewController {
                             K.FStore.Field.type: datePicker.date,
                             K.FStore.Field.isNeededRemind: isRemindChecked
                         ]) {
-                            Utilities.showBunner(title: "Woohoo", subtitle: "Task updated", style: .success)
+                            Utilities.showBunner(title: "Woohoo".localize(), subtitle: "Task updated".localize(), style: .success)
                         }
                         
                         if currentTask.isNeededRemind && !isRemindChecked {
@@ -219,7 +219,7 @@ class TaskDetailController: UIViewController {
                     }
                 }
             } else {	
-                Utilities.showBunner(title: "Oh, we can't save your task", subtitle: "Please, fill all required fields", style: .danger)
+                Utilities.showBunner(title: "Oh, we can't update your task".localize(), subtitle: "Please, fill all required fields".localize(), style: .danger)
             }
         }
         

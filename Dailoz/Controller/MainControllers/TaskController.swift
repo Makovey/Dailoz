@@ -50,7 +50,7 @@ extension TaskController: UITableViewDelegate, UITableViewDataSource {
             self.todayTaskTableView.restore()
         } else {
             countOfTaskToday = 0
-            self.todayTaskTableView.setImageWithMessage("You don’t have any schedule today.")
+            self.todayTaskTableView.setImageWithMessage("You don’t have any schedule today.".localize())
         }
         return countOfTaskToday!
     }

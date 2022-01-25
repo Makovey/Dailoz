@@ -156,7 +156,7 @@ class AddTaskController: UIViewController {
                                 isNeededRemind: isRemindChecked)
                 
                 if checkAlreadyHasThisTask(task) {
-                    Utilities.showBunner(title: "Oops", subtitle: "You're alredy planned \(task.title)", style: .warning)
+                    Utilities.showBunner(title: "Oops".localize(), subtitle: "You're alredy planned".localize() + " \(task.title)", style: .warning)
                     return
                 }
                 
@@ -176,7 +176,7 @@ class AddTaskController: UIViewController {
                     ])
                 
                 DBHelper.userTasks.insert(task)
-                Utilities.showBunner(title: "We're plained your task", subtitle: "\(task.title) - startAt \(startAt)", style: .success)
+                Utilities.showBunner(title: "We're plained your task".localize(), subtitle: "\(task.title) - startAt \(startAt)", style: .success)
                 Utilities.clearAllTextFields(textFields: self.createTaskTextFields)
                 self.resetTypeButtons()
                 
@@ -185,7 +185,7 @@ class AddTaskController: UIViewController {
                 }
                 
             } else {
-                Utilities.showBunner(title: "Oh, we can't save your task", subtitle: "Please, fill all required fields", style: .danger)
+                Utilities.showBunner(title: "Oh, we can't save your task".localize(), subtitle: "Please, fill all required fields".localize(), style: .danger)
             }
         }
     }
