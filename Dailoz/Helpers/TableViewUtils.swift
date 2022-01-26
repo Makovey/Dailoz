@@ -48,7 +48,7 @@ struct TableViewUtils {
                 if var userTask = DBHelper.userTasks.filter({$0.id == task.id}).first {
                     userTask.isDone = true
                     DBHelper.updateUserTask(updatableTask: userTask, data: [K.FStore.Field.isDone: true]) {
-                        Utilities.showBunner(title: "Wohoo", subtitle: "\(task.title) is done.", style: .success)
+                        Utilities.showBunner(title: "Wohoo".localize(), subtitle: "\(task.title) " + "is done.".localize(), style: .success)
                         cell.doneImage.alpha = 1
                     }
                 }
@@ -62,7 +62,7 @@ struct TableViewUtils {
                 if var userTask = DBHelper.userTasks.filter({$0.id == task.id}).first {
                     userTask.isDone = false
                     DBHelper.updateUserTask(updatableTask: userTask, data: [K.FStore.Field.isDone: false]) {
-                        Utilities.showBunner(title: "Task in active", subtitle: "\(task.title) in progress.", style: .info)
+                        Utilities.showBunner(title: "Task in active".localize(), subtitle: "\(task.title) " + "in progress.".localize(), style: .info)
                         cell.doneImage.alpha = 0
                     }
                 }

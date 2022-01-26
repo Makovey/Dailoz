@@ -68,7 +68,7 @@ struct Utilities {
         content.title = "Dailoz"
         content.sound = .default
         
-        content.body = "\(task.title) starts now"
+        content.body = "\(task.title) " + "starts now".localize()
         
         var dateComponents = DateComponents()
         dateComponents.calendar = Calendar.current
@@ -89,7 +89,7 @@ struct Utilities {
         }
         
         if showBanner {
-            showBunner(title: "We remaind you about your task", subtitle: "In \(task.startAt.get(.hour)) : \(task.startAt.get(.minute))", style: .success)
+            showBunner(title: "We remaind you about your task".localize(), subtitle: "In".localize() + " \(task.startAt.get(.hour)) : \(task.startAt.get(.minute))", style: .success)
         }
     }
     

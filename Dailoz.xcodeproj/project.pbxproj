@@ -39,6 +39,7 @@
 		5EDA2E9A274442FD00546708 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDA2E98274442FD00546708 /* Main.storyboard */; };
 		5EDA2E9C2744430100546708 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EDA2E9B2744430100546708 /* Assets.xcassets */; };
 		5EDA2E9F2744430100546708 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDA2E9D2744430100546708 /* LaunchScreen.storyboard */; };
+		5EDA33FA27A169E50063FB99 /* ResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDA33F927A169E50063FB99 /* ResetPasswordController.swift */; };
 		5EE5FA14275228ED00676A7D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE5FA13275228ED00676A7D /* Constants.swift */; };
 		5EED98E7274A55DA00918BE7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EED98E6274A55DA00918BE7 /* LoginController.swift */; };
 		5EFD4465275522EC00EFBA96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EFD4464275522EC00EFBA96 /* GoogleService-Info.plist */; };
@@ -103,6 +104,7 @@
 		5EDA2E9B2744430100546708 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5EDA2E9E2744430100546708 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5EDA2EA02744430100546708 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EDA33F927A169E50063FB99 /* ResetPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordController.swift; sourceTree = "<group>"; };
 		5EE5FA13275228ED00676A7D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5EED98E6274A55DA00918BE7 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		5EFD4464275522EC00EFBA96 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "Dailoz/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -163,6 +165,7 @@
 				5E2FD2D8279C2F1000A06872 /* SplashController.swift */,
 				5E0D11EB2746F1EF00F4F905 /* SignUpController.swift */,
 				5EED98E6274A55DA00918BE7 /* LoginController.swift */,
+				5EDA33F927A169E50063FB99 /* ResetPasswordController.swift */,
 			);
 			path = StarterControllers;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				5E943822274FD2F70099CF1C /* Extensions.swift in Sources */,
 				5E2137D12775E40100F7DA27 /* ProfileController.swift in Sources */,
 				5E5693E62790337800F4C1FE /* UserSettingsController.swift in Sources */,
+				5EDA33FA27A169E50063FB99 /* ResetPasswordController.swift in Sources */,
 				5E9954122767A1A1007EE757 /* TaskCell.swift in Sources */,
 				5E239B4C278B77DA000BBE50 /* TableViewUtils.swift in Sources */,
 				5EDA2E93274442FD00546708 /* AppDelegate.swift in Sources */,

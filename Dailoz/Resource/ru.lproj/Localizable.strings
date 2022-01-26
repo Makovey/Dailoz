@@ -6,11 +6,17 @@
   
 */
 
-// TableView
+// Utilities
 "Delete" = "Удалить";
 "Update" = "Обновить";
 "Done" = "Завершить";
 "Active" = "Возобновить";
+"Task in active" = "Задача возобновлена";
+"is done." = "завершена.";
+"in progress." = "в процессе.";
+"We remaind you about your task" = "Мы напомним вам об этом";
+"In" = "В";
+"starts now" = "стартует!";
 
 //SignUp Controller
 "Oh, we can't sign up" = "Не зарегистрировали";
@@ -25,6 +31,10 @@
 "The password is invalid or the user does not have a password." = "Что-то не так с паролем :(";
 "The email address is badly formatted." = "Email в неверном формате.";
 "There is no user record corresponding to this identifier. The user may have been deleted." = "Неверный email или пароль. Или может пользователь был удален. 🤷‍♂️";
+
+//ResetPassword Controller
+"Success" = "Успех";
+"Check your email and come back" = "Проверьте почтовый ящик и возвращайтесь";
 
 //Home Controller
 "active" = "В процессе";

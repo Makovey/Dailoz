@@ -71,8 +71,13 @@
 /* Class = "UILabel"; text = "0 Task"; ObjectID = "HWM-zX-m6g"; */
 "HWM-zX-m6g.text" = "0 Задач";
 
-/* Class = "UILabel"; text = "or with"; ObjectID = "ImK-GO-zAV"; */
-"ImK-GO-zAV.text" = "или с";
+"1BT-Hn-P3h.text" = "Сброс пароля";
+
+"WsB-ec-HXB.text" = "Введите ваш Email и тогда на ящик придет письмо со сбросом пароля";
+
+"wQn-gq-2cL.configuration.title" = "Отправить";
+
+"wQn-gq-2cL.normalTitle" = "Отправить";
 
 /* Class = "UILabel"; text = "or with"; ObjectID = "JL3-I3-kee"; */
 "JL3-I3-kee.text" = "или с";
