@@ -17,6 +17,9 @@
 "Please, fill username field" = "Заполните все поля";
 "The password must be 6 characters long or more." = "Пароль должен содержать 6 символов или более.";
 
+//Welcome Controller
+"Login" = "Войти";
+
 //Login Controller
 "Oh, we can't login" = "Не можем войти";
 "The password is invalid or the user does not have a password." = "Что-то не так с паролем :(";

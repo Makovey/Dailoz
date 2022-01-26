@@ -23,7 +23,7 @@ class TypeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        typeLabel.text = type!.capitalized
+        typeLabel.text = type!.localize().capitalized
         
         typeTableView.delegate = self
         typeTableView.dataSource = self

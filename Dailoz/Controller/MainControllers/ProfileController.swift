@@ -54,19 +54,19 @@ class ProfileController: UIViewController {
         if let touch = touches.first {
             switch touch.view {
             case workView, workStack:
-                typeTapped = "work".localize()
+                typeTapped = "work"
                 performSegue(withIdentifier: K.profileSegue, sender: self)
             case homeView, homeStack:
-                typeTapped = "home".localize()
+                typeTapped = "home"
                 performSegue(withIdentifier: K.profileSegue, sender: self)
             case studyView, studyStack:
-                typeTapped = "study".localize()
+                typeTapped = "study"
                 performSegue(withIdentifier: K.profileSegue, sender: self)
             case otherView, otherStack:
-                typeTapped = "other".localize()
+                typeTapped = "other"
                 performSegue(withIdentifier: K.profileSegue, sender: self)
             case allTypeView, allStack:
-                typeTapped = "all".localize()
+                typeTapped = "all"
                 performSegue(withIdentifier: K.profileSegue, sender: self)
             default:
                 return

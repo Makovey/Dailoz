@@ -84,7 +84,7 @@
 "Kwq-CG-3pX.configuration.title" = "Создать";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Kwq-CG-3pX"; */
-"Kwq-CG-3pX.normalTitle" = "Button";
+"Kwq-CG-3pX.normalTitle" = "Создать";
 
 /* Class = "UILabel"; text = "0 Task"; ObjectID = "L8b-0W-Y1P"; */
 "L8b-0W-Y1P.text" = "0 Задач";

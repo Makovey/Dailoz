@@ -55,43 +55,30 @@
                                     <constraint firstAttribute="height" constant="300" id="fcE-9B-I5P"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qH-Ol-LmO">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qH-Ol-LmO">
                                 <rect key="frame" x="25" y="792" width="364" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="oan-XD-eKo"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
                                 <color key="tintColor" name="MainPurple"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Sign Up">
-                                            <attributes>
-                                                <font key="NSFont" size="16" name="Comfortaa-Regular"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </buttonConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <segue destination="cgp-rf-bin" kind="show" id="Agv-Jj-gSE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjD-Ol-uzL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjD-Ol-uzL">
                                 <rect key="frame" x="25" y="722" width="364" height="50"/>
                                 <color key="backgroundColor" name="MainPurple"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="WGp-hy-aXH"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Login">
-                                            <attributes>
-                                                <font key="NSFont" size="16" name="Comfortaa-Medium"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                    <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="15"/>
@@ -153,11 +140,11 @@
             <objects>
                 <viewController title="Login Screen" id="p4b-tE-Lw8" customClass="LoginController" customModule="Dailoz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4kC-5W-dkh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4t-fb-TDZ">
-                                <rect key="frame" x="25" y="65" width="103.5" height="39.5"/>
+                                <rect key="frame" x="25" y="109" width="103.5" height="39.5"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="35"/>
                                 <color key="textColor" name="MainPurple"/>
                                 <nil key="highlightedColor"/>
@@ -171,24 +158,17 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Vk-L8-67K">
-                                <rect key="frame" x="25" y="768.5" width="364" height="28.5"/>
+                                <rect key="frame" x="25" y="824" width="364" height="27"/>
+                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="13"/>
                                 <color key="tintColor" name="SplashText"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Don’t have an account? Sign Up">
-                                            <attributes>
-                                                <font key="NSFont" size="13" name="Comfortaa-Regular"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </buttonConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Don’t have an account? Sign Up"/>
                                 <connections>
                                     <segue destination="cgp-rf-bin" kind="show" id="Kk1-7K-d7v"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="z3O-bd-9bc">
-                                <rect key="frame" x="25" y="184.5" width="364" height="181.5"/>
+                                <rect key="frame" x="25" y="228.5" width="364" height="180"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DAb-h3-PG6">
                                         <rect key="frame" x="0.0" y="0.0" width="364" height="45"/>
@@ -209,38 +189,25 @@
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="name"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gz7-Ul-WXl">
-                                        <rect key="frame" x="0.0" y="154" width="364" height="27.5"/>
+                                        <rect key="frame" x="0.0" y="154" width="364" height="26"/>
+                                        <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="12"/>
                                         <color key="tintColor" name="MainPurple"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Forgot Password?">
-                                                    <attributes>
-                                                        <font key="NSFont" size="12" name="Comfortaa-Regular"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Forgot Password?"/>
                                     </button>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHN-5F-Af1">
-                                <rect key="frame" x="25" y="446" width="364" height="50"/>
+                                <rect key="frame" x="25" y="488.5" width="364" height="50"/>
                                 <color key="backgroundColor" name="MainPurple"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="UFl-qg-Gga"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Login">
-                                            <attributes>
-                                                <font key="NSFont" size="16" name="Comfortaa-Regular"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                    <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="15"/>
@@ -251,7 +218,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ka-Ry-YuL" userLabel="BaselineRight">
-                                <rect key="frame" x="259" y="566" width="130" height="1"/>
+                                <rect key="frame" x="259" y="608.5" width="130" height="1"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="SVe-bV-MIy"/>
@@ -259,20 +226,20 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Lj-uc-Dbr" userLabel="BaselineLeft">
-                                <rect key="frame" x="25" y="566" width="130.5" height="1"/>
+                                <rect key="frame" x="25" y="608.5" width="130.5" height="1"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="ZaR-J4-Vuk"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or with" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ImK-GO-zAV">
-                                <rect key="frame" x="180.5" y="556" width="53.5" height="17"/>
+                                <rect key="frame" x="180.5" y="598.5" width="53.5" height="17"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="15"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="xqf-Eh-Gtw">
-                                <rect key="frame" x="120" y="608" width="174" height="75"/>
+                                <rect key="frame" x="120" y="650.5" width="174" height="75"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f43-bo-Ki9">
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
@@ -341,11 +308,11 @@
             <objects>
                 <viewController title="Sign Up Screen" id="cgp-rf-bin" customClass="SignUpController" customModule="Dailoz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tvZ-Q9-qSD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIY-2M-FG2">
-                                <rect key="frame" x="25" y="65" width="144.5" height="39.5"/>
+                                <rect key="frame" x="25" y="109" width="144.5" height="39.5"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="35"/>
                                 <color key="textColor" name="MainPurple"/>
                                 <nil key="highlightedColor"/>
@@ -359,7 +326,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="G3V-9o-EfK">
-                                <rect key="frame" x="25" y="184.5" width="364" height="199"/>
+                                <rect key="frame" x="25" y="228.5" width="364" height="199"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vX7-l3-1sF">
                                         <rect key="frame" x="0.0" y="0.0" width="364" height="45"/>
@@ -390,23 +357,15 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kwq-CG-3pX">
-                                <rect key="frame" x="25" y="453.5" width="364" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kwq-CG-3pX">
+                                <rect key="frame" x="25" y="497.5" width="364" height="50"/>
                                 <color key="backgroundColor" name="MainPurple"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Avr-TN-GPh"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Create">
-                                            <attributes>
-                                                <font key="NSFont" size="16" name="Comfortaa-Regular"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                    <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Create"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="15"/>
@@ -417,44 +376,37 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or with" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JL3-I3-kee">
-                                <rect key="frame" x="180.5" y="573.5" width="53.5" height="17"/>
+                                <rect key="frame" x="180.5" y="617.5" width="53.5" height="17"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="15"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ek5-Tx-fZM">
-                                <rect key="frame" x="25" y="767" width="364" height="30"/>
+                                <rect key="frame" x="25" y="823" width="364" height="28"/>
+                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                                 <color key="tintColor" name="SplashText"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Have any account? Sign In">
-                                            <attributes>
-                                                <font key="NSFont" size="14" name="Comfortaa-Regular"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </buttonConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Have any account? Sign In"/>
                                 <connections>
                                     <segue destination="p4b-tE-Lw8" kind="show" id="6Ki-i5-Yqh"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZU-Xw-YKh" userLabel="BaselineLeft">
-                                <rect key="frame" x="25" y="583.5" width="130.5" height="1"/>
+                                <rect key="frame" x="25" y="627.5" width="130.5" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="a9V-Z2-pCU"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="paz-cg-oUI" userLabel="BaselineRight">
-                                <rect key="frame" x="259" y="583.5" width="130" height="1"/>
+                                <rect key="frame" x="259" y="627.5" width="130" height="1"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="vn6-VN-xSu"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ9-Xw-0Xb">
-                                <rect key="frame" x="120" y="625.5" width="174" height="75"/>
+                                <rect key="frame" x="120" y="669.5" width="174" height="75"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zrf-cj-rDw">
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
@@ -543,7 +495,7 @@
                 <navigationController id="pp8-XQ-mIB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="house.circle" catalog="system" selectedImage="house.circle.fill" id="o2b-Dl-xTs"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oSa-1Q-C7C">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -559,11 +511,11 @@
             <objects>
                 <viewController id="H3N-Y0-5ab" userLabel="Home Screen" customClass="HomeController" customModule="Dailoz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cUa-kb-nyS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Zo1-Db-juW">
-                                <rect key="frame" x="25" y="76" width="364" height="55"/>
+                                <rect key="frame" x="25" y="108" width="364" height="55"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wRq-Dc-Ozp">
                                         <rect key="frame" x="340" y="-2" width="24" height="78.5"/>
@@ -622,7 +574,7 @@
                                 </variation>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="UY8-km-2n6">
-                                <rect key="frame" x="25" y="231.5" width="364" height="450"/>
+                                <rect key="frame" x="25" y="263.5" width="364" height="450"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mIw-cT-s0C">
                                         <rect key="frame" x="0.0" y="0.0" width="364" height="136.5"/>
@@ -785,7 +737,7 @@
                                 <color key="backgroundColor" name="CompletedCardBlue"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c38-95-j5t">
-                                <rect key="frame" x="25" y="181" width="364" height="30.5"/>
+                                <rect key="frame" x="25" y="213" width="364" height="30.5"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="27"/>
                                 <color key="textColor" name="MainBlue"/>
                                 <nil key="highlightedColor"/>
@@ -847,7 +799,7 @@
                 <navigationController id="l16-1Y-SyO" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="line.3.horizontal.circle" catalog="system" selectedImage="line.3.horizontal.circle.fill" id="Ooc-pj-HU3"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jvv-rL-TI1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -867,7 +819,7 @@
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qFM-1E-r8o">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -883,11 +835,11 @@
             <objects>
                 <viewController id="DAp-SU-M65" userLabel="Add Task Screen" customClass="AddTaskController" customModule="Dailoz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SBd-7S-eHs">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pl7-he-GNW">
-                                <rect key="frame" x="25" y="76" width="126.5" height="30.5"/>
+                                <rect key="frame" x="25" y="108" width="126.5" height="30.5"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="27"/>
                                 <color key="textColor" name="MainBlue"/>
                                 <nil key="highlightedColor"/>
@@ -901,7 +853,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="ttZ-gP-84j">
-                                <rect key="frame" x="25" y="136.5" width="364" height="300"/>
+                                <rect key="frame" x="25" y="168.5" width="364" height="300"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title (required)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n1N-SO-484">
                                         <rect key="frame" x="0.0" y="0.0" width="364" height="45"/>
@@ -958,17 +910,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="meh-Rn-QX5"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Create">
-                                            <attributes>
-                                                <font key="NSFont" size="16" name="Comfortaa-Regular"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                    <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Create">
+                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="15"/>
@@ -979,7 +925,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NqZ-my-zQv">
-                                <rect key="frame" x="25" y="471.5" width="65.5" height="30.5"/>
+                                <rect key="frame" x="25" y="503.5" width="65.5" height="30.5"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="27"/>
                                 <color key="textColor" name="MainBlue"/>
                                 <nil key="highlightedColor"/>
@@ -993,22 +939,15 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="9mJ-R8-vQ5">
-                                <rect key="frame" x="25" y="527" width="364" height="34.5"/>
+                                <rect key="frame" x="25" y="559" width="364" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZS0-Yh-g6K">
-                                        <rect key="frame" x="0.0" y="0.0" width="86" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="86" height="30"/>
                                         <color key="backgroundColor" red="0.92168945069999997" green="0.92070549729999995" blue="0.99216026069999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
                                         <color key="tintColor" name="purpleTypeText"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Work">
-                                                    <attributes>
-                                                        <font key="NSFont" size="18" name="Comfortaa-Regular"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Work"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="10"/>
@@ -1019,19 +958,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGK-IO-Cis">
-                                        <rect key="frame" x="93" y="0.0" width="85.5" height="34.5"/>
+                                        <rect key="frame" x="93" y="0.0" width="85.5" height="30"/>
                                         <color key="backgroundColor" red="0.84714561700000002" green="0.97729045150000005" blue="0.89410001039999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
                                         <color key="tintColor" name="greenTypeText"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Home">
-                                                    <attributes>
-                                                        <font key="NSFont" size="18" name="Comfortaa-Regular"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Home"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="10"/>
@@ -1042,19 +974,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1t9-Fn-CTm">
-                                        <rect key="frame" x="185.5" y="0.0" width="86" height="34.5"/>
+                                        <rect key="frame" x="185.5" y="0.0" width="86" height="30"/>
                                         <color key="backgroundColor" red="0.99989479780000001" green="0.93745505809999996" blue="0.92155671120000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
                                         <color key="tintColor" name="orangeTypeText"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Study">
-                                                    <attributes>
-                                                        <font key="NSFont" size="18" name="Comfortaa-Regular"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Study"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="10"/>
@@ -1065,19 +990,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yp7-S7-xrb">
-                                        <rect key="frame" x="278.5" y="0.0" width="85.5" height="34.5"/>
+                                        <rect key="frame" x="278.5" y="0.0" width="85.5" height="30"/>
                                         <color key="backgroundColor" red="0.80427414180000001" green="0.99598020320000002" blue="0.99607557059999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
                                         <color key="tintColor" name="blueTypeText"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Other">
-                                                    <attributes>
-                                                        <font key="NSFont" size="18" name="Comfortaa-Regular"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Other"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="10"/>
@@ -1160,11 +1078,11 @@
             <objects>
                 <viewController id="QgS-lm-MT5" userLabel="Task Screen" customClass="TaskController" customModule="Dailoz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AuG-rm-gVB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mS6-5p-YeJ">
-                                <rect key="frame" x="25" y="76" width="54" height="30.5"/>
+                                <rect key="frame" x="25" y="108" width="54" height="30.5"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="27"/>
                                 <color key="textColor" name="MainBlue"/>
                                 <nil key="highlightedColor"/>
@@ -1178,10 +1096,10 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3aJ-xo-oV7">
-                                <rect key="frame" x="25" y="252" width="364" height="546"/>
+                                <rect key="frame" x="25" y="284" width="364" height="514"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4FW-7X-ANC">
-                                <rect key="frame" x="25" y="201.5" width="76.5" height="30.5"/>
+                                <rect key="frame" x="25" y="233.5" width="76.5" height="30.5"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="27"/>
                                 <color key="textColor" name="MainBlue"/>
                                 <nil key="highlightedColor"/>
@@ -1195,7 +1113,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose your day" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nOG-oV-tZf">
-                                <rect key="frame" x="25" y="126.5" width="364" height="45"/>
+                                <rect key="frame" x="25" y="158.5" width="364" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="s9e-un-DVU"/>
                                 </constraints>
@@ -1236,26 +1154,20 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="wcE-hg-0O4" customClass="TaskDetailController" customModule="Dailoz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y1z-sc-B0v">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsO-gm-j9Q">
-                                <rect key="frame" x="25" y="767" width="364" height="50"/>
+                                <rect key="frame" x="25" y="787" width="364" height="50"/>
                                 <color key="backgroundColor" name="MainPurple"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="r8J-e1-OZn"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Update">
-                                            <attributes>
-                                                <font key="NSFont" size="16" name="Comfortaa-Regular"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                    <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Update">
+                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="15"/>
@@ -1267,7 +1179,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsQ-l3-7gn">
-                                <rect key="frame" x="25" y="406.5" width="65.5" height="30.5"/>
+                                <rect key="frame" x="25" y="438.5" width="65.5" height="30.5"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="27"/>
                                 <color key="textColor" name="MainBlue"/>
                                 <nil key="highlightedColor"/>
@@ -1281,7 +1193,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eTo-yo-st4">
-                                <rect key="frame" x="25" y="704" width="181" height="38"/>
+                                <rect key="frame" x="25" y="724" width="181" height="38"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98v-v1-y3Z">
                                         <rect key="frame" x="0.0" y="0.0" width="48" height="38"/>
@@ -1300,7 +1212,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="b6j-7V-9hS">
-                                <rect key="frame" x="25" y="146.5" width="364" height="215"/>
+                                <rect key="frame" x="25" y="178.5" width="364" height="215"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="When we start? (required)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N8m-qR-0of">
                                         <rect key="frame" x="0.0" y="0.0" width="364" height="45"/>
@@ -1343,22 +1255,15 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="9ee-m0-ciq">
-                                <rect key="frame" x="25" y="462" width="364" height="34.5"/>
+                                <rect key="frame" x="25" y="494" width="364" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VY6-dZ-0uJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="86" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="86" height="30"/>
                                         <color key="backgroundColor" red="0.92168945069999997" green="0.92070549729999995" blue="0.99216026069999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
                                         <color key="tintColor" name="purpleTypeText"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Work">
-                                                    <attributes>
-                                                        <font key="NSFont" size="18" name="Comfortaa-Regular"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Work"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="10"/>
@@ -1370,19 +1275,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USk-ks-qQI">
-                                        <rect key="frame" x="93" y="0.0" width="85.5" height="34.5"/>
+                                        <rect key="frame" x="93" y="0.0" width="85.5" height="30"/>
                                         <color key="backgroundColor" red="0.84714561700000002" green="0.97729045150000005" blue="0.89410001039999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
                                         <color key="tintColor" name="greenTypeText"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Home">
-                                                    <attributes>
-                                                        <font key="NSFont" size="18" name="Comfortaa-Regular"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Home"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="10"/>
@@ -1394,19 +1292,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQH-DH-3oR">
-                                        <rect key="frame" x="185.5" y="0.0" width="86" height="34.5"/>
+                                        <rect key="frame" x="185.5" y="0.0" width="86" height="30"/>
                                         <color key="backgroundColor" red="0.99989479780000001" green="0.93745505809999996" blue="0.92155671120000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
                                         <color key="tintColor" name="orangeTypeText"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Study">
-                                                    <attributes>
-                                                        <font key="NSFont" size="18" name="Comfortaa-Regular"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Study"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="10"/>
@@ -1418,19 +1309,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPh-OQ-UNF">
-                                        <rect key="frame" x="278.5" y="0.0" width="85.5" height="34.5"/>
+                                        <rect key="frame" x="278.5" y="0.0" width="85.5" height="30"/>
                                         <color key="backgroundColor" red="0.80427414180000001" green="0.99598020320000002" blue="0.99607557059999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
                                         <color key="tintColor" name="blueTypeText"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Other">
-                                                    <attributes>
-                                                        <font key="NSFont" size="18" name="Comfortaa-Regular"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Other"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="10"/>
@@ -1444,7 +1328,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gl-aF-cDx">
-                                <rect key="frame" x="25" y="86" width="176" height="30.5"/>
+                                <rect key="frame" x="25" y="118" width="176" height="30.5"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="27"/>
                                 <color key="textColor" name="MainBlue"/>
                                 <nil key="highlightedColor"/>
@@ -1510,7 +1394,7 @@
                 <navigationController id="VMe-MP-bnF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="person.circle" catalog="system" selectedImage="person.circle.fill" id="ZyI-HU-PQZ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="soZ-T4-e4G">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1526,11 +1410,11 @@
             <objects>
                 <viewController id="pTY-AO-TYz" userLabel="Profile Screen" customClass="ProfileController" customModule="Dailoz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tqc-2Z-DMp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xJo-L3-6md">
-                                <rect key="frame" x="273" y="66" width="116" height="38"/>
+                                <rect key="frame" x="273" y="98" width="116" height="38"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPR-yT-HGg">
                                         <rect key="frame" x="0.0" y="0.0" width="48" height="38"/>
@@ -1549,7 +1433,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sR3-ad-ggU">
-                                <rect key="frame" x="25" y="154" width="364" height="52"/>
+                                <rect key="frame" x="25" y="186" width="364" height="52"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="${username}" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nE1-vt-gjv">
                                         <rect key="frame" x="119.5" y="0.0" width="125" height="21.5"/>
@@ -1566,7 +1450,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="bkk-2U-ygk">
-                                <rect key="frame" x="25" y="231" width="364" height="480"/>
+                                <rect key="frame" x="25" y="263" width="364" height="480"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tt2-CZ-qrq">
                                         <rect key="frame" x="0.0" y="0.0" width="364" height="150"/>
@@ -1575,20 +1459,20 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="172" height="150"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="wAS-oc-rT7">
-                                                        <rect key="frame" x="50" y="20" width="72" height="110"/>
+                                                        <rect key="frame" x="15" y="20" width="142" height="110"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="display" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ofd-At-PRZ">
-                                                                <rect key="frame" x="0.0" y="0.5" width="72" height="68.5"/>
+                                                                <rect key="frame" x="0.0" y="0.5" width="142" height="68.5"/>
                                                                 <color key="tintColor" name="purpleTypeText"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvM-v4-ugl">
-                                                                <rect key="frame" x="0.0" y="73.5" width="72" height="19"/>
+                                                                <rect key="frame" x="0.0" y="73.5" width="142" height="19"/>
                                                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="17"/>
                                                                 <color key="textColor" name="MainBlue"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWM-zX-m6g">
-                                                                <rect key="frame" x="0.0" y="96.5" width="72" height="13.5"/>
+                                                                <rect key="frame" x="0.0" y="96.5" width="142" height="13.5"/>
                                                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="12"/>
                                                                 <color key="textColor" name="GraphicBorder"/>
                                                                 <nil key="highlightedColor"/>
@@ -1599,9 +1483,9 @@
                                                 <color key="backgroundColor" red="0.92168945069999997" green="0.92070549729999995" blue="0.99216026069999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstItem="wAS-oc-rT7" firstAttribute="top" secondItem="JkU-OX-Ifo" secondAttribute="top" constant="20" id="8gS-Vq-6wE"/>
-                                                    <constraint firstItem="wAS-oc-rT7" firstAttribute="leading" secondItem="JkU-OX-Ifo" secondAttribute="leading" constant="50" id="ctt-PH-guW"/>
+                                                    <constraint firstItem="wAS-oc-rT7" firstAttribute="leading" secondItem="JkU-OX-Ifo" secondAttribute="leading" constant="15" id="ctt-PH-guW"/>
                                                     <constraint firstAttribute="bottom" secondItem="wAS-oc-rT7" secondAttribute="bottom" constant="20" id="ft7-wP-IKQ"/>
-                                                    <constraint firstAttribute="trailing" secondItem="wAS-oc-rT7" secondAttribute="trailing" constant="50" id="taa-Qz-TiI"/>
+                                                    <constraint firstAttribute="trailing" secondItem="wAS-oc-rT7" secondAttribute="trailing" constant="15" id="taa-Qz-TiI"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1619,20 +1503,20 @@
                                                 <rect key="frame" x="192" y="0.0" width="172" height="150"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Dli-Bs-fy1">
-                                                        <rect key="frame" x="50" y="20" width="72" height="110"/>
+                                                        <rect key="frame" x="15" y="20" width="142" height="110"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="house.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="d4G-87-rxx">
-                                                                <rect key="frame" x="0.0" y="-1" width="72" height="69.5"/>
+                                                                <rect key="frame" x="0.0" y="-1" width="142" height="69.5"/>
                                                                 <color key="tintColor" name="greenTypeText"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xi-T3-5Dm">
-                                                                <rect key="frame" x="0.0" y="73.5" width="72" height="19"/>
+                                                                <rect key="frame" x="0.0" y="73.5" width="142" height="19"/>
                                                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="17"/>
                                                                 <color key="textColor" name="MainBlue"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ad8-2B-m0F">
-                                                                <rect key="frame" x="0.0" y="96.5" width="72" height="13.5"/>
+                                                                <rect key="frame" x="0.0" y="96.5" width="142" height="13.5"/>
                                                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="12"/>
                                                                 <color key="textColor" name="GraphicBorder"/>
                                                                 <nil key="highlightedColor"/>
@@ -1642,9 +1526,9 @@
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.84705882352941175" green="0.97729045150000005" blue="0.89410001039999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="Dli-Bs-fy1" secondAttribute="trailing" constant="50" id="9Ty-YM-RrF"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Dli-Bs-fy1" secondAttribute="trailing" constant="15" id="9Ty-YM-RrF"/>
                                                     <constraint firstItem="Dli-Bs-fy1" firstAttribute="top" secondItem="DN6-fU-Tnv" secondAttribute="top" constant="20" id="UWg-T3-C9H"/>
-                                                    <constraint firstItem="Dli-Bs-fy1" firstAttribute="leading" secondItem="DN6-fU-Tnv" secondAttribute="leading" constant="50" id="hYZ-yI-SEg"/>
+                                                    <constraint firstItem="Dli-Bs-fy1" firstAttribute="leading" secondItem="DN6-fU-Tnv" secondAttribute="leading" constant="15" id="hYZ-yI-SEg"/>
                                                     <constraint firstAttribute="bottom" secondItem="Dli-Bs-fy1" secondAttribute="bottom" constant="20" id="rSs-AB-lmG"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
@@ -1671,20 +1555,20 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="172" height="150"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="HGg-Ds-PQ5">
-                                                        <rect key="frame" x="50" y="20" width="72" height="110"/>
+                                                        <rect key="frame" x="15" y="20" width="142" height="110"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="graduationcap.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="JLm-fW-AFv">
-                                                                <rect key="frame" x="0.0" y="0.5" width="72" height="72"/>
+                                                                <rect key="frame" x="0.0" y="0.5" width="142" height="72"/>
                                                                 <color key="tintColor" name="orangeTypeText"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Study" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0B-JY-0o9">
-                                                                <rect key="frame" x="0.0" y="73.5" width="72" height="19"/>
+                                                                <rect key="frame" x="0.0" y="73.5" width="142" height="19"/>
                                                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="17"/>
                                                                 <color key="textColor" name="MainBlue"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8b-0W-Y1P">
-                                                                <rect key="frame" x="0.0" y="96.5" width="72" height="13.5"/>
+                                                                <rect key="frame" x="0.0" y="96.5" width="142" height="13.5"/>
                                                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="12"/>
                                                                 <color key="textColor" name="GraphicBorder"/>
                                                                 <nil key="highlightedColor"/>
@@ -1695,8 +1579,8 @@
                                                 <color key="backgroundColor" red="0.98814636469999995" green="0.93348509069999996" blue="0.92155760529999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstItem="HGg-Ds-PQ5" firstAttribute="top" secondItem="O6z-io-fqn" secondAttribute="top" constant="20" id="0TU-4i-Iay"/>
-                                                    <constraint firstItem="HGg-Ds-PQ5" firstAttribute="leading" secondItem="O6z-io-fqn" secondAttribute="leading" constant="50" id="4KS-qU-Q2n"/>
-                                                    <constraint firstAttribute="trailing" secondItem="HGg-Ds-PQ5" secondAttribute="trailing" constant="50" id="EHf-EN-ewa"/>
+                                                    <constraint firstItem="HGg-Ds-PQ5" firstAttribute="leading" secondItem="O6z-io-fqn" secondAttribute="leading" constant="15" id="4KS-qU-Q2n"/>
+                                                    <constraint firstAttribute="trailing" secondItem="HGg-Ds-PQ5" secondAttribute="trailing" constant="15" id="EHf-EN-ewa"/>
                                                     <constraint firstAttribute="bottom" secondItem="HGg-Ds-PQ5" secondAttribute="bottom" constant="20" id="fMp-ei-ofX"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
@@ -1715,20 +1599,20 @@
                                                 <rect key="frame" x="192" y="0.0" width="172" height="150"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="RHm-7H-prO">
-                                                        <rect key="frame" x="50" y="20" width="72" height="110"/>
+                                                        <rect key="frame" x="15" y="20" width="142" height="110"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="square.and.pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="M5I-Tb-Jyh">
-                                                                <rect key="frame" x="0.0" y="0.0" width="72" height="68"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="142" height="68"/>
                                                                 <color key="tintColor" name="blueTypeText"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vv9-K2-cng">
-                                                                <rect key="frame" x="0.0" y="73.5" width="72" height="19"/>
+                                                                <rect key="frame" x="0.0" y="73.5" width="142" height="19"/>
                                                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="17"/>
                                                                 <color key="textColor" name="MainBlue"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gu3-ey-oyx">
-                                                                <rect key="frame" x="0.0" y="96.5" width="72" height="13.5"/>
+                                                                <rect key="frame" x="0.0" y="96.5" width="142" height="13.5"/>
                                                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="12"/>
                                                                 <color key="textColor" name="GraphicBorder"/>
                                                                 <nil key="highlightedColor"/>
@@ -1739,9 +1623,9 @@
                                                 <color key="backgroundColor" red="0.80427402260000003" green="0.99201506380000004" blue="0.9960760474" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="RHm-7H-prO" secondAttribute="bottom" constant="20" id="2pi-vb-thZ"/>
-                                                    <constraint firstItem="RHm-7H-prO" firstAttribute="leading" secondItem="GBS-Eg-fDn" secondAttribute="leading" constant="50" id="7eQ-5e-yIS"/>
+                                                    <constraint firstItem="RHm-7H-prO" firstAttribute="leading" secondItem="GBS-Eg-fDn" secondAttribute="leading" constant="15" id="7eQ-5e-yIS"/>
                                                     <constraint firstItem="RHm-7H-prO" firstAttribute="top" secondItem="GBS-Eg-fDn" secondAttribute="top" constant="20" id="LLU-W6-tyd"/>
-                                                    <constraint firstAttribute="trailing" secondItem="RHm-7H-prO" secondAttribute="trailing" constant="50" id="d87-uS-duo"/>
+                                                    <constraint firstAttribute="trailing" secondItem="RHm-7H-prO" secondAttribute="trailing" constant="15" id="d87-uS-duo"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1847,11 +1731,11 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="R2S-iK-bVX" customClass="UserSettingsController" customModule="Dailoz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ygr-g5-1nY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GV5-as-Gb1">
-                                <rect key="frame" x="25" y="76" width="189" height="30.5"/>
+                                <rect key="frame" x="25" y="108" width="189" height="30.5"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="27"/>
                                 <color key="textColor" name="MainBlue"/>
                                 <nil key="highlightedColor"/>
@@ -1865,7 +1749,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="dJb-h0-Vsf">
-                                <rect key="frame" x="25" y="141.5" width="364" height="337"/>
+                                <rect key="frame" x="25" y="173.5" width="364" height="337"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="z1c-PX-L0T">
                                         <rect key="frame" x="0.0" y="0.0" width="364" height="138.5"/>
@@ -1896,18 +1780,11 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="itU-XO-qVM"/>
                                                 </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="Update name">
-                                                            <attributes>
-                                                                <font key="NSFont" size="16" name="Comfortaa-Regular"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                    <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
-                                                </buttonConfiguration>
+                                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Update name">
+                                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                                </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="15"/>
@@ -1948,18 +1825,11 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="ZOc-Wp-HRX"/>
                                                 </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="Update email">
-                                                            <attributes>
-                                                                <font key="NSFont" size="16" name="Comfortaa-Regular"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                    <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
-                                                </buttonConfiguration>
+                                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Update email">
+                                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                                </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="15"/>
@@ -1974,29 +1844,22 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCx-1l-8O8">
-                                <rect key="frame" x="25" y="701" width="364" height="16"/>
+                                <rect key="frame" x="25" y="721" width="364" height="16"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOd-mM-BRi">
-                                <rect key="frame" x="25" y="767" width="364" height="50"/>
+                                <rect key="frame" x="25" y="787" width="364" height="50"/>
                                 <color key="backgroundColor" name="CanceledCardRed"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8bN-dq-Gyf"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Delete Account">
-                                            <attributes>
-                                                <font key="NSFont" size="16" name="Comfortaa-Regular"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                    <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Delete Account">
+                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="15"/>
@@ -2038,21 +1901,21 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="Pgd-r1-81d" userLabel="Task Screen" customClass="TypeController" customModule="Dailoz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5x9-5D-cm9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for" translatesAutoresizingMaskIntoConstraints="NO" id="RgL-Yl-EUP">
-                                <rect key="frame" x="25" y="56" width="364" height="51"/>
+                                <rect key="frame" x="25" y="88" width="364" height="51"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
                                 </scopeButtonTitles>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Z4E-Be-UeX">
-                                <rect key="frame" x="25" y="187.5" width="364" height="639.5"/>
+                                <rect key="frame" x="25" y="219.5" width="364" height="627.5"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xH3-J4-8u0">
-                                <rect key="frame" x="25" y="137" width="76.5" height="30.5"/>
+                                <rect key="frame" x="25" y="169" width="76.5" height="30.5"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="27"/>
                                 <color key="textColor" name="MainBlue"/>
                                 <nil key="highlightedColor"/>
@@ -2113,8 +1976,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="sVu-Fv-hTO"/>
         <segue reference="DrQ-H5-Q6u"/>
-        <segue reference="7QN-Qn-XoF"/>
-        <segue reference="Kk1-7K-d7v"/>
+        <segue reference="zzc-1Q-sc0"/>
+        <segue reference="Agv-Jj-gSE"/>
         <segue reference="6Ki-i5-Yqh"/>
     </inferredMetricsTieBreakers>
     <resources>
