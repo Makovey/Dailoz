@@ -40,9 +40,9 @@ class SignUpController: UIViewController {
                 enableSignUpButton()
                 return
             }
-            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                if let e = error {
-                    Utilities.showBunner(title: "Oh, we can't sign up".localize(), subtitle: e.localizedDescription.localize(), style: .danger)
+            Auth.auth().createUser(withEmail: email, password: password) { _, error in
+                if let error = error {
+                    Utilities.showBunner(title: "Oh, we can't sign up".localize(), subtitle: error.localizedDescription.localize(), style: .danger)
                     self.enableSignUpButton()
                 } else {
                     DBHelper.userId = Auth.auth().currentUser?.uid
@@ -50,8 +50,8 @@ class SignUpController: UIViewController {
                     DBHelper.saveDataTo(
                         collection: K.FStore.Collection.userInfo,
                         data: [
-                            K.FStore.Field.name : username,
-                            K.FStore.Field.email : email
+                            K.FStore.Field.name: username,
+                            K.FStore.Field.email: email
                         ])
                     
                     DBHelper.prepareData {

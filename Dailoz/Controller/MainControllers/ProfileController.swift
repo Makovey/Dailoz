@@ -76,7 +76,9 @@ class ProfileController: UIViewController {
     
     func prepareTextByType(_ type: String) -> String {
         if type == "all" {
-            return DBHelper.userTasks.count > 1 ? "\(DBHelper.userTasks.count) " + "Tasks".localize() : "\(DBHelper.userTasks.count) " + "Task".localize()
+            return !DBHelper.userTasks.isEmpty ?
+            "\(DBHelper.userTasks.count) " + "Tasks".localize() :
+            "\(DBHelper.userTasks.count) " + "Task".localize()
         }
         
         let tasks = DBHelper.userTasks.filter { $0.type == type }
@@ -85,20 +87,21 @@ class ProfileController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.profileSegue {
-            let destinationVC = segue.destination as! TypeController
-            destinationVC.type = typeTapped
+            if let destinationVC = segue.destination as? TypeController {
+                destinationVC.type = typeTapped
+            }
         }
     }
-    
-    
     
     @IBAction func logoutButtonPressed(_ sender: UIButton) {
         do {
             try Auth.auth().signOut()
             
-            let navigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
-            navigation.modalPresentationStyle = .fullScreen
-            self.present(navigation, animated: true, completion: nil)
+            if let navigation = UIStoryboard(name: "Main", bundle: nil)
+                .instantiateViewController(withIdentifier: "NavigationController") as? UINavigationController {
+                navigation.modalPresentationStyle = .fullScreen
+                self.present(navigation, animated: true, completion: nil)
+            }
             
             DBHelper.userId = nil
         } catch {

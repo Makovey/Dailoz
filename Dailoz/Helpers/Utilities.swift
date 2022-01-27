@@ -16,7 +16,7 @@ struct Utilities {
     
     // MARK: - Style
     
-    static func styleTextField(_ textfield:UITextField) {
+    static func styleTextField(_ textfield: UITextField) {
         textfield.layer.borderColor = UIColor.init(red: 125/255, green: 136/255, blue: 231/255, alpha: 1).cgColor
         textfield.layer.borderWidth = 1.0
         textfield.layer.cornerRadius = 10.0
@@ -41,7 +41,7 @@ struct Utilities {
     static func isEmailValid(_ email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
 
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: email)
     }
     
@@ -83,13 +83,15 @@ struct Utilities {
         
         let request = UNNotificationRequest(identifier: task.id, content: content, trigger: trigger)
         notificationCenter.add(request) { error in
-            if let e = error {
-                fatalError("Cannot create remainder cause: \(e.localizedDescription)")
+            if let error = error {
+                fatalError("Cannot create remainder cause: \(error.localizedDescription)")
             }
         }
         
         if showBanner {
-            showBunner(title: "We remaind you about your task".localize(), subtitle: "In".localize() + " \(task.startAt.get(.hour)) : \(task.startAt.get(.minute))", style: .success)
+            showBunner(title: "We remaind you about your task".localize(),
+                       subtitle: "In".localize() + " \(task.startAt.get(.hour)) : \(task.startAt.get(.minute))",
+                       style: .success)
         }
     }
     

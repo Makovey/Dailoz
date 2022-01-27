@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UNUserNotificationCenter
             .current()
-            .requestAuthorization(options: [.alert, .badge, .sound]) { granded, error in
-                if let e = error {
-                    print("Haven't permission cause \(e)")
+            .requestAuthorization(options: [.alert, .badge, .sound]) { _, error in
+                if let error = error {
+                    print("Haven't permission cause \(error)")
                 }
             }
         return true
@@ -41,9 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-        return .portrait;
+        return .portrait
     }
 }
-

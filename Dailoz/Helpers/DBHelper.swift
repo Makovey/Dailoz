@@ -10,20 +10,20 @@ import FirebaseFirestore
 
 struct DBHelper {
     
-    static let db = Firestore.firestore()
+    static let database = Firestore.firestore()
     
     static var userTasks = Set<Task>()
     
     static var userInfo: UserInfo?
     
-    static var userId: String? = nil
+    static var userId: String?
     
-    static func saveDataTo(collection: String, data:[String: Any]) {
-        db.collection(collection)
+    static func saveDataTo(collection: String, data: [String: Any]) {
+        database.collection(collection)
             .document(userId!)
             .setData(data) { error in
-                if let e = error {
-                    print("There was an issue saving data to Firestore \(e)")
+                if let error = error {
+                    print("There was an issue saving data to Firestore \(error)")
                 } else {
                     print("Successfully saving data to collection: \(collection)")
                 }
@@ -31,7 +31,7 @@ struct DBHelper {
     }
     
     static func getOnlyTaskOfDay(_ date: Date) -> [Task]? {
-        if userTasks.count != 0 && filterTaskByDay(date).count > 0 {
+        if !userTasks.isEmpty && !filterTaskByDay(date).isEmpty {
             return filterTaskByDay(date)
         } else {
             return nil
@@ -49,35 +49,33 @@ struct DBHelper {
     }
     
     static func saveDataToSubcollection(collection: String, subCollection: String, data: [String: Any]) {
-        db.collection(collection)
+        database.collection(collection)
             .document(userId!)
             .collection(subCollection)
             .document()
             .setData(data) { error in
-                if let e = error {
-                    print("There was an issue saving data to Firestore \(e)")
+                if let error = error {
+                    print("There was an issue saving data to Firestore \(error)")
                 } else {
                     print("Successfully saving data to collection: \(collection) and subcollection \(subCollection)")
                 }
             }
     }
     
-    static func updateUserTask(updatableTask: Task, data: [String: Any] ,completion:@escaping(() -> ())) {
-        db.collection(K.FStore.Collection.tasks)
+    static func updateUserTask(updatableTask: Task, data: [String: Any], completion:@escaping(() -> Void)) {
+        database.collection(K.FStore.Collection.tasks)
             .document(userId!)
             .collection(K.FStore.Collection.userTasks)
             .getDocuments { querySnaphost, error in
-                if let e = error {
-                    print("Can't update task cause: \(e)")
+                if let error = error {
+                    print("Can't update task cause: \(error)")
                 } else {
                     for document in querySnaphost!.documents {
                         if document.data()[K.FStore.Field.id] as? String == updatableTask.id {
                             document.reference.updateData(data)
-                            for task in userTasks {
-                                if task.id == updatableTask.id {
-                                    userTasks.remove(task)
-                                    userTasks.insert(updatableTask)
-                                }
+                            for task in userTasks where task.id == updatableTask.id {
+                                userTasks.remove(task)
+                                userTasks.insert(updatableTask)
                             }
                             completion()
                         }
@@ -86,31 +84,34 @@ struct DBHelper {
             }
     }
     
-    static func updateUserInfo(data: [String: Any] ,completion:@escaping(() -> ())) {
+    static func updateUserInfo(data: [String: Any], completion:@escaping(() -> Void)) {
         let user = Auth.auth().currentUser!
         
-        db.collection(K.FStore.Collection.userInfo)
+        database.collection(K.FStore.Collection.userInfo)
             .document(userId!)
             .updateData(data) { error in
-                if let e = error {
-                    print("Can't update users data cause: \(e)")
+                if let error = error {
+                    print("Can't update users data cause: \(error)")
                 } else {
                     if data.keys.contains(K.FStore.Field.name) {
-                        let newName = data[K.FStore.Field.name] as! String
-                        userInfo?.username = newName
-                    } else {
-                        let newEmail = data[K.FStore.Field.email] as! String
-                        userInfo?.email = newEmail
-                        user.updateEmail(to: newEmail) { error in
-                            print("Can't update email in firebase")
+                        if let newName = data[K.FStore.Field.name] as? String {
+                            userInfo?.username = newName
                         }
+                    } else {
+                        if let newEmail = data[K.FStore.Field.email] as? String {
+                            userInfo?.email = newEmail
+                            user.updateEmail(to: newEmail) { _ in
+                                print("Can't update email in firebase")
+                           }
+                        }
+
                     }
                 }
                 completion()
             }
     }
     
-    static func prepareData(completion:@escaping(() -> ())) {
+    static func prepareData(completion:@escaping(() -> Void)) {
         userId = Auth.auth().currentUser?.uid
         loadUserInfo {
             fetchUserTasks {
@@ -119,11 +120,11 @@ struct DBHelper {
         }
     }
     
-    static func reloadUserTasks(completion:@escaping(() -> ())) {
-        db.collection(K.FStore.Collection.tasks)
+    static func reloadUserTasks(completion:@escaping(() -> Void)) {
+        database.collection(K.FStore.Collection.tasks)
             .document(userId!)
             .collection(K.FStore.Collection.userTasks)
-            .addSnapshotListener({ querySnapshot, error in
+            .addSnapshotListener({ querySnapshot, _ in
                 if let snapshotDocument = querySnapshot?.documents {
                     fillCollectionWithData(snapshotDocument: snapshotDocument)
                 } else {
@@ -133,11 +134,11 @@ struct DBHelper {
             })
     }
     
-    private static func fetchUserTasks(completion:@escaping(() -> ())) {
-        db.collection(K.FStore.Collection.tasks)
+    private static func fetchUserTasks(completion:@escaping(() -> Void)) {
+        database.collection(K.FStore.Collection.tasks)
             .document(userId!)
             .collection(K.FStore.Collection.userTasks)
-            .getDocuments { querySnapshot, error in
+            .getDocuments { querySnapshot, _ in
                 if let snapshotDocument = querySnapshot?.documents {
                     fillCollectionWithData(snapshotDocument: snapshotDocument)
                 }
@@ -173,21 +174,19 @@ struct DBHelper {
         }
     }
     
-    static func removeUserTaskWithId(_ id: String, completion:@escaping(() -> ())) {
-        db.collection(K.FStore.Collection.tasks)
+    static func removeUserTaskWithId(_ id: String, completion:@escaping(() -> Void)) {
+        database.collection(K.FStore.Collection.tasks)
             .document(userId!)
             .collection(K.FStore.Collection.userTasks)
             .getDocuments { querySnaphost, error in
-                if let e = error {
-                    print("Can't delete document cause: \(e)")
+                if let error = error {
+                    print("Can't delete document cause: \(error)")
                 } else {
                     for document in querySnaphost!.documents {
                         if document.data()[K.FStore.Field.id] as? String == id {
                             document.reference.delete()
-                            for task in userTasks {
-                                if task.id == id {
-                                    userTasks.remove(task)
-                                }
+                            for task in userTasks where task.id == id {
+                                userTasks.remove(task)
                             }
                             completion()
                         }
@@ -196,10 +195,10 @@ struct DBHelper {
             }
     }
     
-    private static func loadUserInfo(completion: @escaping(() -> ())) {
-        db.collection(K.FStore.Collection.userInfo)
+    private static func loadUserInfo(completion: @escaping(() -> Void)) {
+        database.collection(K.FStore.Collection.userInfo)
             .document(userId!)
-            .getDocument { (document, error) in
+            .getDocument { (document, _) in
                 if let document = document, document.exists {
                     let data = document.data()!
                     if let username = data[K.FStore.Field.name] as? String,
@@ -215,16 +214,15 @@ struct DBHelper {
     
     static func getTasksByType(_ type: String) -> Set<Task>? {
         if type == "all" {
-            return userTasks.count > 0 ? userTasks : nil
+            return !userTasks.isEmpty ? userTasks : nil
         }
         let filteredTask = userTasks.filter { $0.type == type }
-        return filteredTask.count > 0 ? filteredTask : nil
+        return !filteredTask.isEmpty ? filteredTask : nil
     }
     
-    static func getTasksByDonable(_ type: String) -> Set<Task>? {
+    static func getTasksByDonable(_ type: String) -> Set<Task>? { // swiftlint:disable:this cyclomatic_complexity
         var filteredTask: Set<Task>? = Set<Task>()
         let today = Date()
-        
         
         switch type {
         case "active":
@@ -283,24 +281,23 @@ struct DBHelper {
         }
         
         if let filteredTask = filteredTask {
-            if filteredTask.count > 0 { return filteredTask }
-            else { return nil }
+            if !filteredTask.isEmpty { return filteredTask } else { return nil }
         } else { return nil }
     }
     
-    static func deleteAccountAndTasks(completion:@escaping(() -> ())) {
-        db.collection(K.FStore.Collection.userInfo)
+    static func deleteAccountAndTasks(completion:@escaping(() -> Void)) {
+        database.collection(K.FStore.Collection.userInfo)
             .document(userId!)
             .delete { error in
-                if let e = error {
-                    print("Can't delete account cause \(e)")
+                if let error = error {
+                    print("Can't delete account cause \(error)")
                 } else {
-                    db.collection(K.FStore.Collection.tasks)
+                    database.collection(K.FStore.Collection.tasks)
                         .document(userId!)
                         .collection(K.FStore.Collection.userTasks)
                         .getDocuments { querySnapshot, error in
-                            if let e = error {
-                                print("Can't delete all documents cause: \(e)")
+                            if let error = error {
+                                print("Can't delete all documents cause: \(error)")
                             }
                             for doc in querySnapshot!.documents {
                                 doc.reference.delete()
@@ -315,8 +312,8 @@ struct DBHelper {
                             print(error)
                         }
 
-                        if let e = error {
-                            print("Can't delete user from firebase cause \(e)")
+                        if let error = error {
+                            print("Can't delete user from firebase cause \(error)")
                         }
                         
                         completion()

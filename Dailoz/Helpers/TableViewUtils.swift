@@ -11,7 +11,7 @@ import UIKit
 struct TableViewUtils {
     
     static func createDeleteAction(task: Task, indexPath: IndexPath, tableView: UITableView) -> UIContextualAction {
-        let deleteAction = UIContextualAction(style: .normal, title: "Delete".localize()) { action, view, completion in
+        let deleteAction = UIContextualAction(style: .normal, title: "Delete".localize()) { _, _, completion in
             DBHelper.removeUserTaskWithId(task.id) {
                 NotificationCenter.default.post(name: Notification.Name.deletetdTask, object: nil, userInfo: ["DeletedTask": task])
                 tableView.deleteRows(at: [indexPath], with: .right)
@@ -30,7 +30,7 @@ struct TableViewUtils {
     }
     
     static func createUpdateAction(task: Task, tableView: UITableView, viewController: UIViewController) -> UIContextualAction {
-        let updateAction = UIContextualAction(style: .normal, title: "Update".localize()) { action, view, completion in
+        let updateAction = UIContextualAction(style: .normal, title: "Update".localize()) { _, _, completion in
             viewController.performSegue(withIdentifier: K.taskSegue, sender: viewController)
             completion(true)
         }
@@ -44,7 +44,7 @@ struct TableViewUtils {
         var finishable = UIContextualAction()
         
         if !task.isDone {
-            finishable = UIContextualAction(style: .normal, title: "Done".localize()) { action, view, completion in
+            finishable = UIContextualAction(style: .normal, title: "Done".localize()) { _, _, completion in
                 if var userTask = DBHelper.userTasks.filter({$0.id == task.id}).first {
                     userTask.isDone = true
                     DBHelper.updateUserTask(updatableTask: userTask, data: [K.FStore.Field.isDone: true]) {
@@ -58,7 +58,7 @@ struct TableViewUtils {
             finishable.image = UIImage(systemName: "checkmark.circle")
             finishable.backgroundColor = UIColor.init(named: "PendingCardPurple")
         } else {
-            finishable = UIContextualAction(style: .normal, title: "Active".localize()) { action, view, completion in
+            finishable = UIContextualAction(style: .normal, title: "Active".localize()) { _, _, completion in
                 if var userTask = DBHelper.userTasks.filter({$0.id == task.id}).first {
                     userTask.isDone = false
                     DBHelper.updateUserTask(updatableTask: userTask, data: [K.FStore.Field.isDone: false]) {

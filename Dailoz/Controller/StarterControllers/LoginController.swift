@@ -31,13 +31,12 @@ class LoginController: UIViewController {
         login()
     }
     
-    
     func login() {
         disableLoginButton()
         if let email = loginTextField.text, let password = passwordTextField.text {
-            Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-                if let e = error {
-                    Utilities.showBunner(title: "Oh, we can't login".localize(), subtitle: e.localizedDescription.localize(), style: .danger)
+            Auth.auth().signIn(withEmail: email, password: password) { _, error in
+                if let error = error {
+                    Utilities.showBunner(title: "Oh, we can't login".localize(), subtitle: error.localizedDescription.localize(), style: .danger)
                     self.enableLoginButton()
                 } else {
                     DBHelper.prepareData {

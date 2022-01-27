@@ -27,33 +27,33 @@ class AddTaskController: UIViewController {
     @IBOutlet weak var remainderCheckbox: UIButton!
     
     let datePicker: UIDatePicker = {
-        let dp = UIDatePicker()
-        dp.timeZone = .current
-        dp.minimumDate = Date()
-        return dp
+        let picker = UIDatePicker()
+        picker.timeZone = .current
+        picker.minimumDate = Date()
+        return picker
     }()
     
     let timePicker: UIDatePicker = {
-        let dp = UIDatePicker()
-        dp.timeZone = .current
-        dp.minimumDate = Date()
-        return dp
+        let picker = UIDatePicker()
+        picker.timeZone = .current
+        picker.minimumDate = Date()
+        return picker
     }()
     
     let dateFormatter: DateFormatter = {
-        let df = DateFormatter()
-        df.dateStyle = .full
-        df.timeStyle = .none
-        df.timeZone = .current
-        return df
+        let formatter = DateFormatter()
+        formatter.dateStyle = .full
+        formatter.timeStyle = .none
+        formatter.timeZone = .current
+        return formatter
     }()
     
     let timeFormatter: DateFormatter = {
-        let df = DateFormatter()
-        df.dateStyle = .none
-        df.timeStyle = .short
-        df.timeZone = .current
-        return df
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
+        formatter.timeZone = .current
+        return formatter
     }()
     
     let notification = NotificationCenter.default
@@ -123,10 +123,8 @@ class AddTaskController: UIViewController {
     }
     
     func discardAllButtonsExceptButton(_ sender: UIButton) {
-        for button in typeButtons {
-            if button != sender {
-                Utilities.styleButton(button, borderWidth: 0, borderColor: nil)
-            }
+        for button in typeButtons where button != sender {
+            Utilities.styleButton(button, borderWidth: 0, borderColor: nil)
         }
     }
     
@@ -185,7 +183,10 @@ class AddTaskController: UIViewController {
                 }
                 
             } else {
-                Utilities.showBunner(title: "Oh, we can't save your task".localize(), subtitle: "Please, fill all required fields".localize(), style: .danger)
+                Utilities.showBunner(
+                    title: "Oh, we can't save your task".localize(),
+                    subtitle: "Please, fill all required fields".localize(),
+                    style: .danger)
             }
         }
     }
@@ -198,22 +199,19 @@ class AddTaskController: UIViewController {
         let taskEndTime = DateHelper.getHourAndMinutes(date: task.until)
         
         if !DBHelper.userTasks.isEmpty {
-            for taskFromDB in DBHelper.userTasks {
-                if task.title == taskFromDB.title {
-                    let dbTaskDate = DateHelper.getMonthAndDay(date: taskFromDB.dateBegin)
-                    if taskDate.month! == dbTaskDate.month! && taskDate.day! == dbTaskDate.day! {
-                        
-                        let dbTaskStartTime = DateHelper.getHourAndMinutes(date: taskFromDB.startAt)
-                        let dbTaskEndTime = DateHelper.getHourAndMinutes(date: task.until)
-                        
-                        if taskStartTime.hour == dbTaskStartTime.hour && taskStartTime.minute == dbTaskStartTime.minute {
-                            if taskEndTime.hour == dbTaskEndTime.hour && taskEndTime.minute == dbTaskEndTime.minute {
-                                result = true
-                                break
-                            }
+            for taskFromDB in DBHelper.userTasks where task.title == taskFromDB.title {
+                let dbTaskDate = DateHelper.getMonthAndDay(date: taskFromDB.dateBegin)
+                if taskDate.month! == dbTaskDate.month! && taskDate.day! == dbTaskDate.day! {
+                    let dbTaskStartTime = DateHelper.getHourAndMinutes(date: taskFromDB.startAt)
+                    let dbTaskEndTime = DateHelper.getHourAndMinutes(date: task.until)
+                    if taskStartTime.hour == dbTaskStartTime.hour && taskStartTime.minute == dbTaskStartTime.minute {
+                        if taskEndTime.hour == dbTaskEndTime.hour && taskEndTime.minute == dbTaskEndTime.minute {
+                            result = true
+                            break
                         }
                     }
                 }
+                
             }
         }
         return result
@@ -221,9 +219,9 @@ class AddTaskController: UIViewController {
     
     @IBAction func checkboxPressed(_ sender: UIButton) {
         if !isRemindChecked {
-            remainderCheckbox.setImage(UIImage(named:"checkboxSelected"), for: .normal)
+            remainderCheckbox.setImage(UIImage(named: "checkboxSelected"), for: .normal)
         } else {
-            remainderCheckbox.setImage(UIImage(named:"checkboxUnselected"), for: .normal)
+            remainderCheckbox.setImage(UIImage(named: "checkboxUnselected"), for: .normal)
         }
         
         isRemindChecked = !isRemindChecked
@@ -269,8 +267,7 @@ extension AddTaskController: UITextFieldDelegate {
         }
     }
     
-    
-    func bindPicker(picker: UIDatePicker,to textField: UITextField) {
+    func bindPicker(picker: UIDatePicker, to textField: UITextField) {
         textField.inputView = picker
         textField.inputAccessoryView = createToolbarToTextField(textField)
     }
@@ -298,7 +295,7 @@ extension AddTaskController: UITextFieldDelegate {
         }
         
         safetyDoneBtn.tintColor = K.Color.mainPurple
-        toolbar.setItems([flexButton,safetyDoneBtn], animated: true)
+        toolbar.setItems([flexButton, safetyDoneBtn], animated: true)
         
         return toolbar
     }

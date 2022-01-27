@@ -13,16 +13,18 @@ class SplashController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let _ = Auth.auth().currentUser {
+        if Auth.auth().currentUser != nil {
             DBHelper.prepareData {
-                let newViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
-                newViewController.modalPresentationStyle = .fullScreen
-                self.present(newViewController, animated: true, completion: nil)
+                if let newViewController = UIStoryboard(
+                    name: "Main",
+                    bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController {
+                    newViewController.modalPresentationStyle = .fullScreen
+                    self.present(newViewController, animated: true, completion: nil)
+                }
             }
         } else {
             self.performSegue(withIdentifier: K.splashSegue, sender: self)
         }
     }
-    
     
 }

@@ -56,7 +56,6 @@ extension UITableView {
         labelView.translatesAutoresizingMaskIntoConstraints = false
         labelView.topAnchor.constraint(equalTo: imageView.layoutMarginsGuide.topAnchor, constant: 40).isActive = true
         
-        
         self.backgroundView = imageView
         
     }

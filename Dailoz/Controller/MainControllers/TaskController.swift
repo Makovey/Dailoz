@@ -15,10 +15,10 @@ class TaskController: UIViewController {
     let datePicker = UIDatePicker()
     
     let dateFormatter: DateFormatter = {
-        let df = DateFormatter()
-        df.dateStyle = .full
-        df.timeStyle = .none
-        return df
+        let formatter = DateFormatter()
+        formatter.dateStyle = .full
+        formatter.timeStyle = .none
+        return formatter
     }()
     
     var selectedTask: Task?
@@ -46,7 +46,7 @@ extension TaskController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var countOfTaskToday = DBHelper.getOnlyTaskOfDay(datePicker.date)?.count
         
-        if let _ = countOfTaskToday {
+        if countOfTaskToday != nil {
             self.todayTaskTableView.restore()
         } else {
             countOfTaskToday = 0
@@ -57,7 +57,7 @@ extension TaskController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.Cell.taskCell, for: indexPath) as! TaskCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.Cell.taskCell, for: indexPath) as! TaskCell // swiftlint:disable:this force_cast
         
         if let safetyTasks = DBHelper.getOnlyTaskOfDay(datePicker.date) {
             let sortedByHourTasks = safetyTasks.sorted(by: { $0.startAt.compare($1.startAt) == .orderedAscending })
@@ -121,7 +121,7 @@ extension TaskController {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let selectedCell = tableView.cellForRow(at: indexPath) as! TaskCell
+        let selectedCell = tableView.cellForRow(at: indexPath) as! TaskCell // swiftlint:disable:this force_cast
         
         if let safetySelectedTask = DBHelper.userTasks.filter({ $0.id == selectedCell.idOfTask }).first {
             selectedTask = safetySelectedTask
@@ -147,8 +147,9 @@ extension TaskController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! TaskDetailController
-        destinationVC.currentTask = selectedTask
+        if let destinationVC = segue.destination as? TaskDetailController {
+            destinationVC.currentTask = selectedTask
+        }
     }
 }
 
@@ -174,7 +175,7 @@ extension TaskController: UITextFieldDelegate {
         let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(dateTextFieldDonePressed))
         
         doneBtn.tintColor = K.Color.mainPurple
-        toolbar.setItems([flexButton ,doneBtn], animated: true)
+        toolbar.setItems([flexButton, doneBtn], animated: true)
         
         return toolbar
     }

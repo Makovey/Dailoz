@@ -60,9 +60,9 @@ class HomeController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! TypeController
-        destinationVC.type = viewTapped
-        destinationVC.isFromHomeView = true
+        let destinationVC = segue.destination as? TypeController
+        destinationVC?.type = viewTapped
+        destinationVC?.isFromHomeView = true
     }
     
 }

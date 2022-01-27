@@ -29,31 +29,31 @@ class TaskDetailController: UIViewController {
     @IBOutlet weak var remainderCheckbox: UIButton!
     
     let datePicker: UIDatePicker = {
-        let dp = UIDatePicker()
-        dp.timeZone = .current
-        dp.minimumDate = Date()
-        return dp
+        let picker = UIDatePicker()
+        picker.timeZone = .current
+        picker.minimumDate = Date()
+        return picker
     }()
     
     let timePicker: UIDatePicker = {
-        let dp = UIDatePicker()
-        dp.timeZone = .current
-        dp.minimumDate = Date()
-        return dp
+        let picker = UIDatePicker()
+        picker.timeZone = .current
+        picker.minimumDate = Date()
+        return picker
     }()
     
     let dateFormatter: DateFormatter = {
-        let df = DateFormatter()
-        df.dateStyle = .full
-        df.timeStyle = .none
-        return df
+        let formatter = DateFormatter()
+        formatter.dateStyle = .full
+        formatter.timeStyle = .none
+        return formatter
     }()
     
     let timeFormatter: DateFormatter = {
-        let df = DateFormatter()
-        df.dateStyle = .none
-        df.timeStyle = .short
-        return df
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
+        return formatter
     }()
     
     var timing = (start: Date(), end: Date())
@@ -79,8 +79,6 @@ class TaskDetailController: UIViewController {
         setUpInitialData()
     }
     
-
-    
     func setUpInitialData() {
         if let currentTask = currentTask {
             mainLabel.text = "Update".localize() + " \"\(currentTask.title)\""
@@ -100,9 +98,9 @@ class TaskDetailController: UIViewController {
         }
 
         if isRemindChecked {
-            remainderCheckbox.setImage(UIImage(named:"checkboxSelected"), for: .normal)
+            remainderCheckbox.setImage(UIImage(named: "checkboxSelected"), for: .normal)
         } else {
-            remainderCheckbox.setImage(UIImage(named:"checkboxUnselected"), for: .normal)
+            remainderCheckbox.setImage(UIImage(named: "checkboxUnselected"), for: .normal)
         }
         
         initTypeButton()
@@ -168,10 +166,8 @@ class TaskDetailController: UIViewController {
     }
     
     func discardAllButtonsExceptButton(_ sender: UIButton) {
-        for button in typeButtons {
-            if button != sender {
-                Utilities.styleButton(button, borderWidth: 0, borderColor: nil)
-            }
+        for button in typeButtons where button != sender {
+            Utilities.styleButton(button, borderWidth: 0, borderColor: nil)
         }
     }
     
@@ -198,7 +194,10 @@ class TaskDetailController: UIViewController {
                                     isNeededRemind: isRemindChecked)
                     
                     if currentTask == task {
-                        Utilities.showBunner(title: "Task has not changed".localize(), subtitle: "Сhange anything before updating".localize(), style: .info)
+                        Utilities.showBunner(
+                            title: "Task has not changed".localize(),
+                            subtitle: "Сhange anything before updating".localize(),
+                            style: .info)
                     } else {
                         DBHelper.updateUserTask(updatableTask: task, data: [
                             K.FStore.Field.date: datePicker.date,
@@ -219,7 +218,10 @@ class TaskDetailController: UIViewController {
                     }
                 }
             } else {	
-                Utilities.showBunner(title: "Oh, we can't update your task".localize(), subtitle: "Please, fill all required fields".localize(), style: .danger)
+                Utilities.showBunner(
+                    title: "Oh, we can't update your task".localize(),
+                    subtitle: "Please, fill all required fields".localize(),
+                    style: .danger)
             }
         }
         
@@ -227,9 +229,9 @@ class TaskDetailController: UIViewController {
     
     @IBAction func checkboxPressed(_ sender: UIButton) {
         if !isRemindChecked {
-            remainderCheckbox.setImage(UIImage(named:"checkboxSelected"), for: .normal)
+            remainderCheckbox.setImage(UIImage(named: "checkboxSelected"), for: .normal)
         } else {
-            remainderCheckbox.setImage(UIImage(named:"checkboxUnselected"), for: .normal)
+            remainderCheckbox.setImage(UIImage(named: "checkboxUnselected"), for: .normal)
         }
         
         isRemindChecked = !isRemindChecked
@@ -270,7 +272,7 @@ extension TaskDetailController: UITextFieldDelegate {
         }
     }
     
-    func bindPicker(picker: UIDatePicker,to textField: UITextField) {
+    func bindPicker(picker: UIDatePicker, to textField: UITextField) {
         textField.inputView = picker
         textField.inputAccessoryView = createToolbarToTextField(textField)
     }
@@ -298,7 +300,7 @@ extension TaskDetailController: UITextFieldDelegate {
         }
         
         safetyDoneBtn.tintColor = K.Color.mainPurple
-        toolbar.setItems([flexButton,safetyDoneBtn], animated: true)
+        toolbar.setItems([flexButton, safetyDoneBtn], animated: true)
         
         return toolbar
     }

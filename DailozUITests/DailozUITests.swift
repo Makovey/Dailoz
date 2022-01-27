@@ -62,6 +62,7 @@ class DailozUITests: XCTestCase {
         if !welcomeScreen.loginButton().exists {
             sleep(2)
             profileScreen.tabBarItem().tap()
+            sleep(1)
             profileScreen.logoutButton().tap()
             sleep(2)
         }
@@ -83,7 +84,6 @@ class DailozUITests: XCTestCase {
     }
     
 }
-
 
 struct TestUser {
     let email: String

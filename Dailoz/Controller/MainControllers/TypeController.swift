@@ -32,7 +32,11 @@ class TypeController: UIViewController {
         searchBar.searchTextField.font = UIFont(name: K.mainFont, size: 16)
         
         typeTableView.register(UINib(nibName: K.Cell.taskCell, bundle: nil), forCellReuseIdentifier: K.Cell.taskCell)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.deletedDisplayTask(_:)), name: Notification.Name.deletetdTask, object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.deletedDisplayTask(_:)),
+            name: Notification.Name.deletetdTask,
+            object: nil)
     }
     
     @objc func deletedDisplayTask(_ notification: Notification) {
@@ -72,7 +76,7 @@ extension TypeController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.Cell.taskCell, for: indexPath) as! TaskCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.Cell.taskCell, for: indexPath) as! TaskCell // swiftlint:disable:this force_cast
  
         if let safetyTasks = displayedTasks {
             let sortedByHourTasks = safetyTasks.sorted(by: { $0.startAt.compare($1.startAt) == .orderedAscending })
@@ -136,7 +140,7 @@ extension TypeController {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let selectedCell = tableView.cellForRow(at: indexPath) as! TaskCell
+        let selectedCell = tableView.cellForRow(at: indexPath) as! TaskCell // swiftlint:disable:this force_cast
         
         if let safetySelectedTask = DBHelper.userTasks.filter({ $0.id == selectedCell.idOfTask }).first {
             selectedTask = safetySelectedTask
@@ -162,8 +166,9 @@ extension TypeController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! TaskDetailController
-        destinationVC.currentTask = selectedTask
+        if let destinationVC = segue.destination as? TaskDetailController {
+            destinationVC.currentTask = selectedTask
+        }
     }
 }
 
@@ -171,7 +176,6 @@ extension TypeController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         view.endEditing(true)
     }
-    
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // search right here

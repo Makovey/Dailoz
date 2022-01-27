@@ -10,7 +10,6 @@ import FirebaseAuth
 
 class ResetPasswordController: UIViewController {
     
-    
     @IBOutlet weak var emailTextField: UITextField!
     
     override func viewDidLoad() {
@@ -20,8 +19,6 @@ class ResetPasswordController: UIViewController {
         Utilities.styleTextField(emailTextField)
     }
     
-    
-    
     @IBAction func sendButtonPressed(_ sender: UIButton) {
         sendEmail()
     }
@@ -29,14 +26,17 @@ class ResetPasswordController: UIViewController {
     func sendEmail() {
         if let email = emailTextField.text {
             if !Utilities.isEmailValid(email) {
-                Utilities.showBunner(title: "Check your email".localize(), subtitle: "Please, enter your email in correct format".localize(), style: .info)
+                Utilities.showBunner(
+                    title: "Check your email".localize(),
+                    subtitle: "Please, enter your email in correct format".localize(),
+                    style: .info)
                 return
             } else {
                 Auth.auth().sendPasswordReset(withEmail: email) { error in
-                    if let e = error {
+                    if let error = error {
                         Utilities.showBunner(
                             title: "Oops".localize(),
-                            subtitle: e.localizedDescription.localize(),
+                            subtitle: error.localizedDescription.localize(),
                             style: .warning)
                     } else {
                         Utilities.showBunner(title: "Success".localize(), subtitle: "Check your email and come back".localize(), style: .info)
@@ -46,7 +46,6 @@ class ResetPasswordController: UIViewController {
         }
     }
 }
-
 
 extension ResetPasswordController: UITextViewDelegate {
     func textFieldShouldReturn(_ textView: UITextView) -> Bool {

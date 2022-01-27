@@ -85,6 +85,7 @@
 		5E52B82427660C8400694952 /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
 		5E5693E52790337800F4C1FE /* UserSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsController.swift; sourceTree = "<group>"; };
 		5E60634527693F6700B15F61 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		5E6BF29727A1DD1000FEB895 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		5E6F221E275E2B4900333B13 /* Comfortaa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Comfortaa.ttf; sourceTree = "<group>"; };
 		5E6F2221275E4BF900333B13 /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
 		5E8670C52785EAD600A07862 /* TaskDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailController.swift; sourceTree = "<group>"; };
@@ -276,6 +277,7 @@
 				5EDA2EA62744440E00546708 /* View */,
 				5EFD44682755232100EFBA96 /* Helpers */,
 				5EDA2EA92744444800546708 /* Resource */,
+				5E6BF29727A1DD1000FEB895 /* .swiftlint.yml */,
 			);
 			path = Dailoz;
 			sourceTree = "<group>";
@@ -400,6 +402,7 @@
 				5EDA2E8C274442FD00546708 /* Frameworks */,
 				5EDA2E8D274442FD00546708 /* Resources */,
 				49DBB9A5C6DE646122A564CB /* [CP] Embed Pods Frameworks */,
+				5E6BF29627A1D9FB00FEB895 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -503,6 +506,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dailoz/Pods-Dailoz-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		5E6BF29627A1D9FB00FEB895 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\n  exit 1\nfi\n\n";
 		};
 		B27A8858701C1E23926CC968 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
