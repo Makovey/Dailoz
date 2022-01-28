@@ -251,6 +251,13 @@ extension TaskDetailController: UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        if datePicker.date.get(.day) > Date().get(.day) {
+            timePicker.minimumDate = nil
+        } else {
+            timePicker.minimumDate = Date()
+        }
+        
         switch textField {
         case dateTextField:
             bindPicker(picker: datePicker, to: textField)
